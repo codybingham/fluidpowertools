@@ -144,12 +144,70 @@
 
   <!-- Reference & Lookup -->
   <section id="panel-reference" class="tab-panel" role="tabpanel" aria-labelledby="tab-reference" tabindex="0">
-    <ul>
-      <li>Fitting identification (Brennan model codes, thread ID charts)</li>
-      <li>Hose dash size charts (dash ↔ ID in inches/mm)</li>
-      <li>Common seal/gland dimensions (Parker O-ring sizes)</li>
-      <li>Hydraulic symbol library</li>
-    </ul>
+    <h4>Fitting Identification</h4>
+    <table>
+      <thead>
+        <tr><th>Fitting</th><th>Thread Type</th><th>Example Prefix</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>JIC 37°</td><td>UNF</td><td>37-</td></tr>
+        <tr><td>SAE O-Ring Boss</td><td>UNF</td><td>ORB-</td></tr>
+        <tr><td>BSPP</td><td>G</td><td>BSP-</td></tr>
+      </tbody>
+    </table>
+    <p>See Brennan's <a href="https://www.brennaninc.com" target="_blank" rel="noopener">thread identification guide</a> for a complete chart.</p>
+
+    <h4>Hose Dash Size Chart</h4>
+    <table>
+      <thead>
+        <tr><th>Dash Size</th><th>Hose ID (in)</th><th>Hose ID (mm)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>-4</td><td>0.25</td><td>6.4</td></tr>
+        <tr><td>-6</td><td>0.375</td><td>9.5</td></tr>
+        <tr><td>-8</td><td>0.5</td><td>12.7</td></tr>
+        <tr><td>-10</td><td>0.625</td><td>15.9</td></tr>
+        <tr><td>-12</td><td>0.75</td><td>19.1</td></tr>
+        <tr><td>-16</td><td>1.0</td><td>25.4</td></tr>
+        <tr><td>-20</td><td>1.25</td><td>31.8</td></tr>
+        <tr><td>-24</td><td>1.5</td><td>38.1</td></tr>
+        <tr><td>-32</td><td>2.0</td><td>50.8</td></tr>
+      </tbody>
+    </table>
+
+    <h4>Parker O-Ring Sizes</h4>
+    <table>
+      <thead>
+        <tr><th>AS568 #</th><th>ID (in)</th><th>Cross Section (in)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>-006</td><td>0.114</td><td>0.070</td></tr>
+        <tr><td>-010</td><td>0.239</td><td>0.070</td></tr>
+        <tr><td>-110</td><td>0.239</td><td>0.103</td></tr>
+        <tr><td>-214</td><td>0.737</td><td>0.139</td></tr>
+        <tr><td>-325</td><td>1.362</td><td>0.210</td></tr>
+      </tbody>
+    </table>
+
+    <h4>Hydraulic Schematic Symbols</h4>
+    <table>
+      <thead><tr><th>Symbol</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><svg width="30" height="30" aria-label="pump symbol"><circle cx="15" cy="15" r="10" stroke="black" fill="none"/><line x1="15" y1="15" x2="25" y2="5" stroke="black"/></svg></td>
+          <td>Pump</td>
+        </tr>
+        <tr>
+          <td><svg width="30" height="30" aria-label="motor symbol"><circle cx="15" cy="15" r="10" stroke="black" fill="none"/><line x1="5" y1="5" x2="15" y2="15" stroke="black"/></svg></td>
+          <td>Motor</td>
+        </tr>
+        <tr>
+          <td><svg width="30" height="30" aria-label="check valve symbol"><path d="M5 15 H25" stroke="black"/><path d="M15 15 L10 10 M15 15 L10 20" stroke="black"/></svg></td>
+          <td>Check Valve</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Additional symbols can be found in ISO 1219.</p>
   </section>
 </div>
 
