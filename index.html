@@ -1,219 +1,467 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Fluid Power Tools</title>
-<link rel="icon" type="image/x-icon" href="favicon.png" />
-<link rel="stylesheet" href="styles.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fluid Power Tools</title>
+    <link rel="icon" type="image/x-icon" href="favicon.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="container" role="main" aria-label="Fluid power tools">
+      <h3>Fluid Power Tools</h3>
 
-</head>
-<body>
+      <div class="tabs" role="tablist" aria-label="Tool categories">
+        <div
+          class="tab active"
+          role="tab"
+          tabindex="0"
+          aria-selected="true"
+          aria-controls="panel-pressure-drop"
+          id="tab-pressure-drop"
+        >
+          Pressure Drop
+        </div>
+        <div
+          class="tab"
+          role="tab"
+          tabindex="-1"
+          aria-selected="false"
+          aria-controls="panel-unit-conversions"
+          id="tab-unit-conversions"
+        >
+          Unit Conversions
+        </div>
+        <div
+          class="tab"
+          role="tab"
+          tabindex="-1"
+          aria-selected="false"
+          aria-controls="panel-cylinder-force"
+          id="tab-cylinder-force"
+        >
+          Cylinder Force
+        </div>
+        <div
+          class="tab"
+          role="tab"
+          tabindex="-1"
+          aria-selected="false"
+          aria-controls="panel-pump-power"
+          id="tab-pump-power"
+        >
+          Pump Power
+        </div>
+        <div
+          class="tab"
+          role="tab"
+          tabindex="-1"
+          aria-selected="false"
+          aria-controls="panel-bom-comparator"
+          id="tab-bom-comparator"
+        >
+          BOM Comparator
+        </div>
+        <div
+          class="tab"
+          role="tab"
+          tabindex="-1"
+          aria-selected="false"
+          aria-controls="panel-reference"
+          id="tab-reference"
+        >
+          📊 Reference &amp; Lookup
+        </div>
+      </div>
 
-<div id="container" role="main" aria-label="Fluid power tools">
+      <!-- Pressure Drop -->
+      <section
+        id="panel-pressure-drop"
+        class="tab-panel active"
+        role="tabpanel"
+        aria-labelledby="tab-pressure-drop"
+        tabindex="0"
+      >
+        <label class="calc-label" for="pdFlow">Flow Rate (GPM):</label>
+        <input type="number" id="pdFlow" min="0" step="any" />
 
-  <h3>Fluid Power Tools</h3>
+        <label class="calc-label" for="pdDiameter"
+          >Pipe/Hose Diameter (inches):</label
+        >
+        <input type="number" id="pdDiameter" min="0" step="any" />
 
-  <div class="tabs" role="tablist" aria-label="Tool categories">
-    <div class="tab active" role="tab" tabindex="0" aria-selected="true" aria-controls="panel-pressure-drop" id="tab-pressure-drop">Pressure Drop</div>
-    <div class="tab" role="tab" tabindex="-1" aria-selected="false" aria-controls="panel-unit-conversions" id="tab-unit-conversions">Unit Conversions</div>
-    <div class="tab" role="tab" tabindex="-1" aria-selected="false" aria-controls="panel-cylinder-force" id="tab-cylinder-force">Cylinder Force</div>
-    <div class="tab" role="tab" tabindex="-1" aria-selected="false" aria-controls="panel-pump-power" id="tab-pump-power">Pump Power</div>
-    <div class="tab" role="tab" tabindex="-1" aria-selected="false" aria-controls="panel-bom-comparator" id="tab-bom-comparator">BOM Comparator</div>
-    <div class="tab" role="tab" tabindex="-1" aria-selected="false" aria-controls="panel-reference" id="tab-reference">📊 Reference &amp; Lookup</div>
-  </div>
+        <label class="calc-label" for="pdLength">Length (feet):</label>
+        <input type="number" id="pdLength" min="0" step="any" />
 
-  <!-- Pressure Drop -->
-  <section id="panel-pressure-drop" class="tab-panel active" role="tabpanel" aria-labelledby="tab-pressure-drop" tabindex="0">
-    <label class="calc-label" for="pdFlow">Flow Rate (GPM):</label>
-    <input type="number" id="pdFlow" min="0" step="any" />
+        <label class="calc-label" for="pdViscosity"
+          >Dynamic Viscosity (cP):</label
+        >
+        <input type="number" id="pdViscosity" min="0" step="any" value="40" />
 
-    <label class="calc-label" for="pdDiameter">Pipe/Hose Diameter (inches):</label>
-    <input type="number" id="pdDiameter" min="0" step="any" />
+        <div class="button-row">
+          <button id="calcPressureDrop">Calculate Pressure Drop (psi)</button>
+          <button id="clearPressureDrop">Clear</button>
+        </div>
+        <div id="pressureDropResult"></div>
+      </section>
 
-    <label class="calc-label" for="pdLength">Length (feet):</label>
-    <input type="number" id="pdLength" min="0" step="any" />
+      <!-- Unit Conversions -->
+      <section
+        id="panel-unit-conversions"
+        class="tab-panel"
+        role="tabpanel"
+        aria-labelledby="tab-unit-conversions"
+        tabindex="0"
+      >
+        <label class="calc-label" for="ucCategory">Conversion Type:</label>
+        <select id="ucCategory">
+          <option value="flow">Flow</option>
+          <option value="pressure">Pressure</option>
+          <option value="force">Force</option>
+          <option value="power">Power</option>
+        </select>
 
-    <label class="calc-label" for="pdViscosity">Dynamic Viscosity (cP):</label>
-    <input type="number" id="pdViscosity" min="0" step="any" value="40" />
+        <label class="calc-label" for="ucValue">Value:</label>
+        <input type="number" id="ucValue" min="0" step="any" />
 
-    <div class="button-row">
-      <button id="calcPressureDrop">Calculate Pressure Drop (psi)</button>
-      <button id="clearPressureDrop">Clear</button>
+        <label class="calc-label" for="ucFromUnit">From Unit:</label>
+        <select id="ucFromUnit"></select>
+
+        <label class="calc-label" for="ucToUnit">To Unit:</label>
+        <select id="ucToUnit"></select>
+
+        <div class="button-row">
+          <button id="convertUnitBtn">Convert</button>
+          <button id="clearUnitConvert">Clear</button>
+        </div>
+        <div id="unitConvertResult"></div>
+      </section>
+
+      <!-- Cylinder Force -->
+      <section
+        id="panel-cylinder-force"
+        class="tab-panel"
+        role="tabpanel"
+        aria-labelledby="tab-cylinder-force"
+        tabindex="0"
+      >
+        <label class="calc-label" for="cylBoreDiameter"
+          >Cylinder Bore Diameter (inches):</label
+        >
+        <input type="number" id="cylBoreDiameter" min="0" step="any" />
+
+        <label class="calc-label" for="cylPressure">Pressure (psi):</label>
+        <input type="number" id="cylPressure" min="0" step="any" />
+
+        <div class="button-row">
+          <button id="calcCylinderForceBtn">Calculate Force (lbf)</button>
+          <button id="clearCylinderForce">Clear</button>
+        </div>
+        <div id="cylinderForceResult"></div>
+      </section>
+
+      <!-- Pump Power -->
+      <section
+        id="panel-pump-power"
+        class="tab-panel"
+        role="tabpanel"
+        aria-labelledby="tab-pump-power"
+        tabindex="0"
+      >
+        <label class="calc-label" for="pumpFlow">Flow Rate (GPM):</label>
+        <input type="number" id="pumpFlow" min="0" step="any" />
+
+        <label class="calc-label" for="pumpPressure">Pressure (psi):</label>
+        <input type="number" id="pumpPressure" min="0" step="any" />
+
+        <label class="calc-label" for="pumpEfficiency">Efficiency (%):</label>
+        <input
+          type="number"
+          id="pumpEfficiency"
+          min="1"
+          max="100"
+          step="any"
+          value="85"
+        />
+
+        <div class="button-row">
+          <button id="calcPumpPowerBtn">Calculate Power (HP)</button>
+          <button id="clearPumpPower">Clear</button>
+        </div>
+        <div id="pumpPowerResult"></div>
+      </section>
+
+      <!-- BOM Comparator -->
+      <section
+        id="panel-bom-comparator"
+        class="tab-panel"
+        role="tabpanel"
+        aria-labelledby="tab-bom-comparator"
+        tabindex="0"
+      >
+        <label for="oldBOM">Old BOM:</label>
+        <textarea id="oldBOM" placeholder="PartNumber  Qty"></textarea>
+
+        <label for="newBOM" style="margin-top: 25px">New BOM:</label>
+        <textarea id="newBOM" placeholder="PartNumber  Qty"></textarea>
+
+        <div
+          class="button-group"
+          style="margin-top: 25px; display: flex; gap: 15px"
+        >
+          <button id="compareBOM">Compare</button>
+          <button id="clearBOM">Clear</button>
+          <div id="loadingSpinner" title="Processing..."></div>
+        </div>
+
+        <!-- Quantity scaling toggle and input -->
+        <div
+          id="scalerContainer"
+          style="
+            display: none;
+            margin-top: 15px;
+            font-weight: 600;
+            font-size: 1rem;
+            color: #34495e;
+          "
+        >
+          <label for="qtyScaler">
+            <input type="checkbox" id="enableScaler" />
+            Enable Quantity Scaling
+          </label>
+          <input
+            type="number"
+            id="qtyScaler"
+            value="1"
+            step="1"
+            min="0"
+            style="
+              display: none;
+              margin-left: 10px;
+              width: 80px;
+              padding: 6px 8px;
+              border: 1.8px solid #d1d9e6;
+              border-radius: 6px;
+              font-size: 1rem;
+            "
+          />
+        </div>
+
+        <!-- Filter dropdown -->
+        <div
+          id="filterContainer"
+          style="
+            display: none;
+            margin-top: 15px;
+            font-weight: 600;
+            font-size: 1rem;
+            color: #34495e;
+          "
+        >
+          <label for="statusFilter">Filter by Status:</label>
+          <select
+            id="statusFilter"
+            aria-label="Filter comparison results by status"
+            style="margin-left: 10px; padding: 5px 8px; font-size: 1rem"
+          >
+            <option value="all">All</option>
+            <option value="Added">Added</option>
+            <option value="Removed">Removed</option>
+            <option value="Qty Change">Qty Change</option>
+            <option value="Changed">Changed</option>
+            <option value="Unchanged">Unchanged</option>
+          </select>
+        </div>
+
+        <div
+          id="bomResults"
+          aria-live="polite"
+          aria-atomic="true"
+          style="margin-top: 35px"
+        ></div>
+      </section>
+
+      <!-- Reference & Lookup -->
+      <section
+        id="panel-reference"
+        class="tab-panel"
+        role="tabpanel"
+        aria-labelledby="tab-reference"
+        tabindex="0"
+      >
+        <h4>Fitting Identification</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Fitting</th>
+              <th>Thread Type</th>
+              <th>Example Prefix</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>JIC 37°</td>
+              <td>UNF</td>
+              <td>37-</td>
+            </tr>
+            <tr>
+              <td>SAE O-Ring Boss</td>
+              <td>UNF</td>
+              <td>ORB-</td>
+            </tr>
+            <tr>
+              <td>BSPP</td>
+              <td>G</td>
+              <td>BSP-</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          See Brennan's
+          <a href="https://www.brennaninc.com" target="_blank" rel="noopener"
+            >thread identification guide</a
+          >
+          for a complete chart.
+        </p>
+
+        <h4>Hose Dash Size Chart</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Dash Size</th>
+              <th>Hose ID (in)</th>
+              <th>Hose ID (mm)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>-4</td>
+              <td>0.25</td>
+              <td>6.4</td>
+            </tr>
+            <tr>
+              <td>-6</td>
+              <td>0.375</td>
+              <td>9.5</td>
+            </tr>
+            <tr>
+              <td>-8</td>
+              <td>0.5</td>
+              <td>12.7</td>
+            </tr>
+            <tr>
+              <td>-10</td>
+              <td>0.625</td>
+              <td>15.9</td>
+            </tr>
+            <tr>
+              <td>-12</td>
+              <td>0.75</td>
+              <td>19.1</td>
+            </tr>
+            <tr>
+              <td>-16</td>
+              <td>1.0</td>
+              <td>25.4</td>
+            </tr>
+            <tr>
+              <td>-20</td>
+              <td>1.25</td>
+              <td>31.8</td>
+            </tr>
+            <tr>
+              <td>-24</td>
+              <td>1.5</td>
+              <td>38.1</td>
+            </tr>
+            <tr>
+              <td>-32</td>
+              <td>2.0</td>
+              <td>50.8</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>Parker O-Ring Sizes</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>AS568 #</th>
+              <th>ID (in)</th>
+              <th>Cross Section (in)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>-006</td>
+              <td>0.114</td>
+              <td>0.070</td>
+            </tr>
+            <tr>
+              <td>-010</td>
+              <td>0.239</td>
+              <td>0.070</td>
+            </tr>
+            <tr>
+              <td>-110</td>
+              <td>0.239</td>
+              <td>0.103</td>
+            </tr>
+            <tr>
+              <td>-214</td>
+              <td>0.737</td>
+              <td>0.139</td>
+            </tr>
+            <tr>
+              <td>-325</td>
+              <td>1.362</td>
+              <td>0.210</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>Hydraulic Schematic Symbols</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Symbol</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <svg width="30" height="30" aria-label="pump symbol">
+                  <circle cx="15" cy="15" r="10" stroke="black" fill="none" />
+                  <line x1="15" y1="15" x2="25" y2="5" stroke="black" />
+                </svg>
+              </td>
+              <td>Pump</td>
+            </tr>
+            <tr>
+              <td>
+                <svg width="30" height="30" aria-label="motor symbol">
+                  <circle cx="15" cy="15" r="10" stroke="black" fill="none" />
+                  <line x1="5" y1="5" x2="15" y2="15" stroke="black" />
+                </svg>
+              </td>
+              <td>Motor</td>
+            </tr>
+            <tr>
+              <td>
+                <svg width="30" height="30" aria-label="check valve symbol">
+                  <path d="M5 15 H25" stroke="black" />
+                  <path d="M15 15 L10 10 M15 15 L10 20" stroke="black" />
+                </svg>
+              </td>
+              <td>Check Valve</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Additional symbols can be found in ISO 1219.</p>
+      </section>
     </div>
-    <div id="pressureDropResult"></div>
-  </section>
 
-<!-- Unit Conversions -->
-<section id="panel-unit-conversions" class="tab-panel" role="tabpanel" aria-labelledby="tab-unit-conversions" tabindex="0">
-  <label class="calc-label" for="ucCategory">Conversion Type:</label>
-  <select id="ucCategory">
-    <option value="flow">Flow</option>
-    <option value="pressure">Pressure</option>
-    <option value="force">Force</option>
-    <option value="power">Power</option>
-  </select>
-
-  <label class="calc-label" for="ucValue">Value:</label>
-  <input type="number" id="ucValue" min="0" step="any" />
-
-  <label class="calc-label" for="ucFromUnit">From Unit:</label>
-  <select id="ucFromUnit"></select>
-
-  <label class="calc-label" for="ucToUnit">To Unit:</label>
-  <select id="ucToUnit"></select>
-
-  <div class="button-row">
-    <button id="convertUnitBtn">Convert</button>
-    <button id="clearUnitConvert">Clear</button>
-  </div>
-  <div id="unitConvertResult"></div>
-</section>
-
-<!-- Cylinder Force -->
-<section id="panel-cylinder-force" class="tab-panel" role="tabpanel" aria-labelledby="tab-cylinder-force" tabindex="0">
-    <label class="calc-label" for="cylBoreDiameter">Cylinder Bore Diameter (inches):</label>
-    <input type="number" id="cylBoreDiameter" min="0" step="any" />
-
-    <label class="calc-label" for="cylPressure">Pressure (psi):</label>
-    <input type="number" id="cylPressure" min="0" step="any" />
-
-    <div class="button-row">
-      <button id="calcCylinderForceBtn">Calculate Force (lbf)</button>
-      <button id="clearCylinderForce">Clear</button>
-    </div>
-    <div id="cylinderForceResult"></div>
-  </section>
-
-  <!-- Pump Power -->
-  <section id="panel-pump-power" class="tab-panel" role="tabpanel" aria-labelledby="tab-pump-power" tabindex="0">
-    <label class="calc-label" for="pumpFlow">Flow Rate (GPM):</label>
-    <input type="number" id="pumpFlow" min="0" step="any" />
-
-    <label class="calc-label" for="pumpPressure">Pressure (psi):</label>
-    <input type="number" id="pumpPressure" min="0" step="any" />
-
-    <label class="calc-label" for="pumpEfficiency">Efficiency (%):</label>
-    <input type="number" id="pumpEfficiency" min="1" max="100" step="any" value="85" />
-
-    <div class="button-row">
-      <button id="calcPumpPowerBtn">Calculate Power (HP)</button>
-      <button id="clearPumpPower">Clear</button>
-    </div>
-    <div id="pumpPowerResult"></div>
-  </section>
-
-  <!-- BOM Comparator -->
-  <section id="panel-bom-comparator" class="tab-panel" role="tabpanel" aria-labelledby="tab-bom-comparator" tabindex="0">
-    <label for="oldBOM">Old BOM:</label>
-    <textarea id="oldBOM" placeholder="PartNumber  Qty"></textarea>
-
-    <label for="newBOM" style="margin-top: 25px;">New BOM:</label>
-    <textarea id="newBOM" placeholder="PartNumber  Qty"></textarea>
-
-    <div class="button-group" style="margin-top: 25px; display: flex; gap: 15px;">
-      <button id="compareBOM">Compare</button>
-      <button id="clearBOM">Clear</button>
-      <div id="loadingSpinner" title="Processing..."></div>
-    </div>
-
-    <!-- Quantity scaling toggle and input -->
-    <div id="scalerContainer" style="display:none; margin-top: 15px; font-weight: 600; font-size: 1rem; color: #34495e;">
-      <label for="qtyScaler">
-        <input type="checkbox" id="enableScaler" />
-        Enable Quantity Scaling
-      </label>
-      <input type="number" id="qtyScaler" value="1" step="1" min="0" style="display:none; margin-left:10px; width: 80px; padding: 6px 8px; border: 1.8px solid #d1d9e6; border-radius: 6px; font-size: 1rem;" />
-    </div>
-
-    <!-- Filter dropdown -->
-    <div id="filterContainer" style="display:none; margin-top: 15px; font-weight: 600; font-size: 1rem; color: #34495e;">
-      <label for="statusFilter">Filter by Status:</label>
-      <select id="statusFilter" aria-label="Filter comparison results by status" style="margin-left: 10px; padding: 5px 8px; font-size: 1rem;">
-        <option value="all">All</option>
-        <option value="Added">Added</option>
-        <option value="Removed">Removed</option>
-        <option value="Qty Change">Qty Change</option>
-        <option value="Changed">Changed</option>
-        <option value="Unchanged">Unchanged</option>
-      </select>
-    </div>
-
-    <div id="bomResults" aria-live="polite" aria-atomic="true" style="margin-top: 35px;"></div>
-  </section>
-
-  <!-- Reference & Lookup -->
-  <section id="panel-reference" class="tab-panel" role="tabpanel" aria-labelledby="tab-reference" tabindex="0">
-    <h4>Fitting Identification</h4>
-    <table>
-      <thead>
-        <tr><th>Fitting</th><th>Thread Type</th><th>Example Prefix</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>JIC 37°</td><td>UNF</td><td>37-</td></tr>
-        <tr><td>SAE O-Ring Boss</td><td>UNF</td><td>ORB-</td></tr>
-        <tr><td>BSPP</td><td>G</td><td>BSP-</td></tr>
-      </tbody>
-    </table>
-    <p>See Brennan's <a href="https://www.brennaninc.com" target="_blank" rel="noopener">thread identification guide</a> for a complete chart.</p>
-
-    <h4>Hose Dash Size Chart</h4>
-    <table>
-      <thead>
-        <tr><th>Dash Size</th><th>Hose ID (in)</th><th>Hose ID (mm)</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>-4</td><td>0.25</td><td>6.4</td></tr>
-        <tr><td>-6</td><td>0.375</td><td>9.5</td></tr>
-        <tr><td>-8</td><td>0.5</td><td>12.7</td></tr>
-        <tr><td>-10</td><td>0.625</td><td>15.9</td></tr>
-        <tr><td>-12</td><td>0.75</td><td>19.1</td></tr>
-        <tr><td>-16</td><td>1.0</td><td>25.4</td></tr>
-        <tr><td>-20</td><td>1.25</td><td>31.8</td></tr>
-        <tr><td>-24</td><td>1.5</td><td>38.1</td></tr>
-        <tr><td>-32</td><td>2.0</td><td>50.8</td></tr>
-      </tbody>
-    </table>
-
-    <h4>Parker O-Ring Sizes</h4>
-    <table>
-      <thead>
-        <tr><th>AS568 #</th><th>ID (in)</th><th>Cross Section (in)</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>-006</td><td>0.114</td><td>0.070</td></tr>
-        <tr><td>-010</td><td>0.239</td><td>0.070</td></tr>
-        <tr><td>-110</td><td>0.239</td><td>0.103</td></tr>
-        <tr><td>-214</td><td>0.737</td><td>0.139</td></tr>
-        <tr><td>-325</td><td>1.362</td><td>0.210</td></tr>
-      </tbody>
-    </table>
-
-    <h4>Hydraulic Schematic Symbols</h4>
-    <table>
-      <thead><tr><th>Symbol</th><th>Description</th></tr></thead>
-      <tbody>
-        <tr>
-          <td><svg width="30" height="30" aria-label="pump symbol"><circle cx="15" cy="15" r="10" stroke="black" fill="none"/><line x1="15" y1="15" x2="25" y2="5" stroke="black"/></svg></td>
-          <td>Pump</td>
-        </tr>
-        <tr>
-          <td><svg width="30" height="30" aria-label="motor symbol"><circle cx="15" cy="15" r="10" stroke="black" fill="none"/><line x1="5" y1="5" x2="15" y2="15" stroke="black"/></svg></td>
-          <td>Motor</td>
-        </tr>
-        <tr>
-          <td><svg width="30" height="30" aria-label="check valve symbol"><path d="M5 15 H25" stroke="black"/><path d="M15 15 L10 10 M15 15 L10 20" stroke="black"/></svg></td>
-          <td>Check Valve</td>
-        </tr>
-      </tbody>
-    </table>
-    <p>Additional symbols can be found in ISO 1219.</p>
-  </section>
-</div>
-
-
-
-<script src="script.js"></script>
-
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
