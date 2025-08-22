@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fluid Power Tools</title>
+<link rel="icon" type="image/x-icon" href="favicon.png" />
+<style>
+  /* Reset & base */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    background: #f4f7fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 40px 20px;
+    color: #333;
+    display: flex;
+    justify-content: center;
+  }
+  #container {
+    background: #fff;
+    padding: 30px 40px 40px;
+    width: 680px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  }
+  h3 {
+    margin-top: 0;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #2c3e50;
+    border-bottom: 3px solid #2980b9;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    user-select: none;
+	text-align: center;
+  }
+
+  /* Tabs container */
+  .tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 25px;
+    user-select: none;
+  }
+  .tab {
+    flex: 1;
+    background: #2980b9;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 6px 6px 6px 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+	display: flex;
+	align-items: center;
+  }
+  .tab:hover {
+    background: #1f618d;
+  }
+  .tab.active {
+    background: #ff1a1a;
+    cursor: default;
+  }
+
+  /* Hide all tab panels by default */
+  .tab-panel {
+    display: none;
+  }
+  /* Show active tab panel */
+  .tab-panel.active {
+    display: block;
+  }
+
+  /* --- Calculator common styles --- */
+  label {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #34495e;
+    display: block;
+    margin-bottom: 8px;
+  }
+  input[type="number"], select {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 1rem;
+    border: 1.8px solid #d1d9e6;
+    border-radius: 6px;
+    margin-bottom: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  button {
+    background: #2980b9;
+    color: #fff;
+    border: none;
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 5px 12px rgba(41, 128, 185, 0.4);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    user-select: none;
+  }
+  button:disabled {
+    background: #7f8c8d;
+    cursor: default;
+    box-shadow: none;
+  }
+  button:hover:not(:disabled) {
+    background: #1f618d;
+    box-shadow: 0 8px 20px rgba(31, 97, 141, 0.6);
+  }
+  .calc-label {
+    margin-top: 15px;
+  }
+  #result, #flowConvertResult, #cylinderForceResult, #pumpPowerResult, #pressureDropResult {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #2c3e50;
+    min-height: 40px;
+    margin-top: 12px;
+  }
+  hr {
+    margin: 30px 0;
+    border: none;
+    border-top: 1px solid #ddd;
+  }
+
+  /* --- BOM Comparator specific styles --- */
+  textarea {
+    width: 100%;
+    min-height: 140px;
+    padding: 12px 15px;
+    font-family: 'Source Code Pro', monospace, monospace;
+    font-size: 14px;
+    border: 1.8px solid #d1d9e6;
+    border-radius: 6px;
+    resize: vertical;
+    transition: border-color 0.3s ease;
+  }
+  textarea:focus {
+    border-color: #2980b9;
+    outline: none;
+  }
+  #bomResults {
+    margin-top: 35px;
+    max-height: 380px;
+    overflow-y: auto;
+    border-radius: 6px;
+    box-shadow: inset 0 0 5px #ddd;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  thead {
+    background: #2980b9;
+    color: #fff;
+    user-select: none;
+  }
+  th, td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e4e7eb;
+    text-align: left;
+  }
+  th {
+    cursor: pointer;
+    transition: background-color 0.25s ease;
+    position: relative;
+  }
+  th:hover {
+    background-color: #1f618d;
+  }
+  tr:nth-child(even) {
+    background-color: #f9fbfd;
+  }
+  tr.added {
+    background-color: #d4edda !important;
+  }
+  tr.removed {
+    background-color: #f8d7da !important;
+  }
+  tr.changed {
+    background-color: #fff3cd !important;
+  }
+  tr.invalid {
+    background-color: #fbeaea !important;
+    color: #b03a3a;
+    font-style: italic;
+  }
+  /* Sort arrows */
+  th.sort-asc::after,
+  th.sort-desc::after {
+    content: '';
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    width: 0; 
+    height: 0; 
+    border-style: solid;
+    transform: translateY(-50%);
+  }
+  th.sort-asc::after {
+    border-width: 6px 5px 0 5px;
+    border-color: #fff transparent transparent transparent;
+  }
+  th.sort-desc::after {
+    border-width: 0 5px 6px 5px;
+    border-color: transparent transparent #fff transparent;
+  }
+  #scalerContainer {
+    margin-top: 15px;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #34495e;
+  }
+  #qtyScaler {
+    width: 80px;
+    padding: 6px 8px;
+    margin-left: 10px;
+    border: 1.8px solid #d1d9e6;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    vertical-align: middle;
+  }
+  #enableScaler {
+    vertical-align: middle;
+    margin-right: 6px;
+    cursor: pointer;
+  }
+  #filterContainer {
+    margin-top: 15px;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #34495e;
+  }
+  #statusFilter {
+    margin-left: 10px;
+    padding: 5px 8px;
+    font-size: 1rem;
+  }
+  #loadingSpinner {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 3px solid #2980b9;
+    border-top: 3px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    vertical-align: middle;
+    margin-left: 10px;
+    visibility: hidden;
+  }
+  @keyframes spin {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
+  }
+</style>
+</head>
+<body>
+
+<div id="container" role="main" aria-label="Fluid power tools">
+
+  <h3>Fluid Power Tools</h3>
+
+  <div class="tabs" role="tablist" aria-label="Tool categories">
+    <div class="tab active" role="tab" tabindex="0" aria-selected="true" aria-controls="panel-pressure-drop" id="tab-pressure-drop">Pressure Drop</div>
+    <div class="tab" role="tab" tabindex="-1" aria-selected="false" aria-controls="panel-flow-conversion" id="tab-flow-conversion">Flow Conversion</div>
+    <div class="tab" role="tab" tabindex="-1" aria-selected="false" aria-controls="panel-cylinder-force" id="tab-cylinder-force">Cylinder Force</div>
+    <div class="tab" role="tab" tabindex="-1" aria-selected="false" aria-controls="panel-pump-power" id="tab-pump-power">Pump Power</div>
+    <div class="tab" role="tab" tabindex="-1" aria-selected="false" aria-controls="panel-bom-comparator" id="tab-bom-comparator">BOM Comparator</div>
+  </div>
+
+  <!-- Pressure Drop -->
+  <section id="panel-pressure-drop" class="tab-panel active" role="tabpanel" aria-labelledby="tab-pressure-drop" tabindex="0">
+    <label class="calc-label" for="pdFlow">Flow Rate (GPM):</label>
+    <input type="number" id="pdFlow" min="0" step="any" />
+
+    <label class="calc-label" for="pdDiameter">Pipe/Hose Diameter (inches):</label>
+    <input type="number" id="pdDiameter" min="0" step="any" />
+
+    <label class="calc-label" for="pdLength">Length (feet):</label>
+    <input type="number" id="pdLength" min="0" step="any" />
+
+    <label class="calc-label" for="pdViscosity">Dynamic Viscosity (cP):</label>
+    <input type="number" id="pdViscosity" min="0" step="any" value="40" />
+
+    <button id="calcPressureDrop">Calculate Pressure Drop (psi)</button>
+    <div id="pressureDropResult"></div>
+  </section>
+
+  <!-- Flow Conversion -->
+  <section id="panel-flow-conversion" class="tab-panel" role="tabpanel" aria-labelledby="tab-flow-conversion" tabindex="0">
+    <label class="calc-label" for="flowInput">Flow Rate:</label>
+    <input type="number" id="flowInput" min="0" step="any" />
+
+    <label class="calc-label" for="flowUnit">From Unit:</label>
+    <select id="flowUnit">
+      <option value="gpm">GPM (US Gallons/min)</option>
+      <option value="lpm">LPM (Liters/min)</option>
+      <option value="cfm">CFM (Cubic Feet/min)</option>
+      <option value="cms">CMS (Cubic Meters/sec)</option>
+    </select>
+
+    <label class="calc-label" for="flowUnitTo">To Unit:</label>
+    <select id="flowUnitTo">
+      <option value="gpm">GPM (US Gallons/min)</option>
+      <option value="lpm">LPM (Liters/min)</option>
+      <option value="cfm">CFM (Cubic Feet/min)</option>
+      <option value="cms">CMS (Cubic Meters/sec)</option>
+    </select>
+
+    <button id="convertFlowBtn">Convert</button>
+    <div id="flowConvertResult"></div>
+  </section>
+
+  <!-- Cylinder Force -->
+  <section id="panel-cylinder-force" class="tab-panel" role="tabpanel" aria-labelledby="tab-cylinder-force" tabindex="0">
+    <label class="calc-label" for="cylBoreDiameter">Cylinder Bore Diameter (inches):</label>
+    <input type="number" id="cylBoreDiameter" min="0" step="any" />
+
+    <label class="calc-label" for="cylPressure">Pressure (psi):</label>
+    <input type="number" id="cylPressure" min="0" step="any" />
+
+    <button id="calcCylinderForceBtn">Calculate Force (lbf)</button>
+    <div id="cylinderForceResult"></div>
+  </section>
+
+  <!-- Pump Power -->
+  <section id="panel-pump-power" class="tab-panel" role="tabpanel" aria-labelledby="tab-pump-power" tabindex="0">
+    <label class="calc-label" for="pumpFlow">Flow Rate (GPM):</label>
+    <input type="number" id="pumpFlow" min="0" step="any" />
+
+    <label class="calc-label" for="pumpPressure">Pressure (psi):</label>
+    <input type="number" id="pumpPressure" min="0" step="any" />
+
+    <label class="calc-label" for="pumpEfficiency">Efficiency (%):</label>
+    <input type="number" id="pumpEfficiency" min="1" max="100" step="any" value="85" />
+
+    <button id="calcPumpPowerBtn">Calculate Power (HP)</button>
+    <div id="pumpPowerResult"></div>
+  </section>
+
+  <!-- BOM Comparator -->
+  <section id="panel-bom-comparator" class="tab-panel" role="tabpanel" aria-labelledby="tab-bom-comparator" tabindex="0">
+    <label for="oldBOM">Old BOM:</label>
+    <textarea id="oldBOM" placeholder="PartNumber  Qty"></textarea>
+
+    <label for="newBOM" style="margin-top: 25px;">New BOM:</label>
+    <textarea id="newBOM" placeholder="PartNumber  Qty"></textarea>
+
+    <div class="button-group" style="margin-top: 25px; display: flex; gap: 15px;">
+      <button id="compareBOM">Compare</button>
+      <button id="clearBOM">Clear</button>
+      <div id="loadingSpinner" title="Processing..."></div>
+    </div>
+
+    <!-- Quantity scaling toggle and input -->
+    <div id="scalerContainer" style="display:none; margin-top: 15px; font-weight: 600; font-size: 1rem; color: #34495e;">
+      <label for="qtyScaler">
+        <input type="checkbox" id="enableScaler" />
+        Enable Quantity Scaling
+      </label>
+      <input type="number" id="qtyScaler" value="1" step="1" min="0" style="display:none; margin-left:10px; width: 80px; padding: 6px 8px; border: 1.8px solid #d1d9e6; border-radius: 6px; font-size: 1rem;" />
+    </div>
+
+    <!-- Filter dropdown -->
+    <div id="filterContainer" style="display:none; margin-top: 15px; font-weight: 600; font-size: 1rem; color: #34495e;">
+      <label for="statusFilter">Filter by Status:</label>
+      <select id="statusFilter" aria-label="Filter comparison results by status" style="margin-left: 10px; padding: 5px 8px; font-size: 1rem;">
+        <option value="all">All</option>
+        <option value="Added">Added</option>
+        <option value="Removed">Removed</option>
+        <option value="Qty Change">Qty Change</option>
+        <option value="Changed">Changed</option>
+        <option value="Unchanged">Unchanged</option>
+      </select>
+    </div>
+
+    <div id="bomResults" aria-live="polite" aria-atomic="true" style="margin-top: 35px;"></div>
+  </section>
+</div>
+
+<script>
+  // Tab switching logic
+  const tabs = document.querySelectorAll('.tab');
+  const panels = document.querySelectorAll('.tab-panel');
+
+  tabs.forEach((tab, i) => {
+    tab.addEventListener('click', () => {
+      activateTab(i);
+    });
+    tab.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+        e.preventDefault();
+        let newIndex = i;
+        if (e.key === 'ArrowRight') {
+          newIndex = (i + 1) % tabs.length;
+        } else if (e.key === 'ArrowLeft') {
+          newIndex = (i - 1 + tabs.length) % tabs.length;
+        }
+        activateTab(newIndex);
+        tabs[newIndex].focus();
+      }
+    });
+  });
+
+  function activateTab(index) {
+    tabs.forEach((tab, i) => {
+      if (i === index) {
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+        tab.setAttribute('tabindex', '0');
+        panels[i].classList.add('active');
+      } else {
+        tab.classList.remove('active');
+        tab.setAttribute('aria-selected', 'false');
+        tab.setAttribute('tabindex', '-1');
+        panels[i].classList.remove('active');
+      }
+    });
+  }
+
+  // -------- Calculator functions --------
+
+  // Pressure Drop Calculation (Darcy-Weisbach with Swamee-Jain approx)
+  // Inputs: flow (GPM), diameter (in), length (ft), viscosity (cP)
+  // Output: pressure drop in psi
+  function calculatePressureDrop(flowGPM, diameterIn, lengthFt, viscosityCp) {
+    if (flowGPM <= 0 || diameterIn <= 0 || lengthFt <= 0 || viscosityCp <= 0) return null;
+
+    // Convert units
+    const diameterM = diameterIn * 0.0254; // m
+    const lengthM = lengthFt * 0.3048; // m
+    const flow_m3s = flowGPM * 0.00378541 / 60; // m^3/s
+    const area = Math.PI * (diameterM / 2) ** 2; // m^2
+    const velocity = flow_m3s / area; // m/s
+
+    // Fluid properties (assuming water-like density ~1000 kg/m3)
+    const density = 1000; // kg/m^3
+
+    // Reynolds number
+    const dynamicViscosity = viscosityCp / 1000; // Pa.s (cP to Pa.s)
+    const reynolds = (density * velocity * diameterM) / dynamicViscosity;
+
+    // Roughness for steel pipe approx (m)
+    const roughness = 0.000045; 
+
+    // Swamee-Jain formula for friction factor f
+    const A = roughness / (3.7 * diameterM);
+    const B = 5.74 / Math.pow(reynolds, 0.9);
+    let frictionFactor = 0.25 / Math.pow(Math.log10(A + B), 2);
+
+    // For low Reynolds (laminar), friction factor is 64/Re
+    if (reynolds < 2300) frictionFactor = 64 / reynolds;
+
+    // Darcy-Weisbach pressure drop (Pa)
+    const deltaP = frictionFactor * (lengthM / diameterM) * 0.5 * density * velocity * velocity;
+
+    // Convert Pa to psi (1 Pa = 0.000145038 psi)
+    const deltaPsi = deltaP * 0.000145038;
+
+    return deltaPsi.toFixed(2);
+  }
+
+  // Flow conversion
+  const flowConversions = {
+    gpm: 1,
+    lpm: 3.78541,
+    cfm: 0.133681,
+    cms: 0.00006309
+  };
+
+  function convertFlow(value, fromUnit, toUnit) {
+    if (value <= 0) return null;
+    // Convert input to GPM first
+    let valueInGPM = value;
+    if (fromUnit !== 'gpm') {
+      if (!flowConversions[fromUnit]) return null;
+      valueInGPM = value / flowConversions[fromUnit];
+    }
+    // Convert from GPM to desired unit
+    if (!flowConversions[toUnit]) return null;
+    const converted = valueInGPM * flowConversions[toUnit];
+    return converted.toFixed(4);
+  }
+
+  // Cylinder Force (lbf)
+  // Force = Pressure (psi) * Area (in^2)
+  function calculateCylinderForce(boreDiameterIn, pressurePsi) {
+    if (boreDiameterIn <= 0 || pressurePsi <= 0) return null;
+    const areaIn2 = Math.PI * (boreDiameterIn / 2) ** 2;
+    const forceLbf = pressurePsi * areaIn2;
+    return forceLbf.toFixed(2);
+  }
+
+  // Pump Power (HP)
+  // Power (HP) = (Flow GPM * Pressure PSI) / (1714 * Efficiency)
+  function calculatePumpPower(flowGPM, pressurePsi, efficiencyPct) {
+    if (flowGPM <= 0 || pressurePsi <= 0 || efficiencyPct <= 0) return null;
+    const eff = efficiencyPct / 100;
+    const powerHP = (flowGPM * pressurePsi) / (1714 * eff);
+    return powerHP.toFixed(3);
+  }
+
+  // -------- Calculator event handlers --------
+
+  document.getElementById('calcPressureDrop').addEventListener('click', () => {
+    const flow = parseFloat(document.getElementById('pdFlow').value);
+    const dia = parseFloat(document.getElementById('pdDiameter').value);
+    const len = parseFloat(document.getElementById('pdLength').value);
+    const visc = parseFloat(document.getElementById('pdViscosity').value);
+
+    const result = calculatePressureDrop(flow, dia, len, visc);
+    document.getElementById('pressureDropResult').textContent = result !== null ? result + ' psi' : 'Invalid input';
+  });
+
+  document.getElementById('convertFlowBtn').addEventListener('click', () => {
+    const val = parseFloat(document.getElementById('flowInput').value);
+    const from = document.getElementById('flowUnit').value;
+    const to = document.getElementById('flowUnitTo').value;
+    const result = convertFlow(val, from, to);
+    document.getElementById('flowConvertResult').textContent = result !== null ? result + ' ' + to.toUpperCase() : 'Invalid input';
+  });
+
+  document.getElementById('calcCylinderForceBtn').addEventListener('click', () => {
+    const bore = parseFloat(document.getElementById('cylBoreDiameter').value);
+    const pressure = parseFloat(document.getElementById('cylPressure').value);
+    const result = calculateCylinderForce(bore, pressure);
+    document.getElementById('cylinderForceResult').textContent = result !== null ? result + ' lbf' : 'Invalid input';
+  });
+
+  document.getElementById('calcPumpPowerBtn').addEventListener('click', () => {
+    const flow = parseFloat(document.getElementById('pumpFlow').value);
+    const pressure = parseFloat(document.getElementById('pumpPressure').value);
+    const efficiency = parseFloat(document.getElementById('pumpEfficiency').value);
+    const result = calculatePumpPower(flow, pressure, efficiency);
+    document.getElementById('pumpPowerResult').textContent = result !== null ? result + ' HP' : 'Invalid input';
+  });
+
+  // -------- BOM Comparator code --------
+  const oldBOMEl = document.getElementById('oldBOM');
+  const newBOMEl = document.getElementById('newBOM');
+  const compareBtn = document.getElementById('compareBOM');
+  const clearBtn = document.getElementById('clearBOM');
+  const bomResults = document.getElementById('bomResults');
+  const loadingSpinner = document.getElementById('loadingSpinner');
+  const enableScalerCheckbox = document.getElementById('enableScaler');
+  const qtyScalerInput = document.getElementById('qtyScaler');
+  const scalerContainer = document.getElementById('scalerContainer');
+  const filterContainer = document.getElementById('filterContainer');
+  const statusFilter = document.getElementById('statusFilter');
+
+  // Show scaler toggle & filter after first compare
+  function showExtras() {
+    scalerContainer.style.display = 'block';
+    filterContainer.style.display = 'block';
+  }
+
+  // Parsing BOM input
+  function parseBOM(text) {
+    const lines = text.trim().split(/\n+/);
+    const parts = {};
+    const invalidLines = [];
+    lines.forEach((line, idx) => {
+      const match = line.trim().match(/^(\S+)\s+([\d.]+)$/);
+      if (match && !isNaN(match[2]) && Number(match[2]) >= 0) {
+        const part = match[1];
+        const qty = parseFloat(match[2]);
+        parts[part] = (parts[part] || 0) + qty;
+      } else {
+        if(line.trim().length > 0) invalidLines.push(idx + 1);
+      }
+    });
+    return { parts, invalidLines };
+  }
+
+  // Compare BOMs
+  function compareBOMs(oldParts, newParts, qtyScale = 1) {
+    const allParts = new Set([...Object.keys(oldParts), ...Object.keys(newParts)]);
+    const results = [];
+    allParts.forEach(part => {
+      const oldQtyRaw = oldParts[part] || 0;
+      const newQtyRaw = newParts[part] || 0;
+      const newQty = newQtyRaw * qtyScale;
+	  const oldQty = oldQtyRaw * qtyScale;
+	  
+      if (oldQty === 0 && newQty > 0) {
+        results.push({ part, status: 'Added', oldQty, newQty });
+      } else if (oldQty > 0 && newQty === 0) {
+        results.push({ part, status: 'Removed', oldQty, newQty });
+      } else if (oldQty !== newQty) {
+        results.push({ part, status: 'Qty Change', oldQty, newQty });
+      } else {
+        results.push({ part, status: 'Unchanged', oldQty, newQty });
+      }
+    });
+    return results.sort((a,b) => a.part.localeCompare(b.part, undefined, { numeric:true }));
+  }
+
+  // Render results table
+  function renderResults(results, filter = 'all') {
+    let filtered = results;
+    if (filter !== 'all') {
+      filtered = results.filter(r => r.status === filter);
+    }
+	if (filter === 'Changed') {
+		filtered = results.filter(r => r.status === 'Qty Change' || r.status === 'Added' || r.status === 'Removed');
+	}
+    if (filtered.length === 0) {
+      bomResults.innerHTML = '<p><em>No results to display for selected filter.</em></p>';
+      return;
+    }
+    let html = '<table><thead><tr><th>Part Number</th><th>Old Qty</th><th>New Qty</th><th>Status</th></tr></thead><tbody>';
+    filtered.forEach(r => {
+      let rowClass = '';
+      if (r.status === 'Added') rowClass = 'added';
+      else if (r.status === 'Removed') rowClass = 'removed';
+      else if (r.status === 'Qty Change') rowClass = 'changed';
+      else if (r.status === 'Unchanged') rowClass = '';
+      html += `<tr class="${rowClass}"><td>${r.part}</td><td>${r.oldQty}</td><td>${r.newQty}</td><td>${r.status}</td></tr>`;
+    });
+    html += '</tbody></table>';
+    bomResults.innerHTML = html;
+  }
+
+  // Show spinner
+  function showLoading(show) {
+    loadingSpinner.style.visibility = show ? 'visible' : 'hidden';
+  }
+
+  compareBtn.addEventListener('click', () => {
+    showLoading(true);
+    setTimeout(() => {
+      const oldData = parseBOM(oldBOMEl.value);
+      const newData = parseBOM(newBOMEl.value);
+      if (oldData.invalidLines.length || newData.invalidLines.length) {
+        bomResults.innerHTML = `<p style="color:red;"><strong>Invalid lines detected.</strong> Old BOM lines: ${oldData.invalidLines.join(', ') || 'none'}. New BOM lines: ${newData.invalidLines.join(', ') || 'none'}.</p>`;
+        showLoading(false);
+        return;
+      }
+      const qtyScale = enableScalerCheckbox.checked ? parseFloat(qtyScalerInput.value) || 1 : 1;
+      const results = compareBOMs(oldData.parts, newData.parts, qtyScale);
+      renderResults(results, statusFilter.value);
+      showExtras();
+      showLoading(false);
+    }, 100); // allow spinner show
+  });
+
+  clearBtn.addEventListener('click', () => {
+    oldBOMEl.value = '';
+    newBOMEl.value = '';
+    bomResults.innerHTML = '';
+    scalerContainer.style.display = 'none';
+    filterContainer.style.display = 'none';
+    enableScalerCheckbox.checked = false;
+    qtyScalerInput.style.display = 'none';
+    qtyScalerInput.value = '1';
+  });
+
+  enableScalerCheckbox.addEventListener('change', () => {
+    qtyScalerInput.style.display = enableScalerCheckbox.checked ? 'inline-block' : 'none';
+  });
+
+  qtyScalerInput.addEventListener('input', () => {
+    if (compareBtn.disabled) return;
+    compareBtn.click();
+  });
+
+  statusFilter.addEventListener('change', () => {
+    compareBtn.click();
+  });
+</script>
+
+</body>
+</html>
