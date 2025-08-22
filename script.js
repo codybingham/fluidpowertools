@@ -61,7 +61,7 @@
     });
   });
 
-  const resultIds = ['pressureDropResult','flowConvertResult','unitConvertResult','cylinderForceResult','pumpPowerResult','bomResults'];
+  const resultIds = ['pressureDropResult','unitConvertResult','cylinderForceResult','pumpPowerResult','bomResults'];
   resultIds.forEach(id => {
     const el = document.getElementById(id);
     const stored = localStorage.getItem(id);
@@ -112,30 +112,16 @@
     return deltaPsi.toFixed(2);
   }
 
-  // Flow conversion
-  const flowConversions = {
-    gpm: 1,
-    lpm: 3.78541,
-    cfm: 0.133681,
-    cms: 0.00006309
-  };
-
-  function convertFlow(value, fromUnit, toUnit) {
-    if (value <= 0) return null;
-    // Convert input to GPM first
-    let valueInGPM = value;
-    if (fromUnit !== 'gpm') {
-      if (!flowConversions[fromUnit]) return null;
-      valueInGPM = value / flowConversions[fromUnit];
-    }
-    // Convert from GPM to desired unit
-    if (!flowConversions[toUnit]) return null;
-    const converted = valueInGPM * flowConversions[toUnit];
-    return converted.toFixed(4);
-  }
-
   // General Unit Conversions
   const unitConversionData = {
+    flow: {
+      units: {
+        gpm: { label: 'GPM (US Gallons/min)', toBase: 1 },
+        lpm: { label: 'LPM (Liters/min)', toBase: 0.264172 },
+        cfm: { label: 'CFM (Cubic Feet/min)', toBase: 7.48052 },
+        cms: { label: 'CMS (Cubic Meters/sec)', toBase: 15850.3 }
+      }
+    },
     pressure: {
       units: {
         psi: { label: 'PSI', toBase: 1 },
@@ -210,24 +196,6 @@
     localStorage.removeItem('pressureDropResult');
   });
 
-  document.getElementById('convertFlowBtn').addEventListener('click', () => {
-    const val = parseFloat(document.getElementById('flowInput').value);
-    const from = document.getElementById('flowUnit').value;
-    const to = document.getElementById('flowUnitTo').value;
-    const result = convertFlow(val, from, to);
-    const txt = result !== null ? result + ' ' + to.toUpperCase() : 'Invalid input';
-    document.getElementById('flowConvertResult').textContent = txt;
-    localStorage.setItem('flowConvertResult', txt);
-  });
-
-  document.getElementById('clearFlowConvert').addEventListener('click', () => {
-    document.getElementById('flowInput').value = '';
-    document.getElementById('flowUnit').value = 'gpm';
-    document.getElementById('flowUnitTo').value = 'gpm';
-    ['flowInput','flowUnit','flowUnitTo','flowConvertResult'].forEach(k => localStorage.removeItem(k));
-    document.getElementById('flowConvertResult').textContent = '';
-  });
-
   const ucCategoryEl = document.getElementById('ucCategory');
   const ucFromUnitEl = document.getElementById('ucFromUnit');
   const ucToUnitEl = document.getElementById('ucToUnit');
@@ -270,7 +238,7 @@
 
   document.getElementById('clearUnitConvert').addEventListener('click', () => {
     ['ucCategory','ucValue','ucFromUnit','ucToUnit','unitConvertResult'].forEach(k => localStorage.removeItem(k));
-    ucCategoryEl.value = 'pressure';
+    ucCategoryEl.value = 'flow';
     document.getElementById('ucValue').value = '';
     populateUnitSelects();
     document.getElementById('unitConvertResult').textContent = '';
