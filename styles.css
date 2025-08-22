@@ -284,6 +284,18 @@ th.sort-desc::after {
     flex-direction: column;
   }
 
+  .tab {
+    font-size: 0.95rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  button {
+    width: 100%;
+  }
+
   .button-row {
     flex-direction: column;
     gap: 10px;
