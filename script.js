@@ -39,8 +39,11 @@
   }
 
   const storedTab = localStorage.getItem('activeTab');
-  if (storedTab !== null) {
-    activateTab(parseInt(storedTab, 10));
+  const storedIndex = storedTab !== null ? parseInt(storedTab, 10) : 0;
+  if (storedIndex >= 0 && storedIndex < tabs.length) {
+    activateTab(storedIndex);
+  } else {
+    activateTab(0);
   }
 
   const persistEls = document.querySelectorAll('input, select, textarea');
