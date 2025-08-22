@@ -64,7 +64,14 @@
     });
   });
 
-  const resultIds = ['pressureDropResult','unitConvertResult','cylinderForceResult','pumpPowerResult','bomResults'];
+  const resultIds = [
+    'pressureDropResult',
+    'unitConvertResult',
+    'cylinderForceResult',
+    'pumpPowerResult',
+    'bomResults',
+    'partLookupResults'
+  ];
   resultIds.forEach(id => {
     const el = document.getElementById(id);
     const stored = localStorage.getItem(id);
@@ -295,6 +302,11 @@
   const scalerContainer = document.getElementById('scalerContainer');
   const filterContainer = document.getElementById('filterContainer');
   const statusFilter = document.getElementById('statusFilter');
+  const lookupBtn = document.getElementById('lookupPart');
+  const clearLookupBtn = document.getElementById('clearPartLookup');
+  const plPart = document.getElementById('plPart');
+  const plDesc = document.getElementById('plDesc');
+  const partLookupResults = document.getElementById('partLookupResults');
 
   if (bomResults.innerHTML.trim()) {
     showExtras();
@@ -424,4 +436,67 @@
 
   statusFilter.addEventListener('change', () => {
     compareBtn.click();
+  });
+
+  // ----- Part Lookup -----
+  let itemsData = null;
+
+  function loadItems() {
+    if (itemsData) return Promise.resolve(itemsData);
+    return fetch('items_export_slim.json')
+      .then(r => r.json())
+      .then(data => {
+        itemsData = data;
+        return itemsData;
+      });
+  }
+
+  function wildcardToRegex(str) {
+    const esc = str.replace(/[.+^${}()|[\]\\]/g, '\\$&');
+    const reg = '^' + esc.replace(/\*/g, '.*').replace(/\?/g, '.') + '$';
+    return new RegExp(reg, 'i');
+  }
+
+  lookupBtn.addEventListener('click', () => {
+    loadItems().then(data => {
+      const partVal = plPart.value.trim();
+      const descVal = plDesc.value.trim();
+      const partRe = partVal ? wildcardToRegex(partVal) : null;
+      const descRe = descVal ? wildcardToRegex(descVal) : null;
+      const results = data.filter(it => {
+        const pn = String(it.part_number);
+        const desc = it.description || '';
+        let match = true;
+        if (partRe) match = partRe.test(pn);
+        if (match && descRe) match = descRe.test(desc);
+        return match;
+      });
+      if (results.length === 0) {
+        partLookupResults.innerHTML =
+          '<p><em>No matching parts found.</em></p>';
+      } else {
+        let html =
+          '<table><thead><tr><th>Part Number</th>' +
+          '<th>Description</th></tr></thead><tbody>';
+        results.forEach(r => {
+          html +=
+            `<tr><td>${r.part_number}</td><td>${r.description}</td></tr>`;
+        });
+        html += '</tbody></table>';
+        partLookupResults.innerHTML = html;
+      }
+      localStorage.setItem(
+        'partLookupResults',
+        partLookupResults.innerHTML
+      );
+    });
+  });
+
+  clearLookupBtn.addEventListener('click', () => {
+    plPart.value = '';
+    plDesc.value = '';
+    partLookupResults.innerHTML = '';
+    ['plPart','plDesc','partLookupResults'].forEach(k => {
+      localStorage.removeItem(k);
+    });
   });
