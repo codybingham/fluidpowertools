@@ -17,10 +17,11 @@
   <div class="tabs" role="tablist" aria-label="Tool categories">
     <div class="tab active" role="tab" tabindex="0" aria-selected="true" aria-controls="panel-pressure-drop" id="tab-pressure-drop">Pressure Drop</div>
     <div class="tab" role="tab" tabindex="-1" aria-selected="false" aria-controls="panel-flow-conversion" id="tab-flow-conversion">Flow Conversion</div>
+    <div class="tab" role="tab" tabindex="-1" aria-selected="false" aria-controls="panel-unit-conversions" id="tab-unit-conversions">Unit Conversions</div>
     <div class="tab" role="tab" tabindex="-1" aria-selected="false" aria-controls="panel-cylinder-force" id="tab-cylinder-force">Cylinder Force</div>
     <div class="tab" role="tab" tabindex="-1" aria-selected="false" aria-controls="panel-pump-power" id="tab-pump-power">Pump Power</div>
     <div class="tab" role="tab" tabindex="-1" aria-selected="false" aria-controls="panel-bom-comparator" id="tab-bom-comparator">BOM Comparator</div>
-  </div>
+    </div>
 
   <!-- Pressure Drop -->
   <section id="panel-pressure-drop" class="tab-panel active" role="tabpanel" aria-labelledby="tab-pressure-drop" tabindex="0">
@@ -61,12 +62,36 @@
       <option value="cms">CMS (Cubic Meters/sec)</option>
     </select>
 
-    <button id="convertFlowBtn">Convert</button>
-    <div id="flowConvertResult"></div>
-  </section>
+      <button id="convertFlowBtn">Convert</button>
+      <div id="flowConvertResult"></div>
+    </section>
 
-  <!-- Cylinder Force -->
-  <section id="panel-cylinder-force" class="tab-panel" role="tabpanel" aria-labelledby="tab-cylinder-force" tabindex="0">
+    <!-- Unit Conversions -->
+    <section id="panel-unit-conversions" class="tab-panel" role="tabpanel" aria-labelledby="tab-unit-conversions" tabindex="0">
+      <label class="calc-label" for="ucCategory">Conversion Type:</label>
+      <select id="ucCategory">
+        <option value="pressure">Pressure</option>
+        <option value="force">Force</option>
+        <option value="power">Power</option>
+        <option value="length">Length</option>
+        <option value="torque">Torque</option>
+      </select>
+
+      <label class="calc-label" for="ucValue">Value:</label>
+      <input type="number" id="ucValue" min="0" step="any" />
+
+      <label class="calc-label" for="ucFromUnit">From Unit:</label>
+      <select id="ucFromUnit"></select>
+
+      <label class="calc-label" for="ucToUnit">To Unit:</label>
+      <select id="ucToUnit"></select>
+
+      <button id="convertUnitBtn">Convert</button>
+      <div id="unitConvertResult"></div>
+    </section>
+
+    <!-- Cylinder Force -->
+    <section id="panel-cylinder-force" class="tab-panel" role="tabpanel" aria-labelledby="tab-cylinder-force" tabindex="0">
     <label class="calc-label" for="cylBoreDiameter">Cylinder Bore Diameter (inches):</label>
     <input type="number" id="cylBoreDiameter" min="0" step="any" />
 
@@ -134,7 +159,8 @@
 
 
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
+  <script src="unit-conversions.js"></script>
 
 </body>
 </html>
