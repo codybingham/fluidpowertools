@@ -35,7 +35,40 @@
         panels[i].classList.remove('active');
       }
     });
+    localStorage.setItem('activeTab', index);
   }
+
+  const storedTab = localStorage.getItem('activeTab');
+  if (storedTab !== null) {
+    activateTab(parseInt(storedTab, 10));
+  }
+
+  const persistEls = document.querySelectorAll('input, select, textarea');
+  persistEls.forEach(el => {
+    if (!el.id) return;
+    const stored = localStorage.getItem(el.id);
+    if (stored !== null) {
+      if (el.type === 'checkbox') {
+        el.checked = stored === 'true';
+      } else {
+        el.value = stored;
+      }
+    }
+    const evt = (el.tagName === 'SELECT' || el.type === 'checkbox') ? 'change' : 'input';
+    el.addEventListener(evt, () => {
+      const val = el.type === 'checkbox' ? el.checked : el.value;
+      localStorage.setItem(el.id, val);
+    });
+  });
+
+  const resultIds = ['pressureDropResult','flowConvertResult','unitConvertResult','cylinderForceResult','pumpPowerResult','bomResults'];
+  resultIds.forEach(id => {
+    const el = document.getElementById(id);
+    const stored = localStorage.getItem(id);
+    if (stored !== null && el) {
+      el.innerHTML = stored;
+    }
+  });
 
   // -------- Calculator functions --------
 
@@ -163,7 +196,18 @@
     const visc = parseFloat(document.getElementById('pdViscosity').value);
 
     const result = calculatePressureDrop(flow, dia, len, visc);
-    document.getElementById('pressureDropResult').textContent = result !== null ? result + ' psi' : 'Invalid input';
+    const txt = result !== null ? result + ' psi' : 'Invalid input';
+    document.getElementById('pressureDropResult').textContent = txt;
+    localStorage.setItem('pressureDropResult', txt);
+  });
+
+  document.getElementById('clearPressureDrop').addEventListener('click', () => {
+    ['pdFlow','pdDiameter','pdLength','pdViscosity'].forEach(id => {
+      document.getElementById(id).value = id === 'pdViscosity' ? '40' : '';
+      localStorage.removeItem(id);
+    });
+    document.getElementById('pressureDropResult').textContent = '';
+    localStorage.removeItem('pressureDropResult');
   });
 
   document.getElementById('convertFlowBtn').addEventListener('click', () => {
@@ -171,7 +215,17 @@
     const from = document.getElementById('flowUnit').value;
     const to = document.getElementById('flowUnitTo').value;
     const result = convertFlow(val, from, to);
-    document.getElementById('flowConvertResult').textContent = result !== null ? result + ' ' + to.toUpperCase() : 'Invalid input';
+    const txt = result !== null ? result + ' ' + to.toUpperCase() : 'Invalid input';
+    document.getElementById('flowConvertResult').textContent = txt;
+    localStorage.setItem('flowConvertResult', txt);
+  });
+
+  document.getElementById('clearFlowConvert').addEventListener('click', () => {
+    document.getElementById('flowInput').value = '';
+    document.getElementById('flowUnit').value = 'gpm';
+    document.getElementById('flowUnitTo').value = 'gpm';
+    ['flowInput','flowUnit','flowUnitTo','flowConvertResult'].forEach(k => localStorage.removeItem(k));
+    document.getElementById('flowConvertResult').textContent = '';
   });
 
   const ucCategoryEl = document.getElementById('ucCategory');
@@ -194,6 +248,10 @@
       optTo.textContent = label;
       ucToUnitEl.appendChild(optTo);
     });
+    const storedFrom = localStorage.getItem('ucFromUnit');
+    const storedTo = localStorage.getItem('ucToUnit');
+    if (storedFrom && units[storedFrom]) ucFromUnitEl.value = storedFrom;
+    if (storedTo && units[storedTo]) ucToUnitEl.value = storedTo;
   }
 
   ucCategoryEl.addEventListener('change', populateUnitSelects);
@@ -205,14 +263,35 @@
     const from = ucFromUnitEl.value;
     const to = ucToUnitEl.value;
     const result = convertUnits(val, category, from, to);
-    document.getElementById('unitConvertResult').textContent = result !== null ? result + ' ' + to.toUpperCase() : 'Invalid input';
+    const txt = result !== null ? result + ' ' + to.toUpperCase() : 'Invalid input';
+    document.getElementById('unitConvertResult').textContent = txt;
+    localStorage.setItem('unitConvertResult', txt);
+  });
+
+  document.getElementById('clearUnitConvert').addEventListener('click', () => {
+    ['ucCategory','ucValue','ucFromUnit','ucToUnit','unitConvertResult'].forEach(k => localStorage.removeItem(k));
+    ucCategoryEl.value = 'pressure';
+    document.getElementById('ucValue').value = '';
+    populateUnitSelects();
+    document.getElementById('unitConvertResult').textContent = '';
   });
 
   document.getElementById('calcCylinderForceBtn').addEventListener('click', () => {
     const bore = parseFloat(document.getElementById('cylBoreDiameter').value);
     const pressure = parseFloat(document.getElementById('cylPressure').value);
     const result = calculateCylinderForce(bore, pressure);
-    document.getElementById('cylinderForceResult').textContent = result !== null ? result + ' lbf' : 'Invalid input';
+    const txt = result !== null ? result + ' lbf' : 'Invalid input';
+    document.getElementById('cylinderForceResult').textContent = txt;
+    localStorage.setItem('cylinderForceResult', txt);
+  });
+
+  document.getElementById('clearCylinderForce').addEventListener('click', () => {
+    ['cylBoreDiameter','cylPressure'].forEach(id => {
+      document.getElementById(id).value = '';
+      localStorage.removeItem(id);
+    });
+    document.getElementById('cylinderForceResult').textContent = '';
+    localStorage.removeItem('cylinderForceResult');
   });
 
   document.getElementById('calcPumpPowerBtn').addEventListener('click', () => {
@@ -220,7 +299,17 @@
     const pressure = parseFloat(document.getElementById('pumpPressure').value);
     const efficiency = parseFloat(document.getElementById('pumpEfficiency').value);
     const result = calculatePumpPower(flow, pressure, efficiency);
-    document.getElementById('pumpPowerResult').textContent = result !== null ? result + ' HP' : 'Invalid input';
+    const txt = result !== null ? result + ' HP' : 'Invalid input';
+    document.getElementById('pumpPowerResult').textContent = txt;
+    localStorage.setItem('pumpPowerResult', txt);
+  });
+
+  document.getElementById('clearPumpPower').addEventListener('click', () => {
+    document.getElementById('pumpFlow').value = '';
+    document.getElementById('pumpPressure').value = '';
+    document.getElementById('pumpEfficiency').value = '85';
+    ['pumpFlow','pumpPressure','pumpEfficiency','pumpPowerResult'].forEach(k => localStorage.removeItem(k));
+    document.getElementById('pumpPowerResult').textContent = '';
   });
 
   // -------- BOM Comparator code --------
@@ -235,6 +324,11 @@
   const scalerContainer = document.getElementById('scalerContainer');
   const filterContainer = document.getElementById('filterContainer');
   const statusFilter = document.getElementById('statusFilter');
+
+  if (bomResults.innerHTML.trim()) {
+    showExtras();
+  }
+  qtyScalerInput.style.display = enableScalerCheckbox.checked ? 'inline-block' : 'none';
 
   // Show scaler toggle & filter after first compare
   function showExtras() {
@@ -289,11 +383,12 @@
     if (filter !== 'all') {
       filtered = results.filter(r => r.status === filter);
     }
-	if (filter === 'Changed') {
-		filtered = results.filter(r => r.status === 'Qty Change' || r.status === 'Added' || r.status === 'Removed');
-	}
+        if (filter === 'Changed') {
+                filtered = results.filter(r => r.status === 'Qty Change' || r.status === 'Added' || r.status === 'Removed');
+        }
     if (filtered.length === 0) {
       bomResults.innerHTML = '<p><em>No results to display for selected filter.</em></p>';
+      localStorage.setItem('bomResults', bomResults.innerHTML);
       return;
     }
     let html = '<table><thead><tr><th>Part Number</th><th>Old Qty</th><th>New Qty</th><th>Status</th></tr></thead><tbody>';
@@ -307,6 +402,7 @@
     });
     html += '</tbody></table>';
     bomResults.innerHTML = html;
+    localStorage.setItem('bomResults', bomResults.innerHTML);
   }
 
   // Show spinner
@@ -321,6 +417,7 @@
       const newData = parseBOM(newBOMEl.value);
       if (oldData.invalidLines.length || newData.invalidLines.length) {
         bomResults.innerHTML = `<p style="color:red;"><strong>Invalid lines detected.</strong> Old BOM lines: ${oldData.invalidLines.join(', ') || 'none'}. New BOM lines: ${newData.invalidLines.join(', ') || 'none'}.</p>`;
+        localStorage.setItem('bomResults', bomResults.innerHTML);
         showLoading(false);
         return;
       }
@@ -341,6 +438,8 @@
     enableScalerCheckbox.checked = false;
     qtyScalerInput.style.display = 'none';
     qtyScalerInput.value = '1';
+    statusFilter.value = 'all';
+    ['oldBOM','newBOM','bomResults','enableScaler','qtyScaler','statusFilter'].forEach(k => localStorage.removeItem(k));
   });
 
   enableScalerCheckbox.addEventListener('change', () => {
