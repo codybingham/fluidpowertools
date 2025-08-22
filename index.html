@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fluid Power Tools</title>
+<link rel="icon" type="image/x-icon" href="favicon.png" />
+<link rel="stylesheet" href="styles.css" />
+
+</head>
+<body>
+
+<div id="container" role="main" aria-label="Fluid power tools">
+
+  <h3>Fluid Power Tools</h3>
+
+  <div class="tabs" role="tablist" aria-label="Tool categories">
+    <div class="tab active" role="tab" tabindex="0" aria-selected="true" aria-controls="panel-pressure-drop" id="tab-pressure-drop">Pressure Drop</div>
+    <div class="tab" role="tab" tabindex="-1" aria-selected="false" aria-controls="panel-flow-conversion" id="tab-flow-conversion">Flow Conversion</div>
+    <div class="tab" role="tab" tabindex="-1" aria-selected="false" aria-controls="panel-cylinder-force" id="tab-cylinder-force">Cylinder Force</div>
+    <div class="tab" role="tab" tabindex="-1" aria-selected="false" aria-controls="panel-pump-power" id="tab-pump-power">Pump Power</div>
+    <div class="tab" role="tab" tabindex="-1" aria-selected="false" aria-controls="panel-bom-comparator" id="tab-bom-comparator">BOM Comparator</div>
+  </div>
+
+  <!-- Pressure Drop -->
+  <section id="panel-pressure-drop" class="tab-panel active" role="tabpanel" aria-labelledby="tab-pressure-drop" tabindex="0">
+    <label class="calc-label" for="pdFlow">Flow Rate (GPM):</label>
+    <input type="number" id="pdFlow" min="0" step="any" />
+
+    <label class="calc-label" for="pdDiameter">Pipe/Hose Diameter (inches):</label>
+    <input type="number" id="pdDiameter" min="0" step="any" />
+
+    <label class="calc-label" for="pdLength">Length (feet):</label>
+    <input type="number" id="pdLength" min="0" step="any" />
+
+    <label class="calc-label" for="pdViscosity">Dynamic Viscosity (cP):</label>
+    <input type="number" id="pdViscosity" min="0" step="any" value="40" />
+
+    <button id="calcPressureDrop">Calculate Pressure Drop (psi)</button>
+    <div id="pressureDropResult"></div>
+  </section>
+
+  <!-- Flow Conversion -->
+  <section id="panel-flow-conversion" class="tab-panel" role="tabpanel" aria-labelledby="tab-flow-conversion" tabindex="0">
+    <label class="calc-label" for="flowInput">Flow Rate:</label>
+    <input type="number" id="flowInput" min="0" step="any" />
+
+    <label class="calc-label" for="flowUnit">From Unit:</label>
+    <select id="flowUnit">
+      <option value="gpm">GPM (US Gallons/min)</option>
+      <option value="lpm">LPM (Liters/min)</option>
+      <option value="cfm">CFM (Cubic Feet/min)</option>
+      <option value="cms">CMS (Cubic Meters/sec)</option>
+    </select>
+
+    <label class="calc-label" for="flowUnitTo">To Unit:</label>
+    <select id="flowUnitTo">
+      <option value="gpm">GPM (US Gallons/min)</option>
+      <option value="lpm">LPM (Liters/min)</option>
+      <option value="cfm">CFM (Cubic Feet/min)</option>
+      <option value="cms">CMS (Cubic Meters/sec)</option>
+    </select>
+
+    <button id="convertFlowBtn">Convert</button>
+    <div id="flowConvertResult"></div>
+  </section>
+
+  <!-- Cylinder Force -->
+  <section id="panel-cylinder-force" class="tab-panel" role="tabpanel" aria-labelledby="tab-cylinder-force" tabindex="0">
+    <label class="calc-label" for="cylBoreDiameter">Cylinder Bore Diameter (inches):</label>
+    <input type="number" id="cylBoreDiameter" min="0" step="any" />
+
+    <label class="calc-label" for="cylPressure">Pressure (psi):</label>
+    <input type="number" id="cylPressure" min="0" step="any" />
+
+    <button id="calcCylinderForceBtn">Calculate Force (lbf)</button>
+    <div id="cylinderForceResult"></div>
+  </section>
+
+  <!-- Pump Power -->
+  <section id="panel-pump-power" class="tab-panel" role="tabpanel" aria-labelledby="tab-pump-power" tabindex="0">
+    <label class="calc-label" for="pumpFlow">Flow Rate (GPM):</label>
+    <input type="number" id="pumpFlow" min="0" step="any" />
+
+    <label class="calc-label" for="pumpPressure">Pressure (psi):</label>
+    <input type="number" id="pumpPressure" min="0" step="any" />
+
+    <label class="calc-label" for="pumpEfficiency">Efficiency (%):</label>
+    <input type="number" id="pumpEfficiency" min="1" max="100" step="any" value="85" />
+
+    <button id="calcPumpPowerBtn">Calculate Power (HP)</button>
+    <div id="pumpPowerResult"></div>
+  </section>
+
+  <!-- BOM Comparator -->
+  <section id="panel-bom-comparator" class="tab-panel" role="tabpanel" aria-labelledby="tab-bom-comparator" tabindex="0">
+    <label for="oldBOM">Old BOM:</label>
+    <textarea id="oldBOM" placeholder="PartNumber  Qty"></textarea>
+
+    <label for="newBOM" style="margin-top: 25px;">New BOM:</label>
+    <textarea id="newBOM" placeholder="PartNumber  Qty"></textarea>
+
+    <div class="button-group" style="margin-top: 25px; display: flex; gap: 15px;">
+      <button id="compareBOM">Compare</button>
+      <button id="clearBOM">Clear</button>
+      <div id="loadingSpinner" title="Processing..."></div>
+    </div>
+
+    <!-- Quantity scaling toggle and input -->
+    <div id="scalerContainer" style="display:none; margin-top: 15px; font-weight: 600; font-size: 1rem; color: #34495e;">
+      <label for="qtyScaler">
+        <input type="checkbox" id="enableScaler" />
+        Enable Quantity Scaling
+      </label>
+      <input type="number" id="qtyScaler" value="1" step="1" min="0" style="display:none; margin-left:10px; width: 80px; padding: 6px 8px; border: 1.8px solid #d1d9e6; border-radius: 6px; font-size: 1rem;" />
+    </div>
+
+    <!-- Filter dropdown -->
+    <div id="filterContainer" style="display:none; margin-top: 15px; font-weight: 600; font-size: 1rem; color: #34495e;">
+      <label for="statusFilter">Filter by Status:</label>
+      <select id="statusFilter" aria-label="Filter comparison results by status" style="margin-left: 10px; padding: 5px 8px; font-size: 1rem;">
+        <option value="all">All</option>
+        <option value="Added">Added</option>
+        <option value="Removed">Removed</option>
+        <option value="Qty Change">Qty Change</option>
+        <option value="Changed">Changed</option>
+        <option value="Unchanged">Unchanged</option>
+      </select>
+    </div>
+
+    <div id="bomResults" aria-live="polite" aria-atomic="true" style="margin-top: 35px;"></div>
+  </section>
+</div>
+
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
