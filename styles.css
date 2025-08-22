@@ -108,7 +108,7 @@
   .calc-label {
     margin-top: 15px;
   }
-  #result, #flowConvertResult, #cylinderForceResult, #pumpPowerResult, #pressureDropResult {
+  #result, #flowConvertResult, #cylinderForceResult, #pumpPowerResult, #pressureDropResult, #unitConvertResult {
     font-weight: 700;
     font-size: 1.2rem;
     color: #2c3e50;
