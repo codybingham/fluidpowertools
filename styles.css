@@ -275,7 +275,7 @@ th.sort-desc::after {
 .reference-table {
   width: 100%;
   border-collapse: collapse;
-  background: #000;
+  background: transparent;
   color: #fff;
 }
 
