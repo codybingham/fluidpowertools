@@ -281,10 +281,12 @@ th.sort-desc::after {
   }
 
   .tabs {
-    flex-direction: column;
+    flex-wrap: wrap;
   }
 
   .tab {
+    flex: 1 1 45%;
+    justify-content: center;
     font-size: 0.95rem;
   }
 
