@@ -67,6 +67,16 @@
           role="tab"
           tabindex="-1"
           aria-selected="false"
+          aria-controls="panel-part-lookup"
+          id="tab-part-lookup"
+        >
+          Part Lookup
+        </div>
+        <div
+          class="tab"
+          role="tab"
+          tabindex="-1"
+          aria-selected="false"
           aria-controls="panel-reference"
           id="tab-reference"
         >
@@ -279,6 +289,26 @@
           aria-atomic="true"
           style="margin-top: 35px"
         ></div>
+      </section>
+      <!-- Part Lookup -->
+      <section
+        id="panel-part-lookup"
+        class="tab-panel"
+        role="tabpanel"
+        aria-labelledby="tab-part-lookup"
+        tabindex="0"
+      >
+        <label class="calc-label" for="plPart">Part Number:</label>
+        <input type="text" id="plPart" />
+
+        <label class="calc-label" for="plDesc">Description:</label>
+        <input type="text" id="plDesc" />
+
+        <div class="button-row">
+          <button id="lookupPart">Search</button>
+          <button id="clearPartLookup">Clear</button>
+        </div>
+        <div id="partLookupResults"></div>
       </section>
       <!-- Reference -->
       <section
