@@ -1,4 +1,7 @@
   // Tab switching logic
+  const PART_LOOKUP_PASSWORD = 'hydraulics';
+  let partLookupUnlocked =
+    localStorage.getItem('plUnlocked') === 'true';
   const tabs = document.querySelectorAll('.tab');
   const panels = document.querySelectorAll('.tab-panel');
 
@@ -22,6 +25,18 @@
   });
 
   function activateTab(index) {
+    if (
+      tabs[index].id === 'tab-part-lookup' &&
+      !partLookupUnlocked
+    ) {
+      const pw = prompt('Enter password for Part Lookup:');
+      if (pw !== PART_LOOKUP_PASSWORD) {
+        alert('Incorrect password.');
+        return;
+      }
+      partLookupUnlocked = true;
+      localStorage.setItem('plUnlocked', 'true');
+    }
     tabs.forEach((tab, i) => {
       if (i === index) {
         tab.classList.add('active');
@@ -39,7 +54,14 @@
   }
 
   const storedTab = localStorage.getItem('activeTab');
-  const storedIndex = storedTab !== null ? parseInt(storedTab, 10) : 0;
+  let storedIndex = storedTab !== null ? parseInt(storedTab, 10) : 0;
+  if (
+    !partLookupUnlocked &&
+    tabs[storedIndex] &&
+    tabs[storedIndex].id === 'tab-part-lookup'
+  ) {
+    storedIndex = 0;
+  }
   if (storedIndex >= 0 && storedIndex < tabs.length) {
     activateTab(storedIndex);
   } else {
