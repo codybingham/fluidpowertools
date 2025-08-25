@@ -172,6 +172,14 @@
         hp: { label: 'Horsepower (HP)', toBase: 1 },
         kw: { label: 'Kilowatt (kW)', toBase: 1.34102 }
       }
+    },
+    length: {
+      units: {
+        in: { label: 'Inches (in)', toBase: 1 },
+        ft: { label: 'Feet (ft)', toBase: 12 },
+        mm: { label: 'Millimeters (mm)', toBase: 0.0393701 },
+        m: { label: 'Meters (m)', toBase: 39.3701 }
+      }
     }
   };
 
