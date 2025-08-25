@@ -338,6 +338,19 @@
   const plDesc = document.getElementById('plDesc');
   const partLookupResults = document.getElementById('partLookupResults');
 
+  function triggerOnEnter(ids, buttonId) {
+    ids.forEach(id => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.addEventListener('keydown', e => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          document.getElementById(buttonId).click();
+        }
+      });
+    });
+  }
+
   if (bomResults.innerHTML.trim()) {
     showExtras();
   }
@@ -530,3 +543,18 @@
       localStorage.removeItem(k);
     });
   });
+
+  triggerOnEnter(
+    ['pdFlow','pdDiameter','pdLength','pdViscosity'],
+    'calcPressureDrop'
+  );
+  triggerOnEnter(['ucValue'], 'convertUnitBtn');
+  triggerOnEnter(
+    ['cylBoreDiameter','cylPressure'],
+    'calcCylinderForceBtn'
+  );
+  triggerOnEnter(
+    ['pumpFlow','pumpPressure','pumpEfficiency'],
+    'calcPumpPowerBtn'
+  );
+  triggerOnEnter(['plPart','plDesc'], 'lookupPart');
