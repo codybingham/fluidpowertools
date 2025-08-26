@@ -282,7 +282,7 @@ th.sort-desc::after {
   width: 100%;
   border-collapse: collapse;
   background: white;
-  color: #fff;
+  color: #333;
 }
 
 .reference-table th,
@@ -294,10 +294,11 @@ th.sort-desc::after {
 
 .reference-table th {
   background: #111;
+  color: #fff;
 }
 
-.reference-table tbody tr:nth-child(even) {
-  background: #1a1a1a;
+.reference-table tr:nth-child(even) {
+  background: white;
 }
 
 @media (max-width: 600px) {
