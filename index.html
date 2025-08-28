@@ -329,14 +329,21 @@
         aria-labelledby="tab-part-lookup-fuzzy"
         tabindex="0"
       >
-        <label class="calc-label" for="plFuzzyQuery">Search:</label>
-        <input type="text" id="plFuzzyQuery" autocomplete="off" />
-
-        <div class="button-row">
-          <button id="lookupPartFuzzy">Search</button>
-          <button id="clearPartLookupFuzzy">Clear</button>
+        <div class="topbar">
+          <span class="hint"
+            >Tip: try "jic -08 elbow" or a full PN</span
+          >
+          <button id="fuzzyExport">Export results (CSV)</button>
         </div>
-        <div id="partLookupFuzzyResults"></div>
+        <div class="searchbar">
+          <input
+            id="fuzzyQuery"
+            placeholder="Search part number, dash size, thread type, or description…"
+            autocomplete="off"
+          />
+        </div>
+        <div id="fuzzyStats" class="meta"></div>
+        <div id="fuzzyResults" class="results"></div>
       </section>
       <!-- Reference -->
       <section
@@ -436,7 +443,6 @@
       </section>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

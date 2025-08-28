@@ -92,9 +92,8 @@
     'cylinderForceResult',
     'pumpPowerResult',
     'bomResults',
-    'partLookupResults',
-    'partLookupFuzzyResults'
-  ];
+    'partLookupResults'
+    ];
   resultIds.forEach(id => {
     const el = document.getElementById(id);
     const stored = localStorage.getItem(id);
@@ -338,12 +337,6 @@
   const plPart = document.getElementById('plPart');
   const plDesc = document.getElementById('plDesc');
   const partLookupResults = document.getElementById('partLookupResults');
-  const lookupBtnFuzzy = document.getElementById('lookupPartFuzzy');
-  const clearLookupBtnFuzzy =
-    document.getElementById('clearPartLookupFuzzy');
-  const plFuzzyQuery = document.getElementById('plFuzzyQuery');
-  const partLookupFuzzyResults =
-    document.getElementById('partLookupFuzzyResults');
 
   function triggerOnEnter(ids, buttonId) {
     ids.forEach(id => {
@@ -514,7 +507,6 @@
 
   // ----- Part Lookup -----
   let itemsData = null;
-  let fuse = null;
 
   function loadItems() {
     if (itemsData) return Promise.resolve(itemsData);
@@ -526,18 +518,6 @@
       });
   }
 
-  function loadFuse() {
-    return loadItems().then(data => {
-      if (!fuse) {
-        fuse = new Fuse(data, {
-          keys: ['part_number', 'description'],
-          threshold: 0.4,
-          ignoreLocation: true
-        });
-      }
-      return fuse;
-    });
-  }
 
   function wildcardToRegex(str) {
     const esc = str.replace(/[.+^${}()|[\]\\]/g, '\\$&');
@@ -589,43 +569,10 @@
     });
   });
 
-  lookupBtnFuzzy.addEventListener('click', () => {
-    loadFuse().then(fuse => {
-      const query = plFuzzyQuery.value.trim();
-      const results = query ? fuse.search(query).map(r => r.item) : [];
-      if (results.length === 0) {
-        partLookupFuzzyResults.innerHTML =
-          '<p><em>No matching parts found.</em></p>';
-      } else {
-        let html =
-          '<table><thead><tr><th>Part Number</th>' +
-          '<th>Description</th></tr></thead><tbody>';
-        results.forEach(r => {
-          html += `<tr><td>${r.part_number}</td>` +
-            `<td>${r.description}</td></tr>`;
-        });
-        html += '</tbody></table>';
-        partLookupFuzzyResults.innerHTML = html;
-      }
-      localStorage.setItem(
-        'partLookupFuzzyResults',
-        partLookupFuzzyResults.innerHTML
-      );
-    });
-  });
-
-  clearLookupBtnFuzzy.addEventListener('click', () => {
-    plFuzzyQuery.value = '';
-    partLookupFuzzyResults.innerHTML = '';
-    ['plFuzzyQuery','partLookupFuzzyResults'].forEach(k => {
-      localStorage.removeItem(k);
-    });
-  });
-
-  triggerOnEnter(
-    ['pdFlow','pdDiameter','pdLength','pdViscosity'],
-    'calcPressureDrop'
-  );
+    triggerOnEnter(
+      ['pdFlow','pdDiameter','pdLength','pdViscosity'],
+      'calcPressureDrop'
+    );
   triggerOnEnter(['ucValue'], 'convertUnitBtn');
   triggerOnEnter(
     ['cylBoreDiameter','cylPressure'],
@@ -636,4 +583,141 @@
     'calcPumpPowerBtn'
   );
   triggerOnEnter(['plPart','plDesc'], 'lookupPart');
-  triggerOnEnter(['plFuzzyQuery'], 'lookupPartFuzzy');
+
+  // ----- Fuzzy Part Lookup -----
+  const fuzzyInput = document.getElementById('fuzzyQuery');
+  const fuzzyResultsEl = document.getElementById('fuzzyResults');
+  const fuzzyStatsEl = document.getElementById('fuzzyStats');
+  const fuzzyExportBtn = document.getElementById('fuzzyExport');
+  let fuzzyLast = [];
+
+  function normalize(s) {
+    return (s || '')
+      .toString()
+      .toLowerCase()
+      .replace(/[^a-z0-9\-\s°\/\.]/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
+  function ed(a, b) {
+    a = a || '';
+    b = b || '';
+    const m = a.length, n = b.length;
+    if (m === 0) return n;
+    if (n === 0) return m;
+    const dp = new Array(n + 1);
+    for (let j = 0; j <= n; j++) dp[j] = j;
+    for (let i = 1; i <= m; i++) {
+      let prev = dp[0];
+      dp[0] = i;
+      for (let j = 1; j <= n; j++) {
+        const tmp = dp[j];
+        dp[j] = Math.min(
+          dp[j] + 1,
+          dp[j - 1] + 1,
+          prev + (a[i - 1] === b[j - 1] ? 0 : 1)
+        );
+        prev = tmp;
+      }
+    }
+    return dp[n];
+  }
+
+  function scoreRow(qTokens, raw, pn) {
+    const text = normalize((pn || '') + ' ' + (raw || ''));
+    if (!qTokens.length) return 0;
+    let tokenScore = 0;
+    let strictMatches = 0;
+    for (const t of qTokens) {
+      if (text.includes(t)) {
+        tokenScore += 2;
+        strictMatches++;
+      } else {
+        const words = text.split(' ');
+        let best = 999;
+        for (const w of words) {
+          if (!w) continue;
+          const d = ed(t, w);
+          if (d < best) best = d;
+          if (best === 0) break;
+        }
+        const approx = Math.max(0, 2 - best * 0.5);
+        tokenScore += approx;
+      }
+    }
+    const pnNorm = normalize(pn || '');
+    const qJoined = qTokens.join(' ');
+    if ((qTokens[0] || '') && pnNorm.startsWith(qTokens[0]))
+      tokenScore += 1.5;
+    if (normalize(raw || '').includes(qJoined)) tokenScore += 1.0;
+    return tokenScore + strictMatches * 0.25;
+  }
+
+  function fuzzySearch(q, limit = 200) {
+    const nq = normalize(q);
+    const tokens = nq.split(' ').filter(Boolean);
+    if (tokens.length === 0) return [];
+    const scored = [];
+    for (const row of itemsData || []) {
+      const s = scoreRow(
+        tokens,
+        row.description || '',
+        row.part_number || ''
+      );
+      if (s > 0) scored.push([s, row]);
+    }
+    scored.sort((a, b) => b[0] - a[0]);
+    return scored.slice(0, limit);
+  }
+
+  function renderFuzzy(results, q) {
+    fuzzyResultsEl.innerHTML = '';
+    fuzzyStatsEl.textContent = results.length
+      ? `Top ${results.length} results for "${q}"`
+      : (q ? 'No results.' : '');
+    for (const [s, row] of results) {
+      const div = document.createElement('div');
+      div.className = 'row';
+      const safeDesc = (row.description || '').replace(/</g, '&lt;');
+      div.innerHTML =
+        `<div><strong>${row.part_number || '(no PN)'}</strong> ` +
+        `<span class="score">score ${s.toFixed(2)}</span></div>` +
+        `<div class="meta">${safeDesc}</div>`;
+      fuzzyResultsEl.appendChild(div);
+    }
+  }
+
+  if (fuzzyInput) {
+    fuzzyInput.addEventListener('input', () => {
+      loadItems().then(() => {
+        fuzzyLast = fuzzySearch(fuzzyInput.value, 200);
+        renderFuzzy(fuzzyLast, fuzzyInput.value);
+      });
+    });
+  }
+
+  if (fuzzyExportBtn) {
+    fuzzyExportBtn.addEventListener('click', () => {
+      const rows = fuzzyLast.map(([s, r]) => ({
+        score: s.toFixed(3),
+        pn: r.part_number,
+        desc: r.description
+      }));
+      const header = 'score,pn,desc\n';
+      const body = rows
+        .map(r => `${r.score},"${(r.pn || '').replace(/"/g,'""')}","` +
+          `${(r.desc || '').replace(/"/g,'""')}"`)
+        .join('\n');
+      const blob = new Blob(
+        [header + body],
+        {type:'text/csv;charset=utf-8;'}
+      );
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'search_results.csv';
+      a.click();
+      URL.revokeObjectURL(url);
+    });
+  }
