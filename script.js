@@ -481,6 +481,20 @@
     compareBtn.click();
   });
 
+  bomResults.addEventListener('copy', e => {
+    const table = bomResults.querySelector('table');
+    if (!table) return;
+    const rows = Array.from(table.querySelectorAll('tbody tr'));
+    const lines = rows.map(row => {
+      const cells = row.children;
+      return [0, 2]
+        .map(i => (cells[i] ? cells[i].textContent.trim() : ''))
+        .join('\t');
+    });
+    e.clipboardData.setData('text/plain', lines.join('\n'));
+    e.preventDefault();
+  });
+
   // ----- Part Lookup -----
   let itemsData = null;
 
