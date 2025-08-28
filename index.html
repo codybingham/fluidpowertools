@@ -77,6 +77,16 @@
           role="tab"
           tabindex="-1"
           aria-selected="false"
+          aria-controls="panel-part-lookup-fuzzy"
+          id="tab-part-lookup-fuzzy"
+        >
+          Part Lookup (Fuzzy)
+        </div>
+        <div
+          class="tab"
+          role="tab"
+          tabindex="-1"
+          aria-selected="false"
           aria-controls="panel-reference"
           id="tab-reference"
         >
@@ -311,6 +321,23 @@
         </div>
         <div id="partLookupResults"></div>
       </section>
+      <!-- Part Lookup Fuzzy -->
+      <section
+        id="panel-part-lookup-fuzzy"
+        class="tab-panel"
+        role="tabpanel"
+        aria-labelledby="tab-part-lookup-fuzzy"
+        tabindex="0"
+      >
+        <label class="calc-label" for="plFuzzyQuery">Search:</label>
+        <input type="text" id="plFuzzyQuery" autocomplete="off" />
+
+        <div class="button-row">
+          <button id="lookupPartFuzzy">Search</button>
+          <button id="clearPartLookupFuzzy">Clear</button>
+        </div>
+        <div id="partLookupFuzzyResults"></div>
+      </section>
       <!-- Reference -->
       <section
         id="panel-reference"
@@ -409,6 +436,7 @@
       </section>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

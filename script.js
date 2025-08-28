@@ -92,7 +92,8 @@
     'cylinderForceResult',
     'pumpPowerResult',
     'bomResults',
-    'partLookupResults'
+    'partLookupResults',
+    'partLookupFuzzyResults'
   ];
   resultIds.forEach(id => {
     const el = document.getElementById(id);
@@ -337,6 +338,12 @@
   const plPart = document.getElementById('plPart');
   const plDesc = document.getElementById('plDesc');
   const partLookupResults = document.getElementById('partLookupResults');
+  const lookupBtnFuzzy = document.getElementById('lookupPartFuzzy');
+  const clearLookupBtnFuzzy =
+    document.getElementById('clearPartLookupFuzzy');
+  const plFuzzyQuery = document.getElementById('plFuzzyQuery');
+  const partLookupFuzzyResults =
+    document.getElementById('partLookupFuzzyResults');
 
   function triggerOnEnter(ids, buttonId) {
     ids.forEach(id => {
@@ -507,6 +514,7 @@
 
   // ----- Part Lookup -----
   let itemsData = null;
+  let fuse = null;
 
   function loadItems() {
     if (itemsData) return Promise.resolve(itemsData);
@@ -516,6 +524,19 @@
         itemsData = data;
         return itemsData;
       });
+  }
+
+  function loadFuse() {
+    return loadItems().then(data => {
+      if (!fuse) {
+        fuse = new Fuse(data, {
+          keys: ['part_number', 'description'],
+          threshold: 0.4,
+          ignoreLocation: true
+        });
+      }
+      return fuse;
+    });
   }
 
   function wildcardToRegex(str) {
@@ -568,6 +589,39 @@
     });
   });
 
+  lookupBtnFuzzy.addEventListener('click', () => {
+    loadFuse().then(fuse => {
+      const query = plFuzzyQuery.value.trim();
+      const results = query ? fuse.search(query).map(r => r.item) : [];
+      if (results.length === 0) {
+        partLookupFuzzyResults.innerHTML =
+          '<p><em>No matching parts found.</em></p>';
+      } else {
+        let html =
+          '<table><thead><tr><th>Part Number</th>' +
+          '<th>Description</th></tr></thead><tbody>';
+        results.forEach(r => {
+          html += `<tr><td>${r.part_number}</td>` +
+            `<td>${r.description}</td></tr>`;
+        });
+        html += '</tbody></table>';
+        partLookupFuzzyResults.innerHTML = html;
+      }
+      localStorage.setItem(
+        'partLookupFuzzyResults',
+        partLookupFuzzyResults.innerHTML
+      );
+    });
+  });
+
+  clearLookupBtnFuzzy.addEventListener('click', () => {
+    plFuzzyQuery.value = '';
+    partLookupFuzzyResults.innerHTML = '';
+    ['plFuzzyQuery','partLookupFuzzyResults'].forEach(k => {
+      localStorage.removeItem(k);
+    });
+  });
+
   triggerOnEnter(
     ['pdFlow','pdDiameter','pdLength','pdViscosity'],
     'calcPressureDrop'
@@ -582,3 +636,4 @@
     'calcPumpPowerBtn'
   );
   triggerOnEnter(['plPart','plDesc'], 'lookupPart');
+  triggerOnEnter(['plFuzzyQuery'], 'lookupPartFuzzy');
