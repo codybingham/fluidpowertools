@@ -484,13 +484,13 @@
   bomResults.addEventListener('copy', e => {
     const table = bomResults.querySelector('table');
     if (!table) return;
-    const rows = Array.from(table.querySelectorAll('tr'));
-    const lines = rows.map(row =>
-      Array.from(row.children)
-        .slice(0, 2)
-        .map(cell => cell.textContent.trim())
-        .join('\t')
-    );
+    const rows = Array.from(table.querySelectorAll('tbody tr'));
+    const lines = rows.map(row => {
+      const cells = row.children;
+      return [0, 2]
+        .map(i => (cells[i] ? cells[i].textContent.trim() : ''))
+        .join('\t');
+    });
     e.clipboardData.setData('text/plain', lines.join('\n'));
     e.preventDefault();
   });
