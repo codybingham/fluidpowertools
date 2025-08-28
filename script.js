@@ -406,25 +406,33 @@
   // Render results table
   function renderResults(results, filter = 'all') {
     let filtered = results;
-    if (filter !== 'all') {
+    if (filter === 'Changed') {
+      filtered = results.filter(r =>
+        r.status === 'Qty Change' ||
+        r.status === 'Added' ||
+        r.status === 'Removed'
+      );
+    } else if (filter !== 'all') {
       filtered = results.filter(r => r.status === filter);
     }
-        if (filter === 'Changed') {
-                filtered = results.filter(r => r.status === 'Qty Change' || r.status === 'Added' || r.status === 'Removed');
-        }
     if (filtered.length === 0) {
-      bomResults.innerHTML = '<p><em>No results to display for selected filter.</em></p>';
+      bomResults.innerHTML =
+        '<p><em>No results to display for selected filter.</em></p>';
       localStorage.setItem('bomResults', bomResults.innerHTML);
       return;
     }
-    let html = '<table><thead><tr><th>Part Number</th><th>Old Qty</th><th>New Qty</th><th>Status</th></tr></thead><tbody>';
+    let html =
+      '<table><thead><tr><th>Part Number</th><th>Old Qty</th>' +
+      '<th>New Qty</th><th>Status</th></tr></thead><tbody>';
     filtered.forEach(r => {
       let rowClass = '';
       if (r.status === 'Added') rowClass = 'added';
       else if (r.status === 'Removed') rowClass = 'removed';
       else if (r.status === 'Qty Change') rowClass = 'changed';
       else if (r.status === 'Unchanged') rowClass = '';
-      html += `<tr class="${rowClass}"><td>${r.part}</td><td>${r.oldQty}</td><td>${r.newQty}</td><td>${r.status}</td></tr>`;
+      html +=
+        `<tr class="${rowClass}"><td>${r.part}</td><td>${r.oldQty}</td>` +
+        `<td>${r.newQty}</td><td>${r.status}</td></tr>`;
     });
     html += '</tbody></table>';
     bomResults.innerHTML = html;
@@ -481,15 +489,17 @@
     compareBtn.click();
   });
 
-  bomResults.addEventListener('copy', e => {
+  document.addEventListener('copy', e => {
+    const sel = document.getSelection();
+    if (!sel || !bomResults.contains(sel.anchorNode)) return;
     const table = bomResults.querySelector('table');
-    if (!table) return;
+    if (!table || !e.clipboardData) return;
     const rows = Array.from(table.querySelectorAll('tbody tr'));
     const lines = rows.map(row => {
-      const cells = row.children;
-      return [0, 2]
-        .map(i => (cells[i] ? cells[i].textContent.trim() : ''))
-        .join('\t');
+      const cells = row.querySelectorAll('td');
+      const part = cells[0] ? cells[0].textContent.trim() : '';
+      const newQty = cells[2] ? cells[2].textContent.trim() : '';
+      return `${part}\t${newQty}`;
     });
     e.clipboardData.setData('text/plain', lines.join('\n'));
     e.preventDefault();
