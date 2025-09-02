@@ -87,6 +87,16 @@
           role="tab"
           tabindex="-1"
           aria-selected="false"
+          aria-controls="panel-part-lookup-fuzzy-bom"
+          id="tab-part-lookup-fuzzy-bom"
+        >
+          Part Lookup (Fuzzy BOM)
+        </div>
+        <div
+          class="tab"
+          role="tab"
+          tabindex="-1"
+          aria-selected="false"
           aria-controls="panel-reference"
           id="tab-reference"
         >
@@ -341,6 +351,29 @@
         </div>
         <div id="fuzzyStats" class="meta"></div>
         <div id="fuzzyResults" class="results"></div>
+      </section>
+      <!-- Part Lookup Fuzzy BOM -->
+      <section
+        id="panel-part-lookup-fuzzy-bom"
+        class="tab-panel"
+        role="tabpanel"
+        aria-labelledby="tab-part-lookup-fuzzy-bom"
+        tabindex="0"
+      >
+        <div class="topbar">
+          <button id="fuzzyBomExport">Export results (CSV)</button>
+          <button id="fuzzyBomClear">Clear BOM</button>
+        </div>
+        <div id="fuzzyBomList" class="bom"></div>
+        <div class="searchbar">
+          <input
+            id="fuzzyBomQuery"
+            placeholder="Search part number, dash size, thread type, or description…"
+            autocomplete="off"
+          />
+        </div>
+        <div id="fuzzyBomStats" class="meta"></div>
+        <div id="fuzzyBomResults" class="results"></div>
       </section>
       <!-- Reference -->
       <section
