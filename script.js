@@ -590,6 +590,19 @@
   const fuzzyStatsEl = document.getElementById('fuzzyStats');
   const fuzzyExportBtn = document.getElementById('fuzzyExport');
   let fuzzyLast = [];
+  const fuzzyBomInput = document.getElementById('fuzzyBomQuery');
+  const fuzzyBomResultsEl = document.getElementById('fuzzyBomResults');
+  const fuzzyBomStatsEl = document.getElementById('fuzzyBomStats');
+  const fuzzyBomListEl = document.getElementById('fuzzyBomList');
+  const fuzzyBomExportBtn = document.getElementById('fuzzyBomExport');
+  const fuzzyBomClearBtn = document.getElementById('fuzzyBomClear');
+  let fuzzyBomLast = [];
+  let fuzzyBom = [];
+  try {
+    fuzzyBom = JSON.parse(localStorage.getItem('fuzzyBom')) || [];
+  } catch (e) {
+    fuzzyBom = [];
+  }
 
   function normalize(s) {
     return (s || '')
@@ -688,11 +701,60 @@
     }
   }
 
+  function renderBom() {
+    if (!fuzzyBomListEl) return;
+    fuzzyBomListEl.innerHTML = '';
+    for (const item of fuzzyBom) {
+      const div = document.createElement('div');
+      const safe = (item.desc || '').replace(/</g, '&lt;');
+      div.innerHTML = `<strong>${item.pn || ''}</strong> ` +
+        `<span class="meta">${safe}</span>`;
+      fuzzyBomListEl.appendChild(div);
+    }
+    localStorage.setItem('fuzzyBom', JSON.stringify(fuzzyBom));
+  }
+
+  function renderFuzzyBom(results, q) {
+    fuzzyBomResultsEl.innerHTML = '';
+    fuzzyBomStatsEl.textContent = results.length
+      ? `Top ${results.length} results for "${q}"`
+      : (q ? 'No results.' : '');
+    for (const [s, row] of results) {
+      const div = document.createElement('div');
+      div.className = 'row';
+      const safeDesc = (row.description || '').replace(/</g, '&lt;');
+      div.innerHTML = `<div><strong>${row.part_number || '(no PN)'}</strong> ` +
+        `<span class="score">score ${s.toFixed(2)}</span> ` +
+        `<button class="add">Add</button></div>` +
+        `<div class="meta">${safeDesc}</div>`;
+      const btn = div.querySelector('button.add');
+      btn.addEventListener('click', () => {
+        fuzzyBom.push({
+          pn: row.part_number,
+          desc: row.description
+        });
+        renderBom();
+      });
+      fuzzyBomResultsEl.appendChild(div);
+    }
+  }
+
+  renderBom();
+
   if (fuzzyInput) {
     fuzzyInput.addEventListener('input', () => {
       loadItems().then(() => {
         fuzzyLast = fuzzySearch(fuzzyInput.value, 200);
         renderFuzzy(fuzzyLast, fuzzyInput.value);
+      });
+    });
+  }
+
+  if (fuzzyBomInput) {
+    fuzzyBomInput.addEventListener('input', () => {
+      loadItems().then(() => {
+        fuzzyBomLast = fuzzySearch(fuzzyBomInput.value, 200);
+        renderFuzzyBom(fuzzyBomLast, fuzzyBomInput.value);
       });
     });
   }
@@ -719,5 +781,37 @@
       a.download = 'search_results.csv';
       a.click();
       URL.revokeObjectURL(url);
+    });
+  }
+
+  if (fuzzyBomExportBtn) {
+    fuzzyBomExportBtn.addEventListener('click', () => {
+      const rows = fuzzyBomLast.map(([s, r]) => ({
+        score: s.toFixed(3),
+        pn: r.part_number,
+        desc: r.description
+      }));
+      const header = 'score,pn,desc\n';
+      const body = rows
+        .map(r => `${r.score},"${(r.pn || '').replace(/"/g,'""')}","` +
+          `${(r.desc || '').replace(/"/g,'""')}"`)
+        .join('\n');
+      const blob = new Blob(
+        [header + body],
+        {type:'text/csv;charset=utf-8;'}
+      );
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'search_results.csv';
+      a.click();
+      URL.revokeObjectURL(url);
+    });
+  }
+
+  if (fuzzyBomClearBtn) {
+    fuzzyBomClearBtn.addEventListener('click', () => {
+      fuzzyBom = [];
+      renderBom();
     });
   }
