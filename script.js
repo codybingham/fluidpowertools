@@ -585,11 +585,6 @@
   triggerOnEnter(['plPart','plDesc'], 'lookupPart');
 
   // ----- Fuzzy Part Lookup -----
-  const fuzzyInput = document.getElementById('fuzzyQuery');
-  const fuzzyResultsEl = document.getElementById('fuzzyResults');
-  const fuzzyStatsEl = document.getElementById('fuzzyStats');
-  const fuzzyExportBtn = document.getElementById('fuzzyExport');
-  let fuzzyLast = [];
   const fuzzyBomInput = document.getElementById('fuzzyBomQuery');
   const fuzzyBomResultsEl = document.getElementById('fuzzyBomResults');
   const fuzzyBomStatsEl = document.getElementById('fuzzyBomStats');
@@ -597,7 +592,6 @@
   const fuzzyBomTopbarEl = document.querySelector(
     '#panel-part-lookup-fuzzy-bom .topbar'
   );
-  const fuzzyBomExportBtn = document.getElementById('fuzzyBomExport');
   const fuzzyBomClearBtn = document.getElementById('fuzzyBomClear');
   let fuzzyBomLast = [];
   let fuzzyBom = [];
@@ -687,23 +681,6 @@
     return scored.slice(0, limit);
   }
 
-  function renderFuzzy(results, q) {
-    fuzzyResultsEl.innerHTML = '';
-    fuzzyStatsEl.textContent = results.length
-      ? `Top ${results.length} results for "${q}"`
-      : (q ? 'No results.' : '');
-    for (const [s, row] of results) {
-      const div = document.createElement('div');
-      div.className = 'row';
-      const safeDesc = (row.description || '').replace(/</g, '&lt;');
-      div.innerHTML =
-        `<div><strong>${row.part_number || '(no PN)'}</strong> ` +
-        `<span class="score">score ${s.toFixed(2)}</span></div>` +
-        `<div class="meta">${safeDesc}</div>`;
-      fuzzyResultsEl.appendChild(div);
-    }
-  }
-
   function renderBom() {
     if (!fuzzyBomListEl || !fuzzyBomTopbarEl) return;
     fuzzyBomListEl.innerHTML = '';
@@ -745,15 +722,6 @@
 
   renderBom();
 
-  if (fuzzyInput) {
-    fuzzyInput.addEventListener('input', () => {
-      loadItems().then(() => {
-        fuzzyLast = fuzzySearch(fuzzyInput.value, 200);
-        renderFuzzy(fuzzyLast, fuzzyInput.value);
-      });
-    });
-  }
-
   if (fuzzyBomInput) {
     fuzzyBomInput.addEventListener('input', () => {
       loadItems().then(() => {
@@ -762,57 +730,6 @@
       });
     });
   }
-
-  if (fuzzyExportBtn) {
-    fuzzyExportBtn.addEventListener('click', () => {
-      const rows = fuzzyLast.map(([s, r]) => ({
-        score: s.toFixed(3),
-        pn: r.part_number,
-        desc: r.description
-      }));
-      const header = 'score,pn,desc\n';
-      const body = rows
-        .map(r => `${r.score},"${(r.pn || '').replace(/"/g,'""')}","` +
-          `${(r.desc || '').replace(/"/g,'""')}"`)
-        .join('\n');
-      const blob = new Blob(
-        [header + body],
-        {type:'text/csv;charset=utf-8;'}
-      );
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'search_results.csv';
-      a.click();
-      URL.revokeObjectURL(url);
-    });
-  }
-
-  if (fuzzyBomExportBtn) {
-    fuzzyBomExportBtn.addEventListener('click', () => {
-      const rows = fuzzyBomLast.map(([s, r]) => ({
-        score: s.toFixed(3),
-        pn: r.part_number,
-        desc: r.description
-      }));
-      const header = 'score,pn,desc\n';
-      const body = rows
-        .map(r => `${r.score},"${(r.pn || '').replace(/"/g,'""')}","` +
-          `${(r.desc || '').replace(/"/g,'""')}"`)
-        .join('\n');
-      const blob = new Blob(
-        [header + body],
-        {type:'text/csv;charset=utf-8;'}
-      );
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'search_results.csv';
-      a.click();
-      URL.revokeObjectURL(url);
-    });
-  }
-
   if (fuzzyBomClearBtn) {
     fuzzyBomClearBtn.addEventListener('click', () => {
       fuzzyBom = [];
