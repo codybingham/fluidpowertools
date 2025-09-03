@@ -77,20 +77,10 @@
           role="tab"
           tabindex="-1"
           aria-selected="false"
-          aria-controls="panel-part-lookup-fuzzy"
-          id="tab-part-lookup-fuzzy"
-        >
-          Part Lookup (Fuzzy)
-        </div>
-        <div
-          class="tab"
-          role="tab"
-          tabindex="-1"
-          aria-selected="false"
           aria-controls="panel-part-lookup-fuzzy-bom"
           id="tab-part-lookup-fuzzy-bom"
         >
-          Part Lookup (Fuzzy BOM)
+          Fuzzy Part Lookup
         </div>
         <div
           class="tab"
@@ -331,28 +321,7 @@
         </div>
         <div id="partLookupResults"></div>
       </section>
-      <!-- Part Lookup Fuzzy -->
-      <section
-        id="panel-part-lookup-fuzzy"
-        class="tab-panel"
-        role="tabpanel"
-        aria-labelledby="tab-part-lookup-fuzzy"
-        tabindex="0"
-      >
-        <div class="topbar">
-          <button id="fuzzyExport">Export results (CSV)</button>
-        </div>
-        <div class="searchbar">
-          <input
-            id="fuzzyQuery"
-            placeholder="Search part number, dash size, thread type, or description…"
-            autocomplete="off"
-          />
-        </div>
-        <div id="fuzzyStats" class="meta"></div>
-        <div id="fuzzyResults" class="results"></div>
-      </section>
-      <!-- Part Lookup Fuzzy BOM -->
+      <!-- Fuzzy Part Lookup -->
       <section
         id="panel-part-lookup-fuzzy-bom"
         class="tab-panel"
@@ -361,7 +330,6 @@
         tabindex="0"
       >
         <div class="topbar" style="display: none;">
-          <button id="fuzzyBomExport">Export results (CSV)</button>
           <button id="fuzzyBomClear">Clear BOM</button>
         </div>
         <div id="fuzzyBomList" class="bom"></div>

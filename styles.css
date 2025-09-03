@@ -71,7 +71,6 @@ h3 {
 }
 
 /* Fuzzy part lookup styles */
-#panel-part-lookup-fuzzy .topbar,
 #panel-part-lookup-fuzzy-bom .topbar {
   display: flex;
   gap: 10px;
@@ -79,30 +78,25 @@ h3 {
   flex-wrap: wrap;
   margin-top: 8px;
 }
-#panel-part-lookup-fuzzy .hint,
 #panel-part-lookup-fuzzy-bom .hint {
   font-size: 0.875rem;
   color: #555;
 }
-#panel-part-lookup-fuzzy .searchbar,
 #panel-part-lookup-fuzzy-bom .searchbar {
   display: flex;
   gap: 12px;
   align-items: center;
   margin-top: 10px;
 }
-#panel-part-lookup-fuzzy .searchbar input,
 #panel-part-lookup-fuzzy-bom .searchbar input {
   flex: 1;
   padding: 12px 14px;
   border: 1px solid #d1d9e6;
   border-radius: 6px;
 }
-#panel-part-lookup-fuzzy .results,
 #panel-part-lookup-fuzzy-bom .results {
   margin-top: 14px;
 }
-#panel-part-lookup-fuzzy .row,
 #panel-part-lookup-fuzzy-bom .row {
   background: #f9f9f9;
   border: 1px solid #d1d9e6;
@@ -110,19 +104,16 @@ h3 {
   padding: 10px 12px;
   margin: 10px 0;
 }
-#panel-part-lookup-fuzzy .meta,
 #panel-part-lookup-fuzzy-bom .meta {
   font-size: 0.875rem;
   color: #555;
   margin-top: 4px;
 }
-#panel-part-lookup-fuzzy .score,
 #panel-part-lookup-fuzzy-bom .score {
   font-variant-numeric: tabular-nums;
   color: #888;
   font-size: 0.75rem;
 }
-#panel-part-lookup-fuzzy button,
 #panel-part-lookup-fuzzy-bom button {
   padding: 6px 10px;
   font-size: 0.875rem;
