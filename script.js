@@ -691,7 +691,9 @@
         `<span class="meta">${safe}</span>`;
       fuzzyBomListEl.appendChild(div);
     }
-    fuzzyBomTopbarEl.style.display = fuzzyBom.length ? 'flex' : 'none';
+    const show = fuzzyBom.length > 0;
+    fuzzyBomTopbarEl.style.display = show ? 'flex' : 'none';
+    fuzzyBomListEl.style.display = show ? 'block' : 'none';
     localStorage.setItem('fuzzyBom', JSON.stringify(fuzzyBom));
   }
 
