@@ -707,20 +707,14 @@
   function renderBom() {
     if (!fuzzyBomListEl || !fuzzyBomTopbarEl) return;
     fuzzyBomListEl.innerHTML = '';
-    if (!fuzzyBom.length) {
-      fuzzyBomTopbarEl.style.display = 'none';
-      fuzzyBomListEl.style.display = 'none';
-    } else {
-      fuzzyBomTopbarEl.style.display = '';
-      fuzzyBomListEl.style.display = '';
-      for (const item of fuzzyBom) {
-        const div = document.createElement('div');
-        const safe = (item.desc || '').replace(/</g, '&lt;');
-        div.innerHTML = `<strong>${item.pn || ''}</strong> ` +
-          `<span class="meta">${safe}</span>`;
-        fuzzyBomListEl.appendChild(div);
-      }
+    for (const item of fuzzyBom) {
+      const div = document.createElement('div');
+      const safe = (item.desc || '').replace(/</g, '&lt;');
+      div.innerHTML = `<strong>${item.pn || ''}</strong> ` +
+        `<span class="meta">${safe}</span>`;
+      fuzzyBomListEl.appendChild(div);
     }
+    fuzzyBomTopbarEl.style.display = fuzzyBom.length ? 'flex' : 'none';
     localStorage.setItem('fuzzyBom', JSON.stringify(fuzzyBom));
   }
 
