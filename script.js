@@ -68,6 +68,57 @@
     activateTab(0);
   }
 
+  // Sub-tab switching logic for calculators
+  const calcContainer = document.getElementById('panel-calculators');
+  if (calcContainer) {
+    const calcTabs = calcContainer.querySelectorAll('.sub-tab');
+    const calcPanels = calcContainer.querySelectorAll('.sub-panel');
+    calcTabs.forEach((tab, i) => {
+      tab.addEventListener('click', () => {
+        activateCalcTab(i);
+      });
+      tab.addEventListener('keydown', e => {
+        if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+          e.preventDefault();
+          let ni = i;
+          if (e.key === 'ArrowRight') {
+            ni = (i + 1) % calcTabs.length;
+          } else {
+            ni = (i - 1 + calcTabs.length) % calcTabs.length;
+          }
+          activateCalcTab(ni);
+          calcTabs[ni].focus();
+        }
+      });
+    });
+
+    function activateCalcTab(index) {
+      calcTabs.forEach((tab, i) => {
+        if (i === index) {
+          tab.classList.add('active');
+          tab.setAttribute('aria-selected', 'true');
+          tab.setAttribute('tabindex', '0');
+          calcPanels[i].classList.add('active');
+        } else {
+          tab.classList.remove('active');
+          tab.setAttribute('aria-selected', 'false');
+          tab.setAttribute('tabindex', '-1');
+          calcPanels[i].classList.remove('active');
+        }
+      });
+      localStorage.setItem('activeCalcTab', index);
+    }
+
+    const storedCalc = localStorage.getItem('activeCalcTab');
+    const calcIndex =
+      storedCalc !== null ? parseInt(storedCalc, 10) : 0;
+    if (calcIndex >= 0 && calcIndex < calcTabs.length) {
+      activateCalcTab(calcIndex);
+    } else {
+      activateCalcTab(0);
+    }
+  }
+
   const persistEls = document.querySelectorAll('input, select, textarea');
   persistEls.forEach(el => {
     if (!el.id) return;
