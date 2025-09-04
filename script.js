@@ -593,10 +593,14 @@
     '#panel-part-lookup-fuzzy-bom .topbar'
   );
   const fuzzyBomClearBtn = document.getElementById('fuzzyBomClear');
+  let fuzzySelectedCol = -1;
   let fuzzyBomLast = [];
   let fuzzyBom = [];
   try {
     fuzzyBom = JSON.parse(localStorage.getItem('fuzzyBom')) || [];
+    fuzzyBom.forEach(it => {
+      if (it.qty === undefined) it.qty = 1;
+    });
   } catch (e) {
     fuzzyBom = [];
   }
@@ -681,24 +685,67 @@
     return scored.slice(0, limit);
   }
 
+  function clearBomSelection(table) {
+    const sel = window.getSelection();
+    if (sel) sel.removeAllRanges();
+    table.querySelectorAll('.selected-col').forEach(c =>
+      c.classList.remove('selected-col')
+    );
+    table.querySelectorAll('.selected-row').forEach(r =>
+      r.classList.remove('selected-row')
+    );
+    fuzzySelectedCol = -1;
+  }
+
   function renderBom() {
     if (!fuzzyBomListEl || !fuzzyBomTopbarEl) return;
     fuzzyBomListEl.innerHTML = '';
+    fuzzySelectedCol = -1;
     if (fuzzyBom.length) {
       const table = document.createElement('table');
       const thead = document.createElement('thead');
       thead.innerHTML =
-        '<tr><th>Part Number</th><th>Description</th></tr>';
+        '<tr><th></th><th>Part Number</th><th>Description</th><th>Qty</th></tr>';
       table.appendChild(thead);
       const tbody = document.createElement('tbody');
-      for (const item of fuzzyBom) {
+      fuzzyBom.forEach((item, idx) => {
         const tr = document.createElement('tr');
         const safe = (item.desc || '').replace(/</g, '&lt;');
-        tr.innerHTML = `<td>${item.pn || ''}</td>` +
-          `<td>${safe}</td>`;
+        tr.innerHTML =
+          `<th class="row-num">${idx + 1}</th>` +
+          `<td>${item.pn || ''}</td>` +
+          `<td>${safe}</td>` +
+          `<td><input type="number" min="0" value="${item.qty}"></td>`;
+        const input = tr.querySelector('input');
+        input.addEventListener('input', () => {
+          item.qty = parseFloat(input.value) || 0;
+          localStorage.setItem('fuzzyBom', JSON.stringify(fuzzyBom));
+        });
+        const rowHeader = tr.querySelector('th.row-num');
+        rowHeader.addEventListener('click', () => {
+          clearBomSelection(table);
+          tr.classList.add('selected-row');
+          const range = document.createRange();
+          range.selectNodeContents(tr);
+          const sel = window.getSelection();
+          sel.removeAllRanges();
+          sel.addRange(range);
+        });
         tbody.appendChild(tr);
-      }
+      });
       table.appendChild(tbody);
+      const headers = table.querySelectorAll('thead th');
+      headers.forEach((th, i) => {
+        if (i === 0) return;
+        th.addEventListener('click', () => {
+          clearBomSelection(table);
+          fuzzySelectedCol = i;
+          table.querySelectorAll('tr').forEach(row => {
+            const cell = row.children[i];
+            if (cell) cell.classList.add('selected-col');
+          });
+        });
+      });
       fuzzyBomListEl.appendChild(table);
     }
     const show = fuzzyBom.length > 0;
@@ -724,7 +771,8 @@
       btn.addEventListener('click', () => {
         fuzzyBom.push({
           pn: row.part_number,
-          desc: row.description
+          desc: row.description,
+          qty: 1
         });
         renderBom();
       });
@@ -748,3 +796,19 @@
       renderBom();
     });
   }
+
+  document.addEventListener('copy', e => {
+    if (fuzzySelectedCol < 0) return;
+    if (window.getSelection().toString()) return;
+    const table = fuzzyBomListEl.querySelector('table');
+    if (!table || !e.clipboardData) return;
+    const rows = table.querySelectorAll('tbody tr');
+    const lines = Array.from(rows).map(r => {
+      const cell = r.children[fuzzySelectedCol];
+      if (!cell) return '';
+      const inp = cell.querySelector('input');
+      return inp ? inp.value : cell.textContent.trim();
+    });
+    e.clipboardData.setData('text/plain', lines.join('\n'));
+    e.preventDefault();
+  });
