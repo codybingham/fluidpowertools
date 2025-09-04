@@ -596,6 +596,8 @@
   let fuzzySelection = null;
   let fuzzyBomLast = [];
   let fuzzyBom = [];
+  let fuzzyBomSort = { key: null, dir: 1 };
+  let fuzzyResultsSort = { key: 'score', dir: -1 };
   try {
     fuzzyBom = JSON.parse(localStorage.getItem('fuzzyBom')) || [];
     fuzzyBom.forEach(it => {
@@ -696,13 +698,28 @@
 
   function renderBom() {
     if (!fuzzyBomListEl || !fuzzyBomTopbarEl) return;
+    if (fuzzyBomSort.key) {
+      const k = fuzzyBomSort.key;
+      const d = fuzzyBomSort.dir;
+      fuzzyBom.sort((a, b) => {
+        let av = a[k] || '';
+        let bv = b[k] || '';
+        if (k === 'qty') {
+          av = parseFloat(av) || 0;
+          bv = parseFloat(bv) || 0;
+        }
+        if (av < bv) return -d;
+        if (av > bv) return d;
+        return 0;
+      });
+    }
     fuzzyBomListEl.innerHTML = '';
     fuzzySelection = null;
     if (fuzzyBom.length) {
       const table = document.createElement('table');
       const thead = document.createElement('thead');
       thead.innerHTML =
-        '<tr><th></th><th>Part Number</th><th>Description</th><th>Qty</th></tr>';
+        '<tr><th></th><th data-key="pn">Part Number</th><th data-key="desc">Description</th><th data-key="qty">Qty</th><th></th></tr>';
       table.appendChild(thead);
       const tbody = document.createElement('tbody');
       fuzzyBom.forEach((item, idx) => {
@@ -713,12 +730,17 @@
           `<th class="row-num">${idx + 1}</th>` +
           `<td data-col="0">${item.pn || ''}</td>` +
           `<td data-col="1">${safe}</td>` +
-          `<td data-col="2"><input type="number" min="0" ` +
-          `value="${item.qty}"></td>`;
+          `<td data-col="2"><input type="number" min="0" value="${item.qty}"></td>` +
+          `<td data-col="3"><button class="remove">×</button></td>`;
         const input = tr.querySelector('input');
         input.addEventListener('input', () => {
           item.qty = parseFloat(input.value) || 0;
           localStorage.setItem('fuzzyBom', JSON.stringify(fuzzyBom));
+        });
+        const rem = tr.querySelector('button.remove');
+        rem.addEventListener('click', () => {
+          fuzzyBom.splice(idx, 1);
+          renderBom();
         });
         tr.querySelectorAll('td').forEach((td, cIdx) => {
           td.dataset.row = idx;
@@ -727,6 +749,20 @@
         tbody.appendChild(tr);
       });
       table.appendChild(tbody);
+
+      thead.querySelectorAll('th[data-key]').forEach(th => {
+        const key = th.dataset.key;
+        if (fuzzyBomSort.key === key)
+          th.classList.add(fuzzyBomSort.dir === 1 ? 'sort-asc' : 'sort-desc');
+        th.addEventListener('click', () => {
+          if (fuzzyBomSort.key === key) {
+            fuzzyBomSort.dir *= -1;
+          } else {
+            fuzzyBomSort = { key, dir: 1 };
+          }
+          renderBom();
+        });
+      });
 
       let isSel = false;
       let start = null;
@@ -818,15 +854,34 @@
     fuzzyBomStatsEl.textContent = results.length
       ? `Top ${results.length} results for "${q}"`
       : (q ? 'No results.' : '');
-    for (const [s, row] of results) {
-      const div = document.createElement('div');
-      div.className = 'row';
+    if (!results.length) return;
+    const table = document.createElement('table');
+    const thead = document.createElement('thead');
+    thead.innerHTML =
+      '<tr><th data-key="pn">Part Number</th><th data-key="desc">Description</th><th data-key="score">Score</th><th></th></tr>';
+    table.appendChild(thead);
+    const tbody = document.createElement('tbody');
+    const sorted = results.slice().sort((a, b) => {
+      const k = fuzzyResultsSort.key;
+      const d = fuzzyResultsSort.dir;
+      if (k === 'score') return d * (a[0] - b[0]);
+      const av = (k === 'pn'
+        ? a[1].part_number
+        : a[1].description) || '';
+      const bv = (k === 'pn'
+        ? b[1].part_number
+        : b[1].description) || '';
+      return av.localeCompare(bv) * d;
+    });
+    for (const [s, row] of sorted) {
+      const tr = document.createElement('tr');
       const safeDesc = (row.description || '').replace(/</g, '&lt;');
-      div.innerHTML = `<div><strong>${row.part_number || '(no PN)'}</strong> ` +
-        `<span class="score">score ${s.toFixed(2)}</span> ` +
-        `<button class="add">Add</button></div>` +
-        `<div class="meta">${safeDesc}</div>`;
-      const btn = div.querySelector('button.add');
+      tr.innerHTML =
+        `<td>${row.part_number || '(no PN)'}</td>` +
+        `<td>${safeDesc}</td>` +
+        `<td class="score">${s.toFixed(2)}</td>` +
+        `<td><button class="add">Add</button></td>`;
+      const btn = tr.querySelector('button.add');
       btn.addEventListener('click', () => {
         fuzzyBom.push({
           pn: row.part_number,
@@ -835,8 +890,25 @@
         });
         renderBom();
       });
-      fuzzyBomResultsEl.appendChild(div);
+      tbody.appendChild(tr);
     }
+    table.appendChild(tbody);
+    thead.querySelectorAll('th[data-key]').forEach(th => {
+      const key = th.dataset.key;
+      if (fuzzyResultsSort.key === key)
+        th.classList.add(
+          fuzzyResultsSort.dir === 1 ? 'sort-asc' : 'sort-desc'
+        );
+      th.addEventListener('click', () => {
+        if (fuzzyResultsSort.key === key) {
+          fuzzyResultsSort.dir *= -1;
+        } else {
+          fuzzyResultsSort = { key, dir: key === 'score' ? -1 : 1 };
+        }
+        renderFuzzyBom(results, q);
+      });
+    });
+    fuzzyBomResultsEl.appendChild(table);
   }
 
   renderBom();
@@ -875,7 +947,8 @@
           continue;
         }
         const inp = cell.querySelector('input');
-        line.push(inp ? inp.value : cell.textContent.trim());
+        const btn = cell.querySelector('button');
+        line.push(inp ? inp.value : btn ? '' : cell.textContent.trim());
       }
       lines.push(line.join('\t'));
     }
