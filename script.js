@@ -694,6 +694,9 @@
     table.querySelectorAll('.selected-row').forEach(r =>
       r.classList.remove('selected-row')
     );
+    table.querySelectorAll('.selected-cell').forEach(c =>
+      c.classList.remove('selected-cell')
+    );
     fuzzySelectedCol = -1;
   }
 
@@ -720,6 +723,23 @@
         input.addEventListener('input', () => {
           item.qty = parseFloat(input.value) || 0;
           localStorage.setItem('fuzzyBom', JSON.stringify(fuzzyBom));
+        });
+        tr.querySelectorAll('td').forEach(td => {
+          td.addEventListener('click', () => {
+            clearBomSelection(table);
+            td.classList.add('selected-cell');
+            const inp = td.querySelector('input');
+            if (inp) {
+              inp.focus();
+              inp.select();
+            } else {
+              const range = document.createRange();
+              range.selectNodeContents(td);
+              const sel = window.getSelection();
+              sel.removeAllRanges();
+              sel.addRange(range);
+            }
+          });
         });
         const rowHeader = tr.querySelector('th.row-num');
         rowHeader.addEventListener('click', () => {

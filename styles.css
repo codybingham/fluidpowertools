@@ -160,6 +160,10 @@ h3 {
   background: #dfe6e9;
 }
 
+#panel-part-lookup-fuzzy-bom .bom .selected-cell {
+  background: #a3d5ff;
+}
+
 #panel-part-lookup-fuzzy-bom .bom .selected-row > th,
 #panel-part-lookup-fuzzy-bom .bom .selected-row > td {
   background: #ffeaa7;
