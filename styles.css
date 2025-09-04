@@ -121,10 +121,25 @@ h3 {
 
 #panel-part-lookup-fuzzy-bom .bom {
   margin-top: 10px;
-  padding: 10px 12px;
+  overflow-x: auto;
+}
+
+#panel-part-lookup-fuzzy-bom .bom table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#panel-part-lookup-fuzzy-bom .bom th,
+#panel-part-lookup-fuzzy-bom .bom td {
   border: 1px solid #d1d9e6;
-  border-radius: 6px;
-  background: #f9f9f9;
+  padding: 6px 8px;
+  text-align: left;
+}
+
+#panel-part-lookup-fuzzy-bom .bom th {
+  background: #2980b9;
+  color: #fff;
+  font-weight: 600;
 }
 
 /* --- Calculator common styles --- */
