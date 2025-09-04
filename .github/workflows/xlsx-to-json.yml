@@ -3,7 +3,7 @@ name: XLSX → items_export_slim.json
 on:
   workflow_dispatch: {}
   push:
-    paths: ["data/**/*.xlsx"]   # runs when you upload a new export
+    paths: ["data/**/*.csv"]   # runs when you upload a new export
   schedule:
     - cron: "0 12 * * MON"      # weekly (12:00 UTC ≈ 6am Boise during DST)
 
