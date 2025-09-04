@@ -809,6 +809,7 @@
       }
 
       table.addEventListener('mousedown', e => {
+        if (e.target.tagName === 'INPUT') return;
         const cell = e.target.closest('td');
         if (!cell) return;
         isSel = true;
