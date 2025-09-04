@@ -1,0 +1,33 @@
+name: XLSX → items_export_slim.json
+
+on:
+  workflow_dispatch: {}
+  push:
+    paths: ["data/**/*.xlsx"]   # runs when you upload a new export
+  schedule:
+    - cron: "0 12 * * MON"      # weekly (12:00 UTC ≈ 6am Boise during DST)
+
+jobs:
+  build-json:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install deps
+        run: npm ci || npm i
+
+      - name: Convert newest XLSX -> slim JSON
+        env:
+          PREFIXES: "60,30,73,13,HA,HK"   # "" to disable filtering
+        run: npm run build:json
+
+      - name: Commit updated JSON
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: update items_export_slim.json"
+          file_pattern: "items_export_slim.json"
