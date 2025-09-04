@@ -17,40 +17,10 @@
           role="tab"
           tabindex="0"
           aria-selected="true"
-          aria-controls="panel-pressure-drop"
-          id="tab-pressure-drop"
+          aria-controls="panel-calculators"
+          id="tab-calculators"
         >
-          Pressure Drop
-        </div>
-        <div
-          class="tab"
-          role="tab"
-          tabindex="-1"
-          aria-selected="false"
-          aria-controls="panel-unit-conversions"
-          id="tab-unit-conversions"
-        >
-          Unit Conversions
-        </div>
-        <div
-          class="tab"
-          role="tab"
-          tabindex="-1"
-          aria-selected="false"
-          aria-controls="panel-cylinder-force"
-          id="tab-cylinder-force"
-        >
-          Cylinder Force
-        </div>
-        <div
-          class="tab"
-          role="tab"
-          tabindex="-1"
-          aria-selected="false"
-          aria-controls="panel-pump-power"
-          id="tab-pump-power"
-        >
-          Pump Power
+          Calculators
         </div>
         <div
           class="tab"
@@ -94,122 +64,180 @@
         </div>
       </div>
 
-      <!-- Pressure Drop -->
+      <!-- Calculators -->
       <section
-        id="panel-pressure-drop"
+        id="panel-calculators"
         class="tab-panel active"
         role="tabpanel"
-        aria-labelledby="tab-pressure-drop"
+        aria-labelledby="tab-calculators"
         tabindex="0"
       >
-        <label class="calc-label" for="pdFlow">Flow Rate (GPM):</label>
-        <input type="number" id="pdFlow" min="0" step="any" />
+        <div class="sub-tabs" role="tablist" aria-label="Calculators">
+          <div
+            class="sub-tab active"
+            role="tab"
+            tabindex="0"
+            aria-selected="true"
+            aria-controls="sub-panel-pressure-drop"
+            id="sub-tab-pressure-drop"
+          >
+            Pressure Drop
+          </div>
+          <div
+            class="sub-tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-controls="sub-panel-unit-conversions"
+            id="sub-tab-unit-conversions"
+          >
+            Unit Conversions
+          </div>
+          <div
+            class="sub-tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-controls="sub-panel-cylinder-force"
+            id="sub-tab-cylinder-force"
+          >
+            Cylinder Force
+          </div>
+          <div
+            class="sub-tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-controls="sub-panel-pump-power"
+            id="sub-tab-pump-power"
+          >
+            Pump Power
+          </div>
+        </div>
 
-        <label class="calc-label" for="pdDiameter"
-          >Pipe/Hose Diameter (inches):</label
+        <!-- Pressure Drop -->
+        <section
+          id="sub-panel-pressure-drop"
+          class="sub-panel active"
+          role="tabpanel"
+          aria-labelledby="sub-tab-pressure-drop"
+          tabindex="0"
         >
-        <input type="number" id="pdDiameter" min="0" step="any" />
+          <label class="calc-label" for="pdFlow">Flow Rate (GPM):</label>
+          <input type="number" id="pdFlow" min="0" step="any" />
 
-        <label class="calc-label" for="pdLength">Length (feet):</label>
-        <input type="number" id="pdLength" min="0" step="any" />
+          <label class="calc-label" for="pdDiameter"
+            >Pipe/Hose Diameter (inches):</label
+          >
+          <input type="number" id="pdDiameter" min="0" step="any" />
 
-        <label class="calc-label" for="pdViscosity"
-          >Dynamic Viscosity (cP):</label
+          <label class="calc-label" for="pdLength">Length (feet):</label>
+          <input type="number" id="pdLength" min="0" step="any" />
+
+          <label class="calc-label" for="pdViscosity"
+            >Dynamic Viscosity (cP):</label
+          >
+          <input
+            type="number"
+            id="pdViscosity"
+            min="0"
+            step="any"
+            value="40"
+          />
+
+          <div class="button-row">
+            <button id="calcPressureDrop">Calculate Pressure Drop (psi)</button>
+            <button id="clearPressureDrop">Clear</button>
+          </div>
+          <div id="pressureDropResult"></div>
+        </section>
+
+        <!-- Unit Conversions -->
+        <section
+          id="sub-panel-unit-conversions"
+          class="sub-panel"
+          role="tabpanel"
+          aria-labelledby="sub-tab-unit-conversions"
+          tabindex="0"
         >
-        <input type="number" id="pdViscosity" min="0" step="any" value="40" />
+          <label class="calc-label" for="ucCategory">Conversion Type:</label>
+          <select id="ucCategory">
+            <option value="flow">Flow</option>
+            <option value="pressure">Pressure</option>
+            <option value="force">Force</option>
+            <option value="power">Power</option>
+            <option value="length">Length</option>
+          </select>
 
-        <div class="button-row">
-          <button id="calcPressureDrop">Calculate Pressure Drop (psi)</button>
-          <button id="clearPressureDrop">Clear</button>
-        </div>
-        <div id="pressureDropResult"></div>
-      </section>
+          <label class="calc-label" for="ucValue">Value:</label>
+          <input type="number" id="ucValue" min="0" step="any" />
 
-      <!-- Unit Conversions -->
-      <section
-        id="panel-unit-conversions"
-        class="tab-panel"
-        role="tabpanel"
-        aria-labelledby="tab-unit-conversions"
-        tabindex="0"
-      >
-        <label class="calc-label" for="ucCategory">Conversion Type:</label>
-        <select id="ucCategory">
-          <option value="flow">Flow</option>
-          <option value="pressure">Pressure</option>
-          <option value="force">Force</option>
-          <option value="power">Power</option>
-          <option value="length">Length</option>
-        </select>
+          <label class="calc-label" for="ucFromUnit">From Unit:</label>
+          <select id="ucFromUnit"></select>
 
-        <label class="calc-label" for="ucValue">Value:</label>
-        <input type="number" id="ucValue" min="0" step="any" />
+          <label class="calc-label" for="ucToUnit">To Unit:</label>
+          <select id="ucToUnit"></select>
 
-        <label class="calc-label" for="ucFromUnit">From Unit:</label>
-        <select id="ucFromUnit"></select>
+          <div class="button-row">
+            <button id="convertUnitBtn">Convert</button>
+            <button id="clearUnitConvert">Clear</button>
+          </div>
+          <div id="unitConvertResult"></div>
+        </section>
 
-        <label class="calc-label" for="ucToUnit">To Unit:</label>
-        <select id="ucToUnit"></select>
-
-        <div class="button-row">
-          <button id="convertUnitBtn">Convert</button>
-          <button id="clearUnitConvert">Clear</button>
-        </div>
-        <div id="unitConvertResult"></div>
-      </section>
-
-      <!-- Cylinder Force -->
-      <section
-        id="panel-cylinder-force"
-        class="tab-panel"
-        role="tabpanel"
-        aria-labelledby="tab-cylinder-force"
-        tabindex="0"
-      >
-        <label class="calc-label" for="cylBoreDiameter"
-          >Cylinder Bore Diameter (inches):</label
+        <!-- Cylinder Force -->
+        <section
+          id="sub-panel-cylinder-force"
+          class="sub-panel"
+          role="tabpanel"
+          aria-labelledby="sub-tab-cylinder-force"
+          tabindex="0"
         >
-        <input type="number" id="cylBoreDiameter" min="0" step="any" />
+          <label class="calc-label" for="cylBoreDiameter"
+            >Cylinder Bore Diameter (inches):</label
+          >
+          <input type="number" id="cylBoreDiameter" min="0" step="any" />
 
-        <label class="calc-label" for="cylPressure">Pressure (psi):</label>
-        <input type="number" id="cylPressure" min="0" step="any" />
+          <label class="calc-label" for="cylPressure">Pressure (psi):</label>
+          <input type="number" id="cylPressure" min="0" step="any" />
 
-        <div class="button-row">
-          <button id="calcCylinderForceBtn">Calculate Force (lbf)</button>
-          <button id="clearCylinderForce">Clear</button>
-        </div>
-        <div id="cylinderForceResult"></div>
-      </section>
+          <div class="button-row">
+            <button id="calcCylinderForceBtn">Calculate Force (lbf)</button>
+            <button id="clearCylinderForce">Clear</button>
+          </div>
+          <div id="cylinderForceResult"></div>
+        </section>
 
-      <!-- Pump Power -->
-      <section
-        id="panel-pump-power"
-        class="tab-panel"
-        role="tabpanel"
-        aria-labelledby="tab-pump-power"
-        tabindex="0"
-      >
-        <label class="calc-label" for="pumpFlow">Flow Rate (GPM):</label>
-        <input type="number" id="pumpFlow" min="0" step="any" />
+        <!-- Pump Power -->
+        <section
+          id="sub-panel-pump-power"
+          class="sub-panel"
+          role="tabpanel"
+          aria-labelledby="sub-tab-pump-power"
+          tabindex="0"
+        >
+          <label class="calc-label" for="pumpFlow">Flow Rate (GPM):</label>
+          <input type="number" id="pumpFlow" min="0" step="any" />
 
-        <label class="calc-label" for="pumpPressure">Pressure (psi):</label>
-        <input type="number" id="pumpPressure" min="0" step="any" />
+          <label class="calc-label" for="pumpPressure">Pressure (psi):</label>
+          <input type="number" id="pumpPressure" min="0" step="any" />
 
-        <label class="calc-label" for="pumpEfficiency">Efficiency (%):</label>
-        <input
-          type="number"
-          id="pumpEfficiency"
-          min="1"
-          max="100"
-          step="any"
-          value="85"
-        />
+          <label class="calc-label" for="pumpEfficiency">Efficiency (%):</label>
+          <input
+            type="number"
+            id="pumpEfficiency"
+            min="1"
+            max="100"
+            step="any"
+            value="85"
+          />
 
-        <div class="button-row">
-          <button id="calcPumpPowerBtn">Calculate Power (HP)</button>
-          <button id="clearPumpPower">Clear</button>
-        </div>
-        <div id="pumpPowerResult"></div>
+          <div class="button-row">
+            <button id="calcPumpPowerBtn">Calculate Power (HP)</button>
+            <button id="clearPumpPower">Clear</button>
+          </div>
+          <div id="pumpPowerResult"></div>
+        </section>
       </section>
 
       <!-- BOM Comparator -->
