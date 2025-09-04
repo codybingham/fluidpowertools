@@ -684,12 +684,22 @@
   function renderBom() {
     if (!fuzzyBomListEl || !fuzzyBomTopbarEl) return;
     fuzzyBomListEl.innerHTML = '';
-    for (const item of fuzzyBom) {
-      const div = document.createElement('div');
-      const safe = (item.desc || '').replace(/</g, '&lt;');
-      div.innerHTML = `<strong>${item.pn || ''}</strong> ` +
-        `<span class="meta">${safe}</span>`;
-      fuzzyBomListEl.appendChild(div);
+    if (fuzzyBom.length) {
+      const table = document.createElement('table');
+      const thead = document.createElement('thead');
+      thead.innerHTML =
+        '<tr><th>Part Number</th><th>Description</th></tr>';
+      table.appendChild(thead);
+      const tbody = document.createElement('tbody');
+      for (const item of fuzzyBom) {
+        const tr = document.createElement('tr');
+        const safe = (item.desc || '').replace(/</g, '&lt;');
+        tr.innerHTML = `<td>${item.pn || ''}</td>` +
+          `<td>${safe}</td>`;
+        tbody.appendChild(tr);
+      }
+      table.appendChild(tbody);
+      fuzzyBomListEl.appendChild(table);
     }
     const show = fuzzyBom.length > 0;
     fuzzyBomTopbarEl.style.display = show ? 'flex' : 'none';
