@@ -140,6 +140,29 @@ h3 {
   background: #2980b9;
   color: #fff;
   font-weight: 600;
+  cursor: pointer;
+}
+
+#panel-part-lookup-fuzzy-bom .bom th.row-num {
+  width: 30px;
+  background: #e0e0e0;
+  cursor: pointer;
+  user-select: none;
+}
+
+#panel-part-lookup-fuzzy-bom .bom td input {
+  width: 60px;
+  border: 1px solid #d1d9e6;
+  padding: 2px 4px;
+}
+
+#panel-part-lookup-fuzzy-bom .bom .selected-col {
+  background: #dfe6e9;
+}
+
+#panel-part-lookup-fuzzy-bom .bom .selected-row > th,
+#panel-part-lookup-fuzzy-bom .bom .selected-row > td {
+  background: #ffeaa7;
 }
 
 /* --- Calculator common styles --- */
