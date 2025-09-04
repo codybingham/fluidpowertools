@@ -593,6 +593,8 @@
     '#panel-part-lookup-fuzzy-bom .topbar'
   );
   const fuzzyBomClearBtn = document.getElementById('fuzzyBomClear');
+  const fuzzySendOldBtn = document.getElementById('fuzzySendOld');
+  const fuzzySendNewBtn = document.getElementById('fuzzySendNew');
   let fuzzySelection = null;
   let fuzzyBomLast = [];
   let fuzzyBom = [];
@@ -694,6 +696,20 @@
       c.classList.remove('selected-cell')
     );
     fuzzySelection = null;
+  }
+
+  function sendFuzzyBom(target) {
+    const lines = fuzzyBom
+      .filter(it => it.pn)
+      .map(it => `${it.pn}\t${it.qty}`);
+    const text = lines.join('\n');
+    if (target === 'old') {
+      oldBOMEl.value = text;
+      localStorage.setItem('oldBOM', text);
+    } else if (target === 'new') {
+      newBOMEl.value = text;
+      localStorage.setItem('newBOM', text);
+    }
   }
 
   function renderBom() {
@@ -925,6 +941,16 @@
     fuzzyBomClearBtn.addEventListener('click', () => {
       fuzzyBom = [];
       renderBom();
+    });
+  }
+  if (fuzzySendOldBtn) {
+    fuzzySendOldBtn.addEventListener('click', () => {
+      sendFuzzyBom('old');
+    });
+  }
+  if (fuzzySendNewBtn) {
+    fuzzySendNewBtn.addEventListener('click', () => {
+      sendFuzzyBom('new');
     });
   }
 
