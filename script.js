@@ -899,11 +899,18 @@
         `<td><button class="add">Add</button></td>`;
       const btn = tr.querySelector('button.add');
       btn.addEventListener('click', () => {
-        fuzzyBom.push({
-          pn: row.part_number,
-          desc: row.description,
-          qty: 1
-        });
+        const existing = fuzzyBom.find(
+          it => it.pn === row.part_number
+        );
+        if (existing) {
+          existing.qty += 1;
+        } else {
+          fuzzyBom.push({
+            pn: row.part_number,
+            desc: row.description,
+            qty: 1
+          });
+        }
         renderBom();
       });
       tbody.appendChild(tr);
