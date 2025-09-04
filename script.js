@@ -593,7 +593,7 @@
     '#panel-part-lookup-fuzzy-bom .topbar'
   );
   const fuzzyBomClearBtn = document.getElementById('fuzzyBomClear');
-  let fuzzySelectedCol = -1;
+  let fuzzySelection = null;
   let fuzzyBomLast = [];
   let fuzzyBom = [];
   try {
@@ -688,22 +688,16 @@
   function clearBomSelection(table) {
     const sel = window.getSelection();
     if (sel) sel.removeAllRanges();
-    table.querySelectorAll('.selected-col').forEach(c =>
-      c.classList.remove('selected-col')
-    );
-    table.querySelectorAll('.selected-row').forEach(r =>
-      r.classList.remove('selected-row')
-    );
     table.querySelectorAll('.selected-cell').forEach(c =>
       c.classList.remove('selected-cell')
     );
-    fuzzySelectedCol = -1;
+    fuzzySelection = null;
   }
 
   function renderBom() {
     if (!fuzzyBomListEl || !fuzzyBomTopbarEl) return;
     fuzzyBomListEl.innerHTML = '';
-    fuzzySelectedCol = -1;
+    fuzzySelection = null;
     if (fuzzyBom.length) {
       const table = document.createElement('table');
       const thead = document.createElement('thead');
@@ -713,59 +707,104 @@
       const tbody = document.createElement('tbody');
       fuzzyBom.forEach((item, idx) => {
         const tr = document.createElement('tr');
+        tr.dataset.row = idx;
         const safe = (item.desc || '').replace(/</g, '&lt;');
         tr.innerHTML =
           `<th class="row-num">${idx + 1}</th>` +
-          `<td>${item.pn || ''}</td>` +
-          `<td>${safe}</td>` +
-          `<td><input type="number" min="0" value="${item.qty}"></td>`;
+          `<td data-col="0">${item.pn || ''}</td>` +
+          `<td data-col="1">${safe}</td>` +
+          `<td data-col="2"><input type="number" min="0" ` +
+          `value="${item.qty}"></td>`;
         const input = tr.querySelector('input');
         input.addEventListener('input', () => {
           item.qty = parseFloat(input.value) || 0;
           localStorage.setItem('fuzzyBom', JSON.stringify(fuzzyBom));
         });
-        tr.querySelectorAll('td').forEach(td => {
-          td.addEventListener('click', () => {
-            clearBomSelection(table);
-            td.classList.add('selected-cell');
-            const inp = td.querySelector('input');
-            if (inp) {
-              inp.focus();
-              inp.select();
-            } else {
-              const range = document.createRange();
-              range.selectNodeContents(td);
-              const sel = window.getSelection();
-              sel.removeAllRanges();
-              sel.addRange(range);
-            }
-          });
-        });
-        const rowHeader = tr.querySelector('th.row-num');
-        rowHeader.addEventListener('click', () => {
-          clearBomSelection(table);
-          tr.classList.add('selected-row');
-          const range = document.createRange();
-          range.selectNodeContents(tr);
-          const sel = window.getSelection();
-          sel.removeAllRanges();
-          sel.addRange(range);
+        tr.querySelectorAll('td').forEach((td, cIdx) => {
+          td.dataset.row = idx;
+          td.dataset.col = cIdx;
         });
         tbody.appendChild(tr);
       });
       table.appendChild(tbody);
-      const headers = table.querySelectorAll('thead th');
-      headers.forEach((th, i) => {
-        if (i === 0) return;
-        th.addEventListener('click', () => {
-          clearBomSelection(table);
-          fuzzySelectedCol = i;
-          table.querySelectorAll('tr').forEach(row => {
-            const cell = row.children[i];
-            if (cell) cell.classList.add('selected-col');
-          });
-        });
+
+      let isSel = false;
+      let start = null;
+
+      function highlight(startPos, endPos) {
+        clearBomSelection(table);
+        if (!startPos || !endPos) return;
+        const minR = Math.min(startPos.row, endPos.row);
+        const maxR = Math.max(startPos.row, endPos.row);
+        const minC = Math.min(startPos.col, endPos.col);
+        const maxC = Math.max(startPos.col, endPos.col);
+        const rows = table.querySelectorAll('tbody tr');
+        for (let r = minR; r <= maxR; r++) {
+          const row = rows[r];
+          if (!row) continue;
+          const cells = row.querySelectorAll('td');
+          for (let c = minC; c <= maxC; c++) {
+            const cell = cells[c];
+            if (cell) cell.classList.add('selected-cell');
+          }
+        }
+        fuzzySelection = {
+          startRow: minR,
+          startCol: minC,
+          endRow: maxR,
+          endCol: maxC
+        };
+      }
+
+      table.addEventListener('mousedown', e => {
+        const cell = e.target.closest('td');
+        if (!cell) return;
+        isSel = true;
+        start = {
+          row: parseInt(cell.dataset.row, 10),
+          col: parseInt(cell.dataset.col, 10)
+        };
+        highlight(start, start);
+        e.preventDefault();
       });
+
+      table.addEventListener('mouseover', e => {
+        if (!isSel) return;
+        const cell = e.target.closest('td');
+        if (!cell) return;
+        const pos = {
+          row: parseInt(cell.dataset.row, 10),
+          col: parseInt(cell.dataset.col, 10)
+        };
+        highlight(start, pos);
+      });
+
+      table.addEventListener('mouseup', e => {
+        if (!isSel) return;
+        isSel = false;
+        const cell = e.target.closest('td');
+        if (!cell) return;
+        const pos = {
+          row: parseInt(cell.dataset.row, 10),
+          col: parseInt(cell.dataset.col, 10)
+        };
+        highlight(start, pos);
+        const cells = table.querySelectorAll('.selected-cell');
+        if (cells.length === 1) {
+          const inp = cells[0].querySelector('input');
+          if (inp) {
+            inp.focus();
+            inp.select();
+          } else {
+            const range = document.createRange();
+            range.selectNodeContents(cells[0]);
+            const sel = window.getSelection();
+            sel.removeAllRanges();
+            sel.addRange(range);
+          }
+        }
+      });
+
       fuzzyBomListEl.appendChild(table);
     }
     const show = fuzzyBom.length > 0;
@@ -818,17 +857,28 @@
   }
 
   document.addEventListener('copy', e => {
-    if (fuzzySelectedCol < 0) return;
+    if (!fuzzySelection) return;
     if (window.getSelection().toString()) return;
     const table = fuzzyBomListEl.querySelector('table');
     if (!table || !e.clipboardData) return;
     const rows = table.querySelectorAll('tbody tr');
-    const lines = Array.from(rows).map(r => {
-      const cell = r.children[fuzzySelectedCol];
-      if (!cell) return '';
-      const inp = cell.querySelector('input');
-      return inp ? inp.value : cell.textContent.trim();
-    });
+    const lines = [];
+    for (let r = fuzzySelection.startRow; r <= fuzzySelection.endRow; r++) {
+      const row = rows[r];
+      if (!row) continue;
+      const cells = row.querySelectorAll('td');
+      const line = [];
+      for (let c = fuzzySelection.startCol; c <= fuzzySelection.endCol; c++) {
+        const cell = cells[c];
+        if (!cell) {
+          line.push('');
+          continue;
+        }
+        const inp = cell.querySelector('input');
+        line.push(inp ? inp.value : cell.textContent.trim());
+      }
+      lines.push(line.join('\t'));
+    }
     e.clipboardData.setData('text/plain', lines.join('\n'));
     e.preventDefault();
   });
