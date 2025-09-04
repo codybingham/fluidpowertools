@@ -1,0 +1,11 @@
+{
+  "name": "xlsx-to-json",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:json": "node scripts/xlsx_to_json.mjs"
+  },
+  "dependencies": {
+    "xlsx": "0.18.5"
+  }
+}
