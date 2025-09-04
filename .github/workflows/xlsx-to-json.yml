@@ -1,17 +1,22 @@
+# .github/workflows/xlsx-to-json.yml
 name: XLSX → items_export_slim.json
 
 on:
   workflow_dispatch: {}
   push:
-    paths: ["data/**/*.csv"]   # runs when you upload a new export
+    paths: ["data/**/*.xlsx", "data/**/*.csv", "data/**/*.csv.gz"]
   schedule:
-    - cron: "0 12 * * MON"      # weekly (12:00 UTC ≈ 6am Boise during DST)
+    - cron: "0 12 * * MON"
 
 jobs:
   build-json:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: List data folder
+        run: |
+          echo "data/ contents:"; ls -lah data || true
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -21,12 +26,18 @@ jobs:
       - name: Install deps
         run: npm ci || npm i
 
-      - name: Convert newest XLSX -> slim JSON
+      - name: Convert newest file -> slim JSON
+        if: ${{ hashFiles('data/**/*.xlsx', 'data/**/*.csv', 'data/**/*.csv.gz') != '' }}
         env:
-          PREFIXES: "60,30,73,13,HA,HK"   # "" to disable filtering
+          PREFIXES: "60,30,73,13,HA,HK"   # "" to disable
         run: npm run build:json
 
+      - name: No input found (skip)
+        if: ${{ hashFiles('data/**/*.xlsx', 'data/**/*.csv', 'data/**/*.csv.gz') == '' }}
+        run: echo "No .xlsx/.csv(.gz) in /data. Skipping."
+
       - name: Commit updated JSON
+        if: ${{ hashFiles('items_export_slim.json') != '' }}
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore: update items_export_slim.json"
