@@ -160,6 +160,37 @@ h3 {
   background: #a3d5ff;
 }
 
+#panel-part-lookup-fuzzy-bom .results table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#panel-part-lookup-fuzzy-bom .results th,
+#panel-part-lookup-fuzzy-bom .results td {
+  border: 1px solid #d1d9e6;
+  padding: 6px 8px;
+  text-align: left;
+}
+
+#panel-part-lookup-fuzzy-bom .results th {
+  background: #2980b9;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#panel-part-lookup-fuzzy-bom .bom button.remove {
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+#panel-part-lookup-fuzzy-bom .bom button.remove:hover {
+  background: #c0392b;
+}
+
 /* --- Calculator common styles --- */
 label {
   font-weight: 600;
