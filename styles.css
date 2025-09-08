@@ -131,6 +131,11 @@ h3 {
   border: 1px solid #d1d9e6;
   border-radius: 6px;
 }
+#panel-part-lookup-fuzzy-bom .searchbar select {
+  padding: 12px 14px;
+  border: 1px solid #d1d9e6;
+  border-radius: 6px;
+}
 #panel-part-lookup-fuzzy-bom .results {
   margin-top: 14px;
 }

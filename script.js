@@ -643,6 +643,7 @@
   const fuzzyBomTopbarEl = document.querySelector(
     '#panel-part-lookup-fuzzy-bom .topbar'
   );
+  const fuzzyBomFilterEl = document.getElementById('fuzzyBomFilter');
   const fuzzyBomClearBtn = document.getElementById('fuzzyBomClear');
   const fuzzySendOldBtn = document.getElementById('fuzzySendOld');
   const fuzzySendNewBtn = document.getElementById('fuzzySendNew');
@@ -727,8 +728,15 @@
     const nq = normalize(q);
     const tokens = nq.split(' ').filter(Boolean);
     if (tokens.length === 0) return [];
+    const filter = (fuzzyBomFilterEl && fuzzyBomFilterEl.value) || '';
     const scored = [];
     for (const row of itemsData || []) {
+      if (filter) {
+        const prefix = (row.part_number || '')
+          .toUpperCase()
+          .slice(0, 2);
+        if (prefix !== filter) continue;
+      }
       const s = scoreRow(
         tokens,
         row.description || '',
@@ -988,13 +996,17 @@
 
   renderBom();
 
-  if (fuzzyBomInput) {
-    fuzzyBomInput.addEventListener('input', () => {
-      loadItems().then(() => {
-        fuzzyBomLast = fuzzySearch(fuzzyBomInput.value, 200);
-        renderFuzzyBom(fuzzyBomLast, fuzzyBomInput.value);
-      });
+  function updateFuzzySearch() {
+    loadItems().then(() => {
+      fuzzyBomLast = fuzzySearch(fuzzyBomInput.value, 200);
+      renderFuzzyBom(fuzzyBomLast, fuzzyBomInput.value);
     });
+  }
+  if (fuzzyBomInput) {
+    fuzzyBomInput.addEventListener('input', updateFuzzySearch);
+  }
+  if (fuzzyBomFilterEl) {
+    fuzzyBomFilterEl.addEventListener('change', updateFuzzySearch);
   }
   if (fuzzyBomClearBtn) {
     fuzzyBomClearBtn.addEventListener('click', () => {
