@@ -528,6 +528,25 @@ th.sort-desc::after {
 }
 #ptControls label {
   font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+#ptControls button {
+  padding: 4px 8px;
+  font-size: 0.85rem;
+  border: none;
+  border-radius: 4px;
+  background: #2980b9;
+  color: #fff;
+  cursor: pointer;
+}
+#ptControls button:hover {
+  background: #1f618d;
+}
+#ptControls select {
+  padding: 3px 5px;
+  font-size: 0.85rem;
 }
 #ptTree ul {
   list-style: none;
@@ -564,6 +583,10 @@ th.sort-desc::after {
 }
 .pt-mini {
   padding: 4px 8px;
+  font-size: 0.8rem;
+}
+.pt-row select {
+  padding: 2px 4px;
   font-size: 0.8rem;
 }
 .status-not_started {

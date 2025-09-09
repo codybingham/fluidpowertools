@@ -70,6 +70,12 @@
     completed: 1
   };
 
+  const substatusProgress = {
+    modeled: 0.6,
+    quoted: 0.75,
+    drafted: 0.9
+  };
+
   const projSel = document.getElementById('ptProject');
   const filterSel = document.getElementById('ptFilter');
   const treeEl = document.getElementById('ptTree');
@@ -183,7 +189,14 @@
 
   function progress(node) {
     if (!node.children.length) {
-      node.progress = statusProgress[node.status] || 0;
+      if (node.status === 'work_in_progress') {
+        node.progress =
+          substatusProgress[node.substatus] ||
+          statusProgress[node.status] ||
+          0;
+      } else {
+        node.progress = statusProgress[node.status] || 0;
+      }
     } else {
       let sum = 0;
       for (const c of node.children) sum += progress(c);
@@ -264,7 +277,11 @@
     }
     statusSel.addEventListener('change', e => {
       node.status = e.target.value;
-      if (node.status !== 'work_in_progress') node.substatus = null;
+      if (node.status === 'work_in_progress') {
+        node.substatus = node.substatus || 'modeled';
+      } else {
+        node.substatus = null;
+      }
       renderTree();
     });
     row.appendChild(statusSel);
@@ -282,7 +299,7 @@
       node.status === 'work_in_progress' ? '' : 'none';
     subSel.addEventListener('change', e => {
       node.substatus = e.target.value;
-      saveProject();
+      renderTree();
     });
     row.appendChild(subSel);
 
