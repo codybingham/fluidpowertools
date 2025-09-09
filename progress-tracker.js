@@ -1,66 +1,73 @@
 // Progress Tracker module
 (function () {
   const sampleProjects = {
-    "4735": [
-      {
-        id: "A123",
-        description: "Boom Assembly",
-        parent_id: null,
-        status: "work_in_progress",
-        substatus: "modeled",
-        notes: [
-          { date: "2025-09-09", text: "Initial modeling started" }
-        ]
-      },
-      {
-        id: "A123-1",
-        description: "Arm",
-        parent_id: "A123",
-        status: "not_started",
-        substatus: null,
-        notes: []
-      },
-      {
-        id: "A123-2",
-        description: "Hydraulic Cylinder",
-        parent_id: "A123",
-        status: "completed",
-        substatus: null,
-        notes: [
-          { date: "2025-09-11", text: "Purchased" }
-        ]
-      }
-    ],
-    "celery_harvester": [
-      {
-        id: "C1",
-        description: "Main Frame",
-        parent_id: null,
-        status: "not_started",
-        substatus: null,
-        notes: []
-      },
-      {
-        id: "C1-1",
-        description: "Left Wheel",
-        parent_id: "C1",
-        status: "not_started",
-        substatus: null,
-        notes: []
-      },
-      {
-        id: "C1-2",
-        description: "Right Wheel",
-        parent_id: "C1",
-        status: "work_in_progress",
-        substatus: "quoted",
-        notes: []
-      }
-    ]
+    "4735": {
+      notes: "",
+      items: [
+        {
+          id: "A123",
+          description: "Boom Assembly",
+          parent_id: null,
+          status: "work_in_progress",
+          substatus: "modeled",
+          notes: [
+            { date: "2025-09-09", text: "Initial modeling started" }
+          ]
+        },
+        {
+          id: "A123-1",
+          description: "Arm",
+          parent_id: "A123",
+          status: "not_started",
+          substatus: null,
+          notes: []
+        },
+        {
+          id: "A123-2",
+          description: "Hydraulic Cylinder",
+          parent_id: "A123",
+          status: "completed",
+          substatus: null,
+          notes: [
+            { date: "2025-09-11", text: "Purchased" }
+          ]
+        }
+      ]
+    },
+    "celery_harvester": {
+      notes: "",
+      items: [
+        {
+          id: "C1",
+          description: "Main Frame",
+          parent_id: null,
+          status: "not_started",
+          substatus: null,
+          notes: []
+        },
+        {
+          id: "C1-1",
+          description: "Left Wheel",
+          parent_id: "C1",
+          status: "not_started",
+          substatus: null,
+          notes: []
+        },
+        {
+          id: "C1-2",
+          description: "Right Wheel",
+          parent_id: "C1",
+          status: "work_in_progress",
+          substatus: "quoted",
+          notes: []
+        }
+      ]
+    }
   };
 
   let curName = null;
   let items = [];
+  let projectNotes = '';
   let open = new Set();
   let filter = 'all';
 
@@ -80,6 +87,7 @@
   const filterSel = document.getElementById('ptFilter');
   const treeEl = document.getElementById('ptTree');
   const importInput = document.getElementById('ptImport');
+  const notesEl = document.getElementById('ptNotes');
 
   document
     .getElementById('ptNewProject')
@@ -97,6 +105,10 @@
     .getElementById('ptImportBtn')
     .addEventListener('click', () => importInput.click());
   importInput.addEventListener('change', handleImport);
+  notesEl.addEventListener('input', e => {
+    projectNotes = e.target.value;
+    saveProject();
+  });
   projSel.addEventListener('change', () => loadProject(projSel.value));
   filterSel.addEventListener('change', () => {
     filter = filterSel.value;
@@ -136,14 +148,28 @@
     curName = name;
     const key = 'project_' + name;
     const data = localStorage.getItem(key);
-    items = data ? JSON.parse(data) : [];
+    if (data) {
+      const parsed = JSON.parse(data);
+      if (Array.isArray(parsed)) {
+        items = parsed;
+        projectNotes = '';
+      } else {
+        items = parsed.items || [];
+        projectNotes = parsed.notes || '';
+      }
+    } else {
+      items = [];
+      projectNotes = '';
+    }
+    notesEl.value = projectNotes;
     renderTree();
   }
 
   function saveProject() {
     if (!curName) return;
     const key = 'project_' + curName;
-    localStorage.setItem(key, JSON.stringify(items));
+    const data = { items, notes: projectNotes };
+    localStorage.setItem(key, JSON.stringify(data));
   }
 
   function newProject() {
@@ -154,7 +180,8 @@
       alert('Exists.');
       return;
     }
-    localStorage.setItem(key, '[]');
+    const data = { items: [], notes: '' };
+    localStorage.setItem(key, JSON.stringify(data));
     populateProjects();
     projSel.value = name;
     loadProject(name);
@@ -239,7 +266,20 @@
     captureOpen();
     const roots = buildTree();
     for (const r of roots) progress(r);
-    treeEl.innerHTML = '<ul class="tree" id="ptRoot"></ul>';
+    treeEl.innerHTML = `
+      <div class="pt-header pt-row">
+        <span></span>
+        <span>ID</span>
+        <span>Description</span>
+        <span>Progress</span>
+        <span>Status</span>
+        <span>Substatus</span>
+        <span>Notes</span>
+        <span>Add</span>
+        <span>Del</span>
+      </div>
+      <ul class="tree" id="ptRoot"></ul>
+    `;
     const rootUl = document.getElementById('ptRoot');
     for (const r of roots) rootUl.appendChild(renderNode(r));
     restoreOpen();
@@ -473,7 +513,7 @@
 
   function exportProject() {
     saveProject();
-    const data = { name: curName, items };
+    const data = { name: curName, notes: projectNotes, items };
     const blob =
       new Blob([JSON.stringify(data, null, 2)], {
         type: 'application/json'
@@ -499,7 +539,7 @@
         }
         localStorage.setItem(
           'project_' + data.name,
-          JSON.stringify(data.items)
+          JSON.stringify({ items: data.items, notes: data.notes || '' })
         );
         populateProjects();
         projSel.value = data.name;
