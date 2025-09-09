@@ -276,11 +276,14 @@
       statusSel.appendChild(opt);
     }
     statusSel.addEventListener('change', e => {
-      node.status = e.target.value;
-      if (node.status === 'work_in_progress') {
-        node.substatus = node.substatus || 'modeled';
-      } else {
-        node.substatus = null;
+      const item = items.find(it => it.id === node.id);
+      if (item) {
+        item.status = e.target.value;
+        if (item.status === 'work_in_progress') {
+          item.substatus = item.substatus || 'modeled';
+        } else {
+          item.substatus = null;
+        }
       }
       renderTree();
     });
@@ -298,7 +301,8 @@
     subSel.style.display =
       node.status === 'work_in_progress' ? '' : 'none';
     subSel.addEventListener('change', e => {
-      node.substatus = e.target.value;
+      const item = items.find(it => it.id === node.id);
+      if (item) item.substatus = e.target.value;
       renderTree();
     });
     row.appendChild(subSel);
@@ -367,9 +371,14 @@
   }
 
   function addItem(parentId) {
+    const id = prompt('Item number?');
+    if (!id) return;
+    if (items.some(it => it.id === id)) {
+      alert('Exists.');
+      return;
+    }
     const desc = prompt('Item description?');
     if (!desc) return;
-    const id = String(Date.now());
     items.push({
       id,
       description: desc,
