@@ -514,3 +514,67 @@ th.sort-desc::after {
     overflow-x: auto;
   }
 }
+
+/* Progress Tracker */
+#panel-progress-tracker {
+  margin-top: 10px;
+}
+#ptControls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+#ptControls label {
+  font-weight: 600;
+}
+#ptTree ul {
+  list-style: none;
+  padding-left: 20px;
+}
+.pt-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 0;
+}
+.pt-desc {
+  flex: 1;
+}
+.pt-progress {
+  width: 50px;
+  text-align: right;
+}
+.pt-toggle {
+  cursor: pointer;
+  width: 1em;
+}
+.pt-toggle.empty {
+  visibility: hidden;
+}
+.pt-notes {
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin-left: 20px;
+  margin-bottom: 5px;
+}
+.pt-notes.hidden {
+  display: none;
+}
+.pt-mini {
+  padding: 4px 8px;
+  font-size: 0.8rem;
+}
+.status-not_started {
+  background: #f8d7da;
+}
+.status-work_in_progress {
+  background: #fff3cd;
+}
+.status-completed {
+  background: #d4edda;
+}
+.pt-collapsed > ul {
+  display: none;
+}
