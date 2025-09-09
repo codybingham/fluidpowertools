@@ -225,7 +225,7 @@
         : notStarted
         ? 'not_started'
         : 'work_in_progress';
-      node.substatus = null;
+      if (node.status !== 'work_in_progress') node.substatus = null;
     }
     const item = items.find(it => it.id === node.id);
     if (item) {
@@ -339,7 +339,7 @@
     subSel.addEventListener('change', e => {
       const item = items.find(it => it.id === node.id);
       if (item) {
-        if (e.target.value === 'drafted') {
+        if (e.target.value === 'drafted' && !node.children.length) {
           item.status = 'completed';
           item.substatus = null;
         } else {

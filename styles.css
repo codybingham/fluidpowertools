@@ -523,7 +523,7 @@ th.sort-desc::after {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  align-items: center;
+  align-items: flex-end;
   margin-bottom: 15px;
 }
 #ptControls label {
@@ -548,15 +548,20 @@ th.sort-desc::after {
   padding: 3px 5px;
   font-size: 0.85rem;
 }
+#ptTree {
+  overflow-x: auto;
+}
 #ptTree ul {
   list-style: none;
   padding-left: 20px;
 }
 .pt-row {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1em 80px 1fr 50px 110px 110px auto auto auto;
   align-items: center;
   gap: 6px;
   padding: 2px 0;
+  min-width: 700px;
 }
 .pt-id {
   width: 80px;
@@ -589,6 +594,7 @@ th.sort-desc::after {
   font-size: 0.8rem;
 }
 .pt-row select {
+  width: 100%;
   padding: 2px 4px;
   font-size: 0.8rem;
 }
