@@ -62,6 +62,16 @@
         >
           Reference
         </div>
+        <div
+          class="tab"
+          role="tab"
+          tabindex="-1"
+          aria-selected="false"
+          aria-controls="panel-progress-tracker"
+          id="tab-progress-tracker"
+        >
+          Progress Tracker
+        </div>
       </div>
 
       <!-- Calculators -->
@@ -477,8 +487,45 @@
           </tbody>
         </table>
       </section>
+      <!-- Progress Tracker -->
+      <section
+        id="panel-progress-tracker"
+        class="tab-panel"
+        role="tabpanel"
+        aria-labelledby="tab-progress-tracker"
+        tabindex="0"
+      >
+        <div id="ptControls" class="pt-controls">
+          <label>
+            Project:
+            <select id="ptProject"></select>
+          </label>
+          <button id="ptNewProject">New Project</button>
+          <button id="ptDeleteProject">Delete Project</button>
+          <label>
+            Filter:
+            <select id="ptFilter">
+              <option value="all">All</option>
+              <option value="not_started">Not Started</option>
+              <option value="work_in_progress">In Progress</option>
+              <option value="completed">Completed</option>
+            </select>
+          </label>
+          <button id="ptAddRoot">Add Root Item</button>
+          <button id="ptExport">Export JSON</button>
+          <button id="ptImportBtn">Import JSON</button>
+          <input
+            id="ptImport"
+            type="file"
+            accept=".json"
+            style="display:none"
+          />
+        </div>
+        <div id="ptTree"></div>
+      </section>
     </div>
 
     <script src="script.js"></script>
+    <script src="progress-tracker.js"></script>
   </body>
 </html>
