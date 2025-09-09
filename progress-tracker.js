@@ -71,9 +71,9 @@
   };
 
   const substatusProgress = {
-    modeled: 0.6,
-    quoted: 0.75,
-    drafted: 0.9
+    '': 0,
+    modeled: 0.33,
+    quoted: 0.66
   };
 
   const projSel = document.getElementById('ptProject');
@@ -190,18 +190,47 @@
   function progress(node) {
     if (!node.children.length) {
       if (node.status === 'work_in_progress') {
-        node.progress =
-          substatusProgress[node.substatus] ||
-          statusProgress[node.status] ||
-          0;
+        const ss = node.substatus || '';
+        if (ss === 'drafted') {
+          node.status = 'completed';
+          node.substatus = null;
+          node.progress = 1;
+        } else {
+          const subprog =
+            Object.prototype.hasOwnProperty.call(substatusProgress, ss)
+              ? substatusProgress[ss]
+              : undefined;
+          node.progress =
+            subprog !== undefined
+              ? subprog
+              : statusProgress[node.status] || 0;
+          node.substatus = ss;
+        }
       } else {
         node.progress = statusProgress[node.status] || 0;
       }
     } else {
       let sum = 0;
-      for (const c of node.children) sum += progress(c);
+      let completed = true;
+      let notStarted = true;
+      for (const c of node.children) {
+        sum += progress(c);
+        if (c.status !== 'completed') completed = false;
+        if (c.status !== 'not_started') notStarted = false;
+      }
       node.progress =
         node.children.length ? sum / node.children.length : 0;
+      node.status = completed
+        ? 'completed'
+        : notStarted
+        ? 'not_started'
+        : 'work_in_progress';
+      node.substatus = null;
+    }
+    const item = items.find(it => it.id === node.id);
+    if (item) {
+      item.status = node.status;
+      item.substatus = node.substatus;
     }
     return node.progress;
   }
@@ -253,6 +282,11 @@
     }
     row.appendChild(toggle);
 
+    const idSpan = document.createElement('span');
+    idSpan.className = 'pt-id';
+    idSpan.textContent = node.id;
+    row.appendChild(idSpan);
+
     const desc = document.createElement('span');
     desc.className = 'pt-desc';
     desc.textContent = node.description;
@@ -280,7 +314,7 @@
       if (item) {
         item.status = e.target.value;
         if (item.status === 'work_in_progress') {
-          item.substatus = item.substatus || 'modeled';
+          item.substatus = item.substatus || '';
         } else {
           item.substatus = null;
         }
@@ -291,18 +325,27 @@
 
     const subSel = document.createElement('select');
     subSel.className = 'pt-substatus';
-    for (const s of ['modeled', 'quoted', 'drafted']) {
+    for (const s of ['', 'modeled', 'quoted', 'drafted']) {
       const opt = document.createElement('option');
       opt.value = s;
-      opt.textContent = s.charAt(0).toUpperCase() + s.slice(1);
-      if (node.substatus === s) opt.selected = true;
+      opt.textContent = s
+        ? s.charAt(0).toUpperCase() + s.slice(1)
+        : '';
+      if ((node.substatus || '') === s) opt.selected = true;
       subSel.appendChild(opt);
     }
     subSel.style.display =
       node.status === 'work_in_progress' ? '' : 'none';
     subSel.addEventListener('change', e => {
       const item = items.find(it => it.id === node.id);
-      if (item) item.substatus = e.target.value;
+      if (item) {
+        if (e.target.value === 'drafted') {
+          item.status = 'completed';
+          item.substatus = null;
+        } else {
+          item.substatus = e.target.value;
+        }
+      }
       renderTree();
     });
     row.appendChild(subSel);

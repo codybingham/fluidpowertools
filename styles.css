@@ -529,7 +529,7 @@ th.sort-desc::after {
 #ptControls label {
   font-weight: 600;
   display: flex;
-  align-items: center;
+  align-items: baseline;
   gap: 4px;
 }
 #ptControls button {
@@ -557,6 +557,9 @@ th.sort-desc::after {
   align-items: center;
   gap: 6px;
   padding: 2px 0;
+}
+.pt-id {
+  width: 80px;
 }
 .pt-desc {
   flex: 1;
