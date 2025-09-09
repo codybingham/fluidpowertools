@@ -574,6 +574,9 @@ th.sort-desc::after {
 }
 .pt-id {
   width: 80px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .pt-desc {
   flex: 1;
@@ -597,6 +600,13 @@ th.sort-desc::after {
 }
 .pt-notes.hidden {
   display: none;
+}
+.pt-notes-block {
+  margin: 10px 0;
+}
+.pt-notes-block textarea {
+  width: 100%;
+  resize: vertical;
 }
 .pt-mini {
   padding: 4px 8px;
@@ -623,4 +633,9 @@ th.sort-desc::after {
 .pt-header {
   font-weight: 600;
   border-bottom: 1px solid #ddd;
+  background: #f5f5f5;
+}
+
+.hidden {
+  display: none;
 }

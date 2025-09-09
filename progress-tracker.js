@@ -88,6 +88,8 @@
   const treeEl = document.getElementById('ptTree');
   const importInput = document.getElementById('ptImport');
   const notesEl = document.getElementById('ptNotes');
+  const notesBlock = document.getElementById('ptProjectNotes');
+  const toggleNotesBtn = document.getElementById('ptToggleNotes');
 
   document
     .getElementById('ptNewProject')
@@ -105,6 +107,10 @@
     .getElementById('ptImportBtn')
     .addEventListener('click', () => importInput.click());
   importInput.addEventListener('change', handleImport);
+  toggleNotesBtn.addEventListener('click', () => {
+    const hidden = notesBlock.classList.toggle('hidden');
+    toggleNotesBtn.textContent = hidden ? 'Show Notes' : 'Hide Notes';
+  });
   notesEl.addEventListener('input', e => {
     projectNotes = e.target.value;
     saveProject();
@@ -269,7 +275,7 @@
     treeEl.innerHTML = `
       <div class="pt-header pt-row">
         <span></span>
-        <span>ID</span>
+        <span>Part Number</span>
         <span>Description</span>
         <span>Progress</span>
         <span>Status</span>
@@ -454,7 +460,7 @@
   }
 
   function addItem(parentId) {
-    const id = prompt('Item number?');
+    const id = prompt('Part number?');
     if (!id) return;
     if (items.some(it => it.id === id)) {
       alert('Exists.');
