@@ -563,6 +563,9 @@ th.sort-desc::after {
   list-style: none;
   padding-left: 20px;
 }
+#ptRoot {
+  padding-left: 0;
+}
 .pt-row {
   display: grid;
   grid-template-columns:
@@ -581,6 +584,10 @@ th.sort-desc::after {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+.pt-parent .pt-id,
+.pt-parent .pt-desc {
+  font-weight: 600;
 }
 .pt-progress {
   text-align: center;
