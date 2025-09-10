@@ -1,70 +1,6 @@
 // Progress Tracker module
 (function () {
-  const sampleProjects = {
-    "4735": {
-      notes: "",
-      items: [
-        {
-          id: "A123",
-          description: "Boom Assembly",
-          parent_id: null,
-          status: "work_in_progress",
-          substatus: "modeled",
-          notes: [
-            { date: "2025-09-09", text: "Initial modeling started" }
-          ]
-        },
-        {
-          id: "A123-1",
-          description: "Arm",
-          parent_id: "A123",
-          status: "not_started",
-          substatus: null,
-          notes: []
-        },
-        {
-          id: "A123-2",
-          description: "Hydraulic Cylinder",
-          parent_id: "A123",
-          status: "completed",
-          substatus: null,
-          notes: [
-            { date: "2025-09-11", text: "Purchased" }
-          ]
-        }
-      ]
-    },
-    "celery_harvester": {
-      notes: "",
-      items: [
-        {
-          id: "C1",
-          description: "Main Frame",
-          parent_id: null,
-          status: "not_started",
-          substatus: null,
-          notes: []
-        },
-        {
-          id: "C1-1",
-          description: "Left Wheel",
-          parent_id: "C1",
-          status: "not_started",
-          substatus: null,
-          notes: []
-        },
-        {
-          id: "C1-2",
-          description: "Right Wheel",
-          parent_id: "C1",
-          status: "work_in_progress",
-          substatus: "quoted",
-          notes: []
-        }
-      ]
-    }
-  };
-
+  
   let curName = null;
   let items = [];
   let projectNotes = '';
@@ -90,6 +26,31 @@
   const notesEl = document.getElementById('ptNotes');
   const notesBlock = document.getElementById('ptProjectNotes');
   const toggleNotesBtn = document.getElementById('ptToggleNotes');
+
+  function updateControls() {
+    const disabled = !curName;
+    [
+      'ptDeleteProject',
+      'ptAddRoot',
+      'ptExport',
+      'ptImportBtn',
+      'ptToggleNotes',
+      'ptFilter',
+      'ptNotes'
+    ].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.disabled = disabled;
+    });
+    if (disabled) {
+      notesBlock.classList.add('hidden');
+      toggleNotesBtn.textContent = 'Show Notes';
+      treeEl.innerHTML =
+        '<p class="pt-empty">Create a project to get started.</p>';
+    } else {
+      notesBlock.classList.remove('hidden');
+      toggleNotesBtn.textContent = 'Hide Notes';
+    }
+  }
 
   document
     .getElementById('ptNewProject')
@@ -121,17 +82,16 @@
     applyFilter();
   });
 
-  initProjects();
-  if (projSel.options.length > 0) loadProject(projSel.value);
+  init();
 
-  function initProjects() {
-    for (const name in sampleProjects) {
-      const key = 'project_' + name;
-      if (!localStorage.getItem(key)) {
-        localStorage.setItem(key, JSON.stringify(sampleProjects[name]));
-      }
+  function init() {
+    const names = populateProjects();
+    if (names.length > 0) {
+      projSel.value = names[0];
+      loadProject(names[0]);
+    } else {
+      updateControls();
     }
-    populateProjects();
   }
 
   function populateProjects() {
@@ -142,12 +102,20 @@
       if (k.startsWith('project_')) names.push(k.slice(8));
     }
     names.sort();
+    const def = document.createElement('option');
+    def.value = '';
+    def.textContent = names.length ? 'Select a project' : 'No projects';
+    def.disabled = true;
+    def.selected = true;
+    projSel.appendChild(def);
     for (const n of names) {
       const opt = document.createElement('option');
       opt.value = n;
       opt.textContent = n;
       projSel.appendChild(opt);
     }
+    projSel.disabled = names.length === 0;
+    return names;
   }
 
   function loadProject(name) {
@@ -169,6 +137,7 @@
     }
     notesEl.value = projectNotes;
     renderTree();
+    updateControls();
   }
 
   function saveProject() {
@@ -199,11 +168,13 @@
     localStorage.removeItem('project_' + curName);
     curName = null;
     items = [];
-    populateProjects();
-    if (projSel.options.length > 0) {
-      loadProject(projSel.options[0].value);
+    const names = populateProjects();
+    if (names.length > 0) {
+      projSel.value = names[0];
+      loadProject(names[0]);
     } else {
-      treeEl.innerHTML = '';
+      notesEl.value = '';
+      updateControls();
     }
   }
 
@@ -287,7 +258,12 @@
       <ul class="tree" id="ptRoot"></ul>
     `;
     const rootUl = document.getElementById('ptRoot');
-    for (const r of roots) rootUl.appendChild(renderNode(r));
+    if (roots.length) {
+      for (const r of roots) rootUl.appendChild(renderNode(r));
+    } else {
+      rootUl.innerHTML =
+        '<li class="pt-empty">Use "Add Root Item" to start.</li>';
+    }
     restoreOpen();
     applyFilter();
     saveProject();
