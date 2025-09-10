@@ -290,6 +290,7 @@
     li.dataset.id = node.id;
     const row = document.createElement('div');
     row.className = 'pt-row status-' + node.status;
+    if (node.children.length) row.classList.add('pt-parent');
 
     const toggle = document.createElement('span');
     toggle.className =
