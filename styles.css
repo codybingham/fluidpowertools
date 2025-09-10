@@ -550,6 +550,10 @@ th.sort-desc::after {
 #ptProjectNotes {
   margin-bottom: 15px;
 }
+#ptOverall {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
 #ptProjectNotes textarea {
   width: 100%;
   padding: 4px;
