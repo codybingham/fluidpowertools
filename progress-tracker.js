@@ -26,6 +26,7 @@
   const notesEl = document.getElementById('ptNotes');
   const notesBlock = document.getElementById('ptProjectNotes');
   const toggleNotesBtn = document.getElementById('ptToggleNotes');
+  const overallEl = document.getElementById('ptOverall');
 
   function updateControls() {
     const disabled = !curName;
@@ -42,6 +43,14 @@
     });
     const importBtn = document.getElementById('ptImportBtn');
     if (importBtn) importBtn.disabled = false;
+    if (overallEl) {
+      if (disabled) {
+        overallEl.textContent = 'Overall Progress: 0%';
+        overallEl.classList.add('hidden');
+      } else {
+        overallEl.classList.remove('hidden');
+      }
+    }
     if (disabled) {
       notesBlock.classList.add('hidden');
       toggleNotesBtn.textContent = 'Show Notes';
@@ -244,6 +253,14 @@
     captureOpen();
     const roots = buildTree();
     for (const r of roots) progress(r);
+    const overall =
+      roots.length
+        ? roots.reduce((s, r) => s + r.progress, 0) / roots.length
+        : 0;
+    if (overallEl) {
+      overallEl.textContent =
+        'Overall Progress: ' + Math.round(overall * 100) + '%';
+    }
     treeEl.innerHTML = `
       <div class="pt-header pt-row">
         <span></span>
