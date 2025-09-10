@@ -33,7 +33,6 @@
       'ptDeleteProject',
       'ptAddRoot',
       'ptExport',
-      'ptImportBtn',
       'ptToggleNotes',
       'ptFilter',
       'ptNotes'
@@ -41,11 +40,13 @@
       const el = document.getElementById(id);
       if (el) el.disabled = disabled;
     });
+    const importBtn = document.getElementById('ptImportBtn');
+    if (importBtn) importBtn.disabled = false;
     if (disabled) {
       notesBlock.classList.add('hidden');
       toggleNotesBtn.textContent = 'Show Notes';
       treeEl.innerHTML =
-        '<p class="pt-empty">Create a project to get started.</p>';
+        '<p class="pt-empty">Create or import a project to get started.</p>';
     } else {
       notesBlock.classList.remove('hidden');
       toggleNotesBtn.textContent = 'Hide Notes';
