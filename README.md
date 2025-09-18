@@ -55,6 +55,17 @@ spreadsheet with the Node script in `scripts/xlsx_to_json.mjs`.
 The script picks the newest file in `data/` and writes `items_export_slim.json`
 sorted by part number.
 
+## Reference guides
+Guides shown in the **Reference** tab live under the `guides/` directory. Each
+guide gets its own folder containing a `body.md` file and any supporting
+images. Run the build script to regenerate the manifest consumed by the site:
+
+```
+npm run build:guides
+```
+
+After recompiling, new guides are automatically listed in the Reference tab.
+
 ## Project structure
 ```
 index.html      Main HTML interface.
