@@ -3,7 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build:json": "node scripts/xlsx_to_json.mjs"
+    "build:json": "node scripts/xlsx_to_json.mjs",
+    "build:guides": "node scripts/build_guides.mjs"
   },
   "dependencies": {
     "xlsx": "0.18.5"
