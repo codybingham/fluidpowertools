@@ -45,11 +45,12 @@ spreadsheet with the Node script in `scripts/xlsx_to_json.mjs`.
 1. Place an `.xlsx`, `.csv`, or `.csv.gz` file in the `data/` directory.
 2. Optionally set `PREFIXES` to limit part numbers, for example:
    `PREFIXES="60,30" npm run build:json`.
-3. Run:
+3. Run the aggregate build command to regenerate all derived assets before
+   publishing:
 
    ```
    npm install
-   npm run build:json
+   npm run build
    ```
 
 The script picks the newest file in `data/` and writes `items_export_slim.json`
@@ -58,13 +59,10 @@ sorted by part number.
 ## Reference guides
 Guides shown in the **Reference** tab live under the `guides/` directory. Each
 guide gets its own folder containing a `body.md` file and any supporting
-images. Run the build script to regenerate the manifest consumed by the site:
-
-```
-npm run build:guides
-```
-
-After recompiling, new guides are automatically listed in the Reference tab.
+images. `npm run build` regenerates both the lookup JSON and the guides
+manifest so deployments always bundle the latest guides alongside other
+generated assets. Re-run the build after adding or updating guides; once the
+site is rebuilt, the new entries are automatically listed in the Reference tab.
 
 ## Project structure
 ```
