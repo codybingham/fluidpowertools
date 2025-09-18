@@ -3,7 +3,6 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "npm run build:json && npm run build:guides",
     "build:json": "node scripts/xlsx_to_json.mjs",
     "build:guides": "node scripts/build_guides.mjs"
   },
