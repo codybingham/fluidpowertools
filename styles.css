@@ -243,6 +243,117 @@ h3 {
   background: #c0392b;
 }
 
+/* Reference guides */
+#guidesContainer {
+  margin-top: 10px;
+}
+
+.guide-loading,
+.guide-error {
+  background: #f0f4f8;
+  border: 1px solid #d1d9e6;
+  border-radius: 6px;
+  padding: 12px 16px;
+  color: #2c3e50;
+}
+
+.guide-error {
+  background: #fbeaea;
+  border-color: #f5c6cb;
+  color: #b03a3a;
+}
+
+.guide-meta {
+  font-size: 0.85rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.guide-nav {
+  margin-bottom: 18px;
+  padding: 12px;
+  background: #f8fbff;
+  border: 1px solid #d1d9e6;
+  border-radius: 8px;
+}
+
+.guide-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.guide-nav a {
+  display: inline-block;
+  padding: 6px 12px;
+  background: #2980b9;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.guide-nav a:hover,
+.guide-nav a:focus {
+  background: #1f618d;
+}
+
+.guide-list article {
+  margin-bottom: 32px;
+}
+
+.guide-list h1,
+.guide-list h2,
+.guide-list h3,
+.guide-list h4,
+.guide-list h5,
+.guide-list h6 {
+  color: #2c3e50;
+}
+
+.guide-list p {
+  line-height: 1.55;
+  margin: 12px 0;
+}
+
+.guide-list ul,
+.guide-list ol {
+  margin: 12px 0 12px 20px;
+}
+
+.guide-list li {
+  margin-bottom: 6px;
+}
+
+.guide-list img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #d1d9e6;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  display: block;
+  margin: 12px auto;
+}
+
+.guide-list hr {
+  margin: 24px 0;
+}
+
+@media (max-width: 600px) {
+  .guide-nav ul {
+    flex-direction: column;
+  }
+
+  .guide-nav a {
+    width: 100%;
+    text-align: center;
+  }
+}
+
 /* --- Calculator common styles --- */
 label {
   font-weight: 600;
