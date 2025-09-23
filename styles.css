@@ -695,6 +695,9 @@ th.sort-desc::after {
 .pt-row.pt-has-notes {
   box-shadow: inset 4px 0 0 #2980b9;
 }
+.pt-row.pt-has-desc-notes {
+  box-shadow: inset 4px 0 0 #85c1e9;
+}
 .pt-row > * {
   text-align: center;
 }
@@ -729,6 +732,14 @@ th.sort-desc::after {
 }
 .pt-row.pt-has-notes .pt-notes-btn:hover {
   background: #1f618d;
+  color: #fff;
+}
+.pt-row.pt-has-desc-notes .pt-notes-btn {
+  background: #85c1e9;
+  color: #fff;
+}
+.pt-row.pt-has-desc-notes .pt-notes-btn:hover {
+  background: #5dade2;
   color: #fff;
 }
 .pt-notes.hidden {

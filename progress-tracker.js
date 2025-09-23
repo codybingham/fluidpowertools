@@ -27,12 +27,16 @@
   const notesBlock = document.getElementById('ptProjectNotes');
   const toggleNotesBtn = document.getElementById('ptToggleNotes');
   const overallEl = document.getElementById('ptOverall');
+  const expandAllBtn = document.getElementById('ptExpandAll');
+  const collapseAllBtn = document.getElementById('ptCollapseAll');
 
   function updateControls() {
     const disabled = !curName;
     [
       'ptDeleteProject',
       'ptAddRoot',
+      'ptExpandAll',
+      'ptCollapseAll',
       'ptExport',
       'ptToggleNotes',
       'ptFilter',
@@ -71,6 +75,8 @@
   document
     .getElementById('ptAddRoot')
     .addEventListener('click', () => addItem(null));
+  if (expandAllBtn) expandAllBtn.addEventListener('click', expandAll);
+  if (collapseAllBtn) collapseAllBtn.addEventListener('click', collapseAll);
   document
     .getElementById('ptExport')
     .addEventListener('click', exportProject);
@@ -146,7 +152,7 @@
       projectNotes = '';
     }
     notesEl.value = projectNotes;
-    renderTree();
+    renderTree(false);
     updateControls();
   }
 
@@ -202,6 +208,9 @@
   }
 
   function progress(node) {
+    const noteArr = Array.isArray(node.notes) ? node.notes : [];
+    let totalNotes = noteArr.length;
+    let hasNotesInTree = totalNotes > 0;
     if (!node.children.length) {
       if (node.status === 'work_in_progress') {
         const ss = node.substatus || '';
@@ -231,6 +240,8 @@
         sum += progress(c);
         if (c.status !== 'completed') completed = false;
         if (c.status !== 'not_started') notStarted = false;
+        if (c.hasNotesInTree) hasNotesInTree = true;
+        totalNotes += c.totalNoteCount || 0;
       }
       node.progress =
         node.children.length ? sum / node.children.length : 0;
@@ -246,11 +257,17 @@
       item.status = node.status;
       item.substatus = node.substatus;
     }
+    node.hasNotesInTree = hasNotesInTree;
+    node.totalNoteCount = totalNotes;
     return node.progress;
   }
 
-  function renderTree() {
-    captureOpen();
+  function renderTree(preserveOpen = true) {
+    if (preserveOpen) {
+      captureOpen();
+    } else {
+      open.clear();
+    }
     const roots = buildTree();
     for (const r of roots) progress(r);
     const overall =
@@ -299,8 +316,34 @@
   function restoreOpen() {
     open.forEach(id => {
       const li = document.querySelector(`#ptRoot li[data-id="${id}"]`);
-      if (li) li.classList.remove('pt-collapsed');
+      if (li) {
+        li.classList.remove('pt-collapsed');
+        const toggle = li.querySelector(':scope > .pt-row .pt-toggle');
+        if (toggle) toggle.textContent = '▾';
+      }
     });
+  }
+
+  function expandAll() {
+    const nodes = document.querySelectorAll('#ptRoot li');
+    nodes.forEach(li => {
+      if (!li.querySelector(':scope > ul')) return;
+      li.classList.remove('pt-collapsed');
+      const toggle = li.querySelector(':scope > .pt-row .pt-toggle');
+      if (toggle) toggle.textContent = '▾';
+    });
+    captureOpen();
+  }
+
+  function collapseAll() {
+    const nodes = document.querySelectorAll('#ptRoot li');
+    nodes.forEach(li => {
+      if (!li.querySelector(':scope > ul')) return;
+      li.classList.add('pt-collapsed');
+      const toggle = li.querySelector(':scope > .pt-row .pt-toggle');
+      if (toggle) toggle.textContent = '▸';
+    });
+    captureOpen();
   }
 
   function renderNode(node) {
@@ -315,20 +358,32 @@
     }
     const li = document.createElement('li');
     li.dataset.id = node.id;
+    if (node.children.length) li.classList.add('pt-collapsed');
     const row = document.createElement('div');
     row.className = 'pt-row status-' + node.status;
     if (node.children.length) row.classList.add('pt-parent');
-    if (node.notes.length) row.classList.add('pt-has-notes');
+    const hasOwnNotes = node.notes.length > 0;
+    const totalNotes =
+      typeof node.totalNoteCount === 'number'
+        ? node.totalNoteCount
+        : node.notes.length;
+    const descendantCount = Math.max(0, totalNotes - node.notes.length);
+    if (hasOwnNotes) {
+      row.classList.add('pt-has-notes');
+    } else if (descendantCount > 0) {
+      row.classList.add('pt-has-desc-notes');
+    }
 
     const toggle = document.createElement('span');
     toggle.className =
       node.children.length ? 'pt-toggle' : 'pt-toggle empty';
-    toggle.textContent = node.children.length ? '▾' : '';
+    toggle.textContent = node.children.length ? '▸' : '';
     if (node.children.length) {
       toggle.addEventListener('click', () => {
         li.classList.toggle('pt-collapsed');
         toggle.textContent =
           li.classList.contains('pt-collapsed') ? '▸' : '▾';
+        captureOpen();
       });
     }
     row.appendChild(toggle);
@@ -402,9 +457,28 @@
     row.appendChild(subSel);
 
     const notesBtn = document.createElement('button');
-    notesBtn.textContent = node.notes.length
-      ? 'Notes (' + node.notes.length + ')'
-      : 'Notes';
+    let notesLabel = 'Notes';
+    if (descendantCount > 0) {
+      notesLabel = hasOwnNotes
+        ? 'Notes (' + node.notes.length + ' +' + descendantCount + ')'
+        : 'Notes (+' + descendantCount + ')';
+    } else if (hasOwnNotes) {
+      notesLabel = 'Notes (' + node.notes.length + ')';
+    }
+    notesBtn.textContent = notesLabel;
+    if (descendantCount > 0) {
+      const noteWord = descendantCount === 1 ? 'note' : 'notes';
+      notesBtn.title =
+        (hasOwnNotes ? 'Includes notes here and ' : 'Contains ') +
+        descendantCount +
+        ' ' +
+        noteWord +
+        ' in child items';
+    } else if (hasOwnNotes) {
+      notesBtn.title = 'Notes for this item';
+    } else {
+      notesBtn.title = 'Add a note to this item';
+    }
     notesBtn.className = 'pt-mini pt-notes-btn';
     row.appendChild(notesBtn);
 
