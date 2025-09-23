@@ -304,11 +304,21 @@
   }
 
   function renderNode(node) {
+    if (!Array.isArray(node.notes)) {
+      node.notes = [];
+      const itemNotes = items.find(it => it.id === node.id);
+      if (itemNotes && !Array.isArray(itemNotes.notes)) {
+        itemNotes.notes = node.notes;
+      } else if (itemNotes && itemNotes.notes !== node.notes) {
+        itemNotes.notes = node.notes;
+      }
+    }
     const li = document.createElement('li');
     li.dataset.id = node.id;
     const row = document.createElement('div');
     row.className = 'pt-row status-' + node.status;
     if (node.children.length) row.classList.add('pt-parent');
+    if (node.notes.length) row.classList.add('pt-has-notes');
 
     const toggle = document.createElement('span');
     toggle.className =
@@ -392,8 +402,10 @@
     row.appendChild(subSel);
 
     const notesBtn = document.createElement('button');
-    notesBtn.textContent = 'Notes';
-    notesBtn.className = 'pt-mini';
+    notesBtn.textContent = node.notes.length
+      ? 'Notes (' + node.notes.length + ')'
+      : 'Notes';
+    notesBtn.className = 'pt-mini pt-notes-btn';
     row.appendChild(notesBtn);
 
     const addBtn = document.createElement('button');

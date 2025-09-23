@@ -692,6 +692,9 @@ th.sort-desc::after {
   min-width: 720px;
   border-bottom: 1px solid #ddd;
 }
+.pt-row.pt-has-notes {
+  box-shadow: inset 4px 0 0 #2980b9;
+}
 .pt-row > * {
   text-align: center;
 }
@@ -719,6 +722,14 @@ th.sort-desc::after {
   padding: 5px;
   margin-left: 20px;
   margin-bottom: 5px;
+}
+.pt-row.pt-has-notes .pt-notes-btn {
+  background: #2980b9;
+  color: #fff;
+}
+.pt-row.pt-has-notes .pt-notes-btn:hover {
+  background: #1f618d;
+  color: #fff;
 }
 .pt-notes.hidden {
   display: none;
