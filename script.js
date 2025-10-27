@@ -1212,14 +1212,12 @@
     const nq = normalize(q);
     const tokens = nq.split(' ').filter(Boolean);
     if (tokens.length === 0) return [];
-    const filter = (fuzzyBomFilterEl && fuzzyBomFilterEl.value) || '';
+    const filter = ((fuzzyBomFilterEl && fuzzyBomFilterEl.value) || '').toUpperCase();
     const scored = [];
     for (const row of itemsData || []) {
       if (filter) {
-        const prefix = (row.part_number || '')
-          .toUpperCase()
-          .slice(0, 2);
-        if (prefix !== filter) continue;
+        const pn = (row.part_number || '').toUpperCase();
+        if (!pn.startsWith(filter)) continue;
       }
       const s = scoreRow(
         tokens,
