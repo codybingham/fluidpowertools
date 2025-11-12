@@ -12,7 +12,7 @@
   {
     "part_number": "1300",
     "description": "MDL 1300 VAN UNLOADER",
-    "unit_cost": 61105.96
+    "unit_cost": 47518.9
   },
   {
     "part_number": "131-000",
@@ -9222,7 +9222,7 @@
   {
     "part_number": "133346",
     "description": "ASSY,BOOM HOPPER,42\",STD WIDTH,66X0-2011",
-    "unit_cost": 1403.11
+    "unit_cost": 1537.35
   },
   {
     "part_number": "133347",
@@ -11042,7 +11042,7 @@
   {
     "part_number": "133809",
     "description": "PICKING TABLE,SWINGBOOM,6631-15",
-    "unit_cost": 6281.71
+    "unit_cost": 6286.89
   },
   {
     "part_number": "133810",
@@ -14237,7 +14237,7 @@
   {
     "part_number": "134640",
     "description": "HOPPER, H-TANK, HYD. DRIVE, 42\",663X",
-    "unit_cost": 1785.16
+    "unit_cost": 2175.96
   },
   {
     "part_number": "134641",
@@ -16017,7 +16017,7 @@
   {
     "part_number": "135-436-2249",
     "description": "V-BELT - D550 PK5 BLACK",
-    "unit_cost": 524.34
+    "unit_cost": 498.4488
   },
   {
     "part_number": "135-444",
@@ -17865,6 +17865,16 @@
     "unit_cost": 109.0116
   },
   {
+    "part_number": "135365",
+    "description": "VLV ASY,SWINGING HOLDING TANK,66X1",
+    "unit_cost": 2835.46
+  },
+  {
+    "part_number": "135366",
+    "description": "VLV ASY,COULTERS+INNER/OUTER BOOM,66X1",
+    "unit_cost": 1806.07
+  },
+  {
     "part_number": "135367",
     "description": "ASSY. CRZY WHEEL, DUALS, HEAVY DUTY, 990",
     "unit_cost": 819.941
@@ -18927,12 +18937,12 @@
   {
     "part_number": "135594",
     "description": "VLV ASY,TRANSFER ROLLER SPEED CTRL,66X1",
-    "unit_cost": 108.3839
+    "unit_cost": 167.9039
   },
   {
     "part_number": "135595",
     "description": "VALVE ASSEM,TERRA FLOAT DRIVE,66X1",
-    "unit_cost": 178.3573
+    "unit_cost": 227.4622
   },
   {
     "part_number": "135596",
@@ -18967,7 +18977,7 @@
   {
     "part_number": "135602",
     "description": "VLV ASY,M/S PRO ROLLER SPEED CTRL,66X1",
-    "unit_cost": 611.3446
+    "unit_cost": 610.2807
   },
   {
     "part_number": "135603",
@@ -19427,7 +19437,7 @@
   {
     "part_number": "135701",
     "description": "FILTER ASSEM,SELF HYD HIGH PRESS,66X1",
-    "unit_cost": 458.9397
+    "unit_cost": 481.2047
   },
   {
     "part_number": "135702",
@@ -19446,13 +19456,13 @@
   },
   {
     "part_number": "135705",
-    "description": "PUMP ASSEM,SELF HYD TANDEM PUMP #2,66X1",
-    "unit_cost": 1315.68
+    "description": "PUMP,HYD SIDE ELEV & REAR CROSS,66X1",
+    "unit_cost": 1350.44
   },
   {
     "part_number": "135706",
     "description": "FILTR ASY,HYD SIDE ELEV/REAR CROSS ,66X1",
-    "unit_cost": 462.2755
+    "unit_cost": 484.5405
   },
   {
     "part_number": "135707",
@@ -19467,7 +19477,7 @@
   {
     "part_number": "135709",
     "description": "VLV ASY,STARSEP CLOD ROLLER REVERSE,66X1",
-    "unit_cost": 183.8841
+    "unit_cost": 227.6512
   },
   {
     "part_number": "135710",
@@ -19516,18 +19526,18 @@
   },
   {
     "part_number": "135719",
-    "description": "PUMP ASSEM,SELF HYD TANDEM PUMP #1,66X1",
-    "unit_cost": 3762.21
+    "description": "PUMP,SELF-HYDRAULIC DRIVES,66X1",
+    "unit_cost": 3807.16
   },
   {
     "part_number": "135720",
     "description": "PUMP ASSEM,SELF HYD SINGLE PUMP,66X1",
-    "unit_cost": 5284.69
+    "unit_cost": 5331.02
   },
   {
     "part_number": "135721",
     "description": "VALVE ASSEM,INDEP CTRL DIGGER NOSE,66X1",
-    "unit_cost": 1421.71
+    "unit_cost": 1513.67
   },
   {
     "part_number": "135722",
@@ -19552,7 +19562,7 @@
   {
     "part_number": "135726",
     "description": "VLV ASY,H-TANK DRIVE MTR BRAKE,HARVESTER",
-    "unit_cost": 49.5628
+    "unit_cost": 72.7846
   },
   {
     "part_number": "135727",
@@ -19842,7 +19852,7 @@
   {
     "part_number": "135786",
     "description": "ASSY,60\"STR-SP,13-7,1/4\"SPCR,W/FRM,48\"SE",
-    "unit_cost": 16433.02
+    "unit_cost": 17946.29
   },
   {
     "part_number": "135787",
@@ -21162,7 +21172,7 @@
   {
     "part_number": "136-345",
     "description": "RUBBERBELT FDA APPROVED MODEL (BLUE)",
-    "unit_cost": 7.71
+    "unit_cost": 7.1388
   },
   {
     "part_number": "136-351",
@@ -21287,17 +21297,17 @@
   {
     "part_number": "136022",
     "description": "ASSY,M-SEP,60\",42\"SE,PCTL,RBR,66X1-23",
-    "unit_cost": 28093.59
+    "unit_cost": 28408.13
   },
   {
     "part_number": "136023",
     "description": "ASSY,M-SEP,60\",42\"SE,PCTL,STL,66X1-23",
-    "unit_cost": 25720.84
+    "unit_cost": 26290.08
   },
   {
     "part_number": "136024",
     "description": "ASSY,M-SEP,60\",42\"SE,PCTL,ST+RB,66X1-23",
-    "unit_cost": 26907.21
+    "unit_cost": 27349.11
   },
   {
     "part_number": "136025",
@@ -21552,7 +21562,7 @@
   {
     "part_number": "136079",
     "description": "BRNG, END, ASSEMBLY, 48\", 882",
-    "unit_cost": 2048.83
+    "unit_cost": 2165.7
   },
   {
     "part_number": "136080",
@@ -21577,12 +21587,12 @@
   {
     "part_number": "136084",
     "description": "INNER BOOM ASSM, 48\", 882",
-    "unit_cost": 7226.45
+    "unit_cost": 7197.01
   },
   {
     "part_number": "136085",
     "description": "INNER BOOM ASSM, 48, COMPLETE, 882",
-    "unit_cost": 9595.83
+    "unit_cost": 9582.43
   },
   {
     "part_number": "136086",
@@ -23207,7 +23217,7 @@
   {
     "part_number": "136424",
     "description": "CAT 4 HITCH PARTS, KS5400",
-    "unit_cost": 642.4139
+    "unit_cost": 364.1567
   },
   {
     "part_number": "136425",
@@ -23552,7 +23562,7 @@
   {
     "part_number": "136498",
     "description": "STANDARD AXLE ASSEMBLY, 882",
-    "unit_cost": 4498.11
+    "unit_cost": 4589.39
   },
   {
     "part_number": "136499",
@@ -23662,7 +23672,7 @@
   {
     "part_number": "136521",
     "description": "MAIN PANEL ASSEM, RH, 882",
-    "unit_cost": 1514.99
+    "unit_cost": 1459.32
   },
   {
     "part_number": "136522",
@@ -23902,7 +23912,7 @@
   {
     "part_number": "136570",
     "description": "VALVE ASSEMBLY, MANUAL/ELECTIC, 882",
-    "unit_cost": 3643.57
+    "unit_cost": 3964.53
   },
   {
     "part_number": "136571",
@@ -23912,7 +23922,7 @@
   {
     "part_number": "136572",
     "description": "HEADER ASSEMBLY, MAIN RETURN, 882",
-    "unit_cost": 112.5616
+    "unit_cost": 120.4081
   },
   {
     "part_number": "136573",
@@ -24527,7 +24537,7 @@
   {
     "part_number": "136697",
     "description": "VLV ASY, SWING AXLE LIFT CNTRBLNC, 882",
-    "unit_cost": 127.6034
+    "unit_cost": 218.4836
   },
   {
     "part_number": "136698",
@@ -26915,6 +26925,11 @@
     "unit_cost": 306.8084
   },
   {
+    "part_number": "137207",
+    "description": "ROCK ELEV, SHORT, SUB-ASSY, 66X1, 26",
+    "unit_cost": 3972.03
+  },
+  {
     "part_number": "137209",
     "description": "VALVE ASY, JACK+TBL GAP+TBL ANGLE, 2990",
     "unit_cost": 713.691
@@ -27117,17 +27132,17 @@
   {
     "part_number": "137254",
     "description": "TANK ASSEMBLY,ELECTRIC ONLY,4400",
-    "unit_cost": 795.9277
+    "unit_cost": 786.1118
   },
   {
     "part_number": "137255",
     "description": "TANK ASSEMBLY,PTO ONLY,4400",
-    "unit_cost": 846.7055
+    "unit_cost": 836.8676
   },
   {
     "part_number": "137256",
     "description": "TANK ASSEMBLY,PTO ELECTRIC,4400",
-    "unit_cost": 850.296
+    "unit_cost": 841.2736
   },
   {
     "part_number": "137257",
@@ -27335,9 +27350,44 @@
     "unit_cost": 105.6353
   },
   {
+    "part_number": "137306",
+    "description": "AXLE, LH, 66X1-26",
+    "unit_cost": 6704.31
+  },
+  {
+    "part_number": "137307",
+    "description": "AXLE, RH, 66X1-26",
+    "unit_cost": 6533.68
+  },
+  {
+    "part_number": "137308",
+    "description": "FRAME, SIDE ELEVATOR, 42\", 66X1-26",
+    "unit_cost": 2086.23
+  },
+  {
+    "part_number": "137309",
+    "description": "HOPPER, SIDE ELEVATOR, 42\", 66X1-26",
+    "unit_cost": 1076.57
+  },
+  {
+    "part_number": "137310",
+    "description": "FRAME, SIDE ELEVATOR, 48\", 66X1-26",
+    "unit_cost": 2388.53
+  },
+  {
+    "part_number": "137311",
+    "description": "HOPPER, SIDE ELEVATOR, 48\", 66X1-26",
+    "unit_cost": 1539.31
+  },
+  {
     "part_number": "137312",
     "description": "HOPPER, STANDARD, TOP SECTION, 34\"-36\"",
     "unit_cost": 2070.55
+  },
+  {
+    "part_number": "137313",
+    "description": "FRAME, SIDE ELEVATOR, LP, 48\", 66X1-26",
+    "unit_cost": 2561.73
   },
   {
     "part_number": "137314",
@@ -27355,9 +27405,64 @@
     "unit_cost": 54.9631
   },
   {
+    "part_number": "137317",
+    "description": "ASSY BOOM 42\"INNER FOLD, 6631-2015",
+    "unit_cost": 1277.17
+  },
+  {
+    "part_number": "137318",
+    "description": "ASSY BOOM 42\"OUTER FOLD, 6631-2015",
+    "unit_cost": 1003.47
+  },
+  {
+    "part_number": "137319",
+    "description": "DIGGERNOSE,WIDE,REAR,6631",
+    "unit_cost": 3973.87
+  },
+  {
+    "part_number": "137320",
+    "description": "DIGGERNOSE, WIDE, FRONT, 6631",
+    "unit_cost": 1975.46
+  },
+  {
+    "part_number": "137321",
+    "description": "PIVOT PULLING ARM,DIGGER NOSE,6631-2012",
+    "unit_cost": 2358.21
+  },
+  {
+    "part_number": "137322",
+    "description": "2 PADDLES, SUB ASSY, STRIPPER KIT, 6631",
+    "unit_cost": 238.2885
+  },
+  {
+    "part_number": "137323",
+    "description": "ROCKBOX,REAR,SUB ASSY, 66X1-25",
+    "unit_cost": 2428.45
+  },
+  {
     "part_number": "137326",
     "description": "8 ST DIRECTIONAL VALVE MANIFOLD,61XX",
     "unit_cost": 3362.85
+  },
+  {
+    "part_number": "137327",
+    "description": "REAR X UHMW HOOD,6631,26",
+    "unit_cost": 1069.1
+  },
+  {
+    "part_number": "137329",
+    "description": "REAR X CONV,6631,26",
+    "unit_cost": 3343.23
+  },
+  {
+    "part_number": "137330",
+    "description": "REAR X, SIDE WALLS,6631,26",
+    "unit_cost": 1515.2
+  },
+  {
+    "part_number": "137333",
+    "description": "REAR X, TRASH CONV,6631,26",
+    "unit_cost": 2870.5
   },
   {
     "part_number": "137335",
@@ -27410,6 +27515,41 @@
     "unit_cost": 210.2506
   },
   {
+    "part_number": "137345",
+    "description": "HORIZONTAL VALVE ASSEMBLY,66X1",
+    "unit_cost": 6609.31
+  },
+  {
+    "part_number": "137346",
+    "description": "THROTTLE VALVE,6FJS->6MJ",
+    "unit_cost": 58.939
+  },
+  {
+    "part_number": "137347",
+    "description": "AXLE, WHL, DRIVE, RH, 66X1-26",
+    "unit_cost": 13080.2
+  },
+  {
+    "part_number": "137348",
+    "description": "AXLE, WHL, DRIVE, LH, 66X1-26",
+    "unit_cost": 12930.6
+  },
+  {
+    "part_number": "137349",
+    "description": "PUMP STACK,TANDEM W/ HYD PRIMARY,66X1",
+    "unit_cost": 7793.55
+  },
+  {
+    "part_number": "137350",
+    "description": "PUMP ASY,SELF-HYD PRIMARY DRIVE,66X1",
+    "unit_cost": 3874.86
+  },
+  {
+    "part_number": "137351",
+    "description": "SELF-HYDRAULIC VALVE,66X1",
+    "unit_cost": 2945.03
+  },
+  {
     "part_number": "137358",
     "description": "VALVE ASY,FILTER/FLW CNTRL,DRY FERT,89XX",
     "unit_cost": 499.4605
@@ -27440,6 +27580,16 @@
     "unit_cost": 112.9694
   },
   {
+    "part_number": "137365",
+    "description": "ASSM, PIVOT ARM ARC, LH, 882, 2026",
+    "unit_cost": 859.2977
+  },
+  {
+    "part_number": "137366",
+    "description": "ASSM, PIVOT ARM ARC, RH, 882, 2026",
+    "unit_cost": 854.6759
+  },
+  {
     "part_number": "137367",
     "description": "PRIMARY + SECONDARY SHAKER VALVE,61XX",
     "unit_cost": 614.3173
@@ -27450,14 +27600,29 @@
     "unit_cost": 149.7214
   },
   {
+    "part_number": "137370",
+    "description": "HEADER,COOLER RETURN,66X1",
+    "unit_cost": 251.3605
+  },
+  {
     "part_number": "137371",
     "description": "JACK,CRANK AND HANDLE,14.5\"",
     "unit_cost": 66.6789
   },
   {
+    "part_number": "137372",
+    "description": "PUMP STACK,TANDEM W/ HYD SE & RC,66X1",
+    "unit_cost": 5184.49
+  },
+  {
     "part_number": "137373",
     "description": "REPLACEMENT CLEANOUT LATCH HARDWARE",
     "unit_cost": 20.4071
+  },
+  {
+    "part_number": "137374",
+    "description": "TANK ASY,TANDEM W/ HYD SE & REAR X,66X1",
+    "unit_cost": 1955.47
   },
   {
     "part_number": "137375",
@@ -27475,6 +27640,11 @@
     "unit_cost": 38.262
   },
   {
+    "part_number": "137378",
+    "description": "S-SEP PINCH ROLLER SPEED CONTROL,6631",
+    "unit_cost": 156.4801
+  },
+  {
     "part_number": "137379",
     "description": "SIDE ELEVATOR DIRT SHEAR, ASSEMBLY",
     "unit_cost": 335.2056
@@ -27483,6 +27653,11 @@
     "part_number": "137380",
     "description": "VALVE ASSEMBLY,DRY FERT LID,FLW DIV,89XX",
     "unit_cost": 115.2922
+  },
+  {
+    "part_number": "137381",
+    "description": "VALVE ASSEM,FLOW DIVIDER,BOOM LIFT,882",
+    "unit_cost": 334.1814
   },
   {
     "part_number": "137383",
@@ -27500,9 +27675,19 @@
     "unit_cost": 298.5181
   },
   {
+    "part_number": "137388",
+    "description": "TANK ASY,SINGLE PUMP SELF-HYD,66X1",
+    "unit_cost": 1579.2
+  },
+  {
     "part_number": "137389",
     "description": "ASSY,BRKWY BM CNTR LOCK RLR CAM,,6740-26",
     "unit_cost": 763.8044
+  },
+  {
+    "part_number": "137390",
+    "description": "TANK ASY,SELF-HYD PRIMARY,66X1",
+    "unit_cost": 1896.67
   },
   {
     "part_number": "137391",
@@ -27517,7 +27702,7 @@
   {
     "part_number": "137393",
     "description": "ASSY,SWNG H-TNK,150SK,684X-26",
-    "unit_cost": 0
+    "unit_cost": 17098
   },
   {
     "part_number": "137394",
@@ -27535,14 +27720,89 @@
     "unit_cost": 3278.92
   },
   {
+    "part_number": "137397",
+    "description": "QUICK CPLG ASY,1/2\" MALE X 8MJ-8MP,YLW",
+    "unit_cost": 38.2701
+  },
+  {
+    "part_number": "137398",
+    "description": "QUICK CPLG ASY,1/2\" CV MALE X 8MJ,YLW",
+    "unit_cost": 66.4813
+  },
+  {
+    "part_number": "137399",
+    "description": "QUICK CPLG ASY,1/2\" CV MALE X 8MJ,BLK",
+    "unit_cost": 90.4368
+  },
+  {
+    "part_number": "137400",
+    "description": "VLV ASY,WHEEL ASSIST FILTER,66X1",
+    "unit_cost": 214.8449
+  },
+  {
+    "part_number": "137401",
+    "description": "JNCTN BLOCK ASY,WHEEL ASSIST,66X1",
+    "unit_cost": 159.945
+  },
+  {
+    "part_number": "137402",
+    "description": "VLV ASY,CLTRS+INR/OUTR BOOM+DP WHL,66X1",
+    "unit_cost": 2639.23
+  },
+  {
+    "part_number": "137403",
+    "description": "VLV ASY,COULTERS ONLY,66X1",
+    "unit_cost": 1777.37
+  },
+  {
+    "part_number": "137404",
+    "description": "THROTTLE VALVE,90DEG X 90DEG,6MJ X 6MJ",
+    "unit_cost": 69.561
+  },
+  {
+    "part_number": "137405",
+    "description": "VLV ASY,COULTERS+DEPTH WHEELS,66X1",
+    "unit_cost": 1827.59
+  },
+  {
+    "part_number": "137406",
+    "description": "VLV ASY,WHEEL ASSIST FREEWHL DUMP,66X1",
+    "unit_cost": 189.6529
+  },
+  {
+    "part_number": "137407",
+    "description": "VLV ASY,WHEEL ASSIST FWD/REV,66X1",
+    "unit_cost": 656.0975
+  },
+  {
     "part_number": "137408",
     "description": "CHOPPING DRUM",
-    "unit_cost": 768.9645
+    "unit_cost": 752.5026
   },
   {
     "part_number": "137409",
     "description": "HEIGHT ADJ WHEEL CHOPPER CLTR",
     "unit_cost": 413.4048
+  },
+  {
+    "part_number": "137410",
+    "description": "ADD WHEEL DRIVE PILOT VALVE,6740",
+    "unit_cost": 183.9104
+  },
+  {
+    "part_number": "137411",
+    "description": "WHEEL DRIVE DIVERTER VALVE,6740",
+    "unit_cost": 1383.69
+  },
+  {
+    "part_number": "137412",
+    "description": "QUICK CPLG ASY,1/2\" CV MALE X 12MJ,GRN",
+    "unit_cost": 89.6128
+  },
+  {
+    "part_number": "137413",
+    "description": "QUICK CPLG ASY,3/8\" CD MALE X 8MJ,ORN",
+    "unit_cost": 117.2394
   },
   {
     "part_number": "137414",
@@ -27553,6 +27813,236 @@
     "part_number": "137415",
     "description": "ASSY,48\" OTR BM,TELE,6844-26",
     "unit_cost": 929.3801
+  },
+  {
+    "part_number": "137416",
+    "description": "OUTER BOOM ASSM, 48, COMPLETE, 882, 2026",
+    "unit_cost": 36672.64
+  },
+  {
+    "part_number": "137417",
+    "description": "AIRSEP, 5 FINGER HINGE W/CNTR CLIP NUT",
+    "unit_cost": 67.974
+  },
+  {
+    "part_number": "137418",
+    "description": "AIRSEP,3-1/2 FINGER HINGE W/CLIP NUTS,RH",
+    "unit_cost": 120.939
+  },
+  {
+    "part_number": "137419",
+    "description": "AIRSEP,3-1/2 FINGER HINGE W/CLIP NUTS,LH",
+    "unit_cost": 122.9883
+  },
+  {
+    "part_number": "137420",
+    "description": "AIRBOX, SUB-ASSY, 6631, 26",
+    "unit_cost": 18487.57
+  },
+  {
+    "part_number": "137421",
+    "description": "ROCK CROSS, SUB-ASSY, AIRSEP, 6631, 26",
+    "unit_cost": 4345.09
+  },
+  {
+    "part_number": "137422",
+    "description": "S-SEP ROLLER, 107\", SMOOTH",
+    "unit_cost": 1074.51
+  },
+  {
+    "part_number": "137423",
+    "description": "S-SEP ROLLER, 107\", 6 LIP, LRG GAP",
+    "unit_cost": 1593.76
+  },
+  {
+    "part_number": "137424",
+    "description": "S-SEP ROLLER, 107\", 4 LIP, SML GAP",
+    "unit_cost": 1189.71
+  },
+  {
+    "part_number": "137425",
+    "description": "SIMPLE SEP, LRG GAP, 31MM-36MM, 6631, 26",
+    "unit_cost": 10004.25
+  },
+  {
+    "part_number": "137426",
+    "description": "SIMPLE SEP, SML GAP, 6MM-10MM, 6631, 26",
+    "unit_cost": 10015.44
+  },
+  {
+    "part_number": "137427",
+    "description": "AIRBOX W/RCK X & LG GAP SIMP SEP,6631,26",
+    "unit_cost": 33941.74
+  },
+  {
+    "part_number": "137428",
+    "description": "AIRBOX W/RCK X & SM GAP SIMP SEP,6631,26",
+    "unit_cost": 33573.88
+  },
+  {
+    "part_number": "137429",
+    "description": "AIRSEP BLOWER, SUB ASSY, 6631, 26",
+    "unit_cost": 5604.77
+  },
+  {
+    "part_number": "137430",
+    "description": "ASSY, FRAME; 48\" 882, 2026",
+    "unit_cost": 38042.13
+  },
+  {
+    "part_number": "137431",
+    "description": "FRAME, DRY FERT, 8906",
+    "unit_cost": 6332.44
+  },
+  {
+    "part_number": "137432",
+    "description": "BOX AND DISTRO,LH,DRY FERT,34-36,8906",
+    "unit_cost": 19110.5
+  },
+  {
+    "part_number": "137433",
+    "description": "BOX AND DISTRO,RH,DRY FERT,34-36,8906",
+    "unit_cost": 19110.41
+  },
+  {
+    "part_number": "137434",
+    "description": "",
+    "unit_cost": 3534.79
+  },
+  {
+    "part_number": "137435",
+    "description": "DISTRO,DRVN RLR,DRY FERT,34-36,8906",
+    "unit_cost": 588.9321
+  },
+  {
+    "part_number": "137436",
+    "description": "DISTRO,1 ROW IDLE RLR,DRY FERT,89XX",
+    "unit_cost": 273.1256
+  },
+  {
+    "part_number": "137437",
+    "description": "LID,DRY FERT,34-36,8906",
+    "unit_cost": 2908.92
+  },
+  {
+    "part_number": "137438",
+    "description": "INNER BOOM, 48\", STANDARD, 6XXX, 26",
+    "unit_cost": 1760.9
+  },
+  {
+    "part_number": "137439",
+    "description": "INNER BOOM, 48\", BREAKAWAY, 6XXX, 26",
+    "unit_cost": 5795.69
+  },
+  {
+    "part_number": "137440",
+    "description": "VALVE ASSEM, MANUAL/ELECTRIC, 6-STN, 882",
+    "unit_cost": 3087.2
+  },
+  {
+    "part_number": "137441",
+    "description": "PIN ASSEMBLY, REAR AXLE, 882, 2026",
+    "unit_cost": 231.2692
+  },
+  {
+    "part_number": "137444",
+    "description": "AXL,REAR,SLEW DRIVE ASSY, RH, 882, 2026",
+    "unit_cost": 562.4552
+  },
+  {
+    "part_number": "137445",
+    "description": "ASSY,CONV; 48\" DRUM",
+    "unit_cost": 7313.84
+  },
+  {
+    "part_number": "137446",
+    "description": "AXL,REAR,SLEW DRIVE ASSY, LH, 882, 2026",
+    "unit_cost": 433.0349
+  },
+  {
+    "part_number": "137447",
+    "description": "PUMP ASSEMBLY, 3HP, 1660",
+    "unit_cost": 817.7137
+  },
+  {
+    "part_number": "137448",
+    "description": "TANK ASSEMBLY, 1660",
+    "unit_cost": 1037.06
+  },
+  {
+    "part_number": "137449",
+    "description": "HEADER ASY, RETURN, 1660",
+    "unit_cost": 102.8409
+  },
+  {
+    "part_number": "137450",
+    "description": "VALVE ASSEMBLY, PWR UNIT RELIEF, 1660",
+    "unit_cost": 75.3311
+  },
+  {
+    "part_number": "137451",
+    "description": "VALVE ASY,2 PUPS,1660",
+    "unit_cost": 83.1025
+  },
+  {
+    "part_number": "137452",
+    "description": "TAKE UP PLATE ASSY 882, 2026",
+    "unit_cost": 79.5725
+  },
+  {
+    "part_number": "137453",
+    "description": "VALVE ASY,BOOM LIFT,FLW DVDR,1660",
+    "unit_cost": 116.3867
+  },
+  {
+    "part_number": "137454",
+    "description": "FILTER ASSEMBLY, RETURN, TANK, 1660",
+    "unit_cost": 90.4358
+  },
+  {
+    "part_number": "137455",
+    "description": "VALVE ASY,BOOM LIFT CNTRBLC,1660",
+    "unit_cost": 135.9749
+  },
+  {
+    "part_number": "137456",
+    "description": "FILTER ASSEMBLY,PRESSURE, BOOM LIFT,1660",
+    "unit_cost": 215.8206
+  },
+  {
+    "part_number": "137457",
+    "description": "VALVE ASY, BOOM LIFT, 1660",
+    "unit_cost": 659.031
+  },
+  {
+    "part_number": "137458",
+    "description": "SHUTTLE VALVE ASY, 2 PUPS, 1660",
+    "unit_cost": 62.7209
+  },
+  {
+    "part_number": "137459",
+    "description": "STEERING STOP, ASSEM, 882,2026",
+    "unit_cost": 49.4465
+  },
+  {
+    "part_number": "137460",
+    "description": "DRUM MOTOR, ASSY, 20HP, 882, 2026",
+    "unit_cost": 18984.51
+  },
+  {
+    "part_number": "137461",
+    "description": "ELEVATOR,1660",
+    "unit_cost": 6344.54
+  },
+  {
+    "part_number": "137462",
+    "description": "BOOM,1660",
+    "unit_cost": 7920.11
+  },
+  {
+    "part_number": "137463",
+    "description": "BOOM HEIGHT SENSOR,60\",1660",
+    "unit_cost": 948.4482
   },
   {
     "part_number": "137959",
@@ -28232,7 +28722,7 @@
   {
     "part_number": "138-436",
     "description": "ASA-LIFT BALL BEARING AS 207",
-    "unit_cost": 22.53
+    "unit_cost": 20.8669
   },
   {
     "part_number": "138-502",
@@ -40675,6 +41165,31 @@
     "unit_cost": 34.08
   },
   {
+    "part_number": "300.57625",
+    "description": "HYD PIPE AT LCV TO MOTOR A 12L",
+    "unit_cost": 65.97
+  },
+  {
+    "part_number": "300.57626",
+    "description": "HYD PIPE AT P-GSS TO MOTOR B12",
+    "unit_cost": 18.76
+  },
+  {
+    "part_number": "300.57627",
+    "description": "HYD PIPE AT LCV (1) TO MOTOR B",
+    "unit_cost": 63.4
+  },
+  {
+    "part_number": "300.57629",
+    "description": "HYD PIPE 8X1X153,19",
+    "unit_cost": 20.2
+  },
+  {
+    "part_number": "300.5763",
+    "description": "HYD PIPE AT P-GSS TO LCV",
+    "unit_cost": 51.64
+  },
+  {
     "part_number": "300.5765",
     "description": "HY-LEITUNG",
     "unit_cost": 54.71
@@ -42490,6 +43005,11 @@
     "unit_cost": 6645.71
   },
   {
+    "part_number": "300.75532",
+    "description": "2.MAIN WEB SHORT 45MM VULC GT",
+    "unit_cost": 1465.25
+  },
+  {
     "part_number": "300.75533",
     "description": "2.MAIN WEB LONG 35MM PLAIN GT",
     "unit_cost": 955.43
@@ -43067,7 +43587,7 @@
   {
     "part_number": "300.94609",
     "description": "DRAWBAR EYE",
-    "unit_cost": 163.5306
+    "unit_cost": 155.8
   },
   {
     "part_number": "300.94748",
@@ -43362,7 +43882,7 @@
   {
     "part_number": "300038",
     "description": "LABEL,BOTTOM,BELT #500",
-    "unit_cost": 0.0613
+    "unit_cost": 0.0611
   },
   {
     "part_number": "300039",
@@ -43382,7 +43902,7 @@
   {
     "part_number": "300042",
     "description": "LABEL,DANGER,240 VOLTS #500",
-    "unit_cost": 0.0502
+    "unit_cost": 0.051
   },
   {
     "part_number": "300043",
@@ -43622,12 +44142,12 @@
   {
     "part_number": "300090",
     "description": "LABEL,WARNING,FLYING,OBJECTS,CAN,CAUSE",
-    "unit_cost": 1.9297
+    "unit_cost": 1.9298
   },
   {
     "part_number": "300091",
     "description": "LABEL,DANGER,ROTATING,DRIVELINES,(VERT)",
-    "unit_cost": 0.7695
+    "unit_cost": 0.7696
   },
   {
     "part_number": "300092",
@@ -43637,7 +44157,7 @@
   {
     "part_number": "300093",
     "description": "LABEL,CAUTION,SLIPPERY,SURFACES,CAN",
-    "unit_cost": 0.7663
+    "unit_cost": 0.768
   },
   {
     "part_number": "300094",
@@ -43662,7 +44182,7 @@
   {
     "part_number": "300098",
     "description": "LABEL,STEERING,INDICATOR (RIGHT OR LEFT)",
-    "unit_cost": 1.9211
+    "unit_cost": 1.9076
   },
   {
     "part_number": "300099",
@@ -43732,7 +44252,7 @@
   {
     "part_number": "300112",
     "description": "LABEL,CAUTION,MACHINE STARTS WITHOUT/SML",
-    "unit_cost": 0.2096
+    "unit_cost": 0.2098
   },
   {
     "part_number": "300113",
@@ -44222,7 +44742,7 @@
   {
     "part_number": "300213",
     "description": "DECAL,LIFT POINT",
-    "unit_cost": 0.7299
+    "unit_cost": 0.73
   },
   {
     "part_number": "300214",
@@ -45137,12 +45657,12 @@
   {
     "part_number": "300401",
     "description": "TAPE,YELLOW,REFLECTIVE x 9\"",
-    "unit_cost": 0.8074
+    "unit_cost": 0.8213
   },
   {
     "part_number": "300402",
     "description": "TAPE,ORANGE,REFLECTIVE x 9\"",
-    "unit_cost": 0.7889
+    "unit_cost": 0.8218
   },
   {
     "part_number": "300403",
@@ -45427,7 +45947,7 @@
   {
     "part_number": "300467",
     "description": "WARNING: MOVING TOOLBAR, STAND CLEAR",
-    "unit_cost": 0.8199
+    "unit_cost": 0.82
   },
   {
     "part_number": "300468",
@@ -45837,7 +46357,7 @@
   {
     "part_number": "300550",
     "description": "STICKER,EVENFLOW,DIAL ADJUST",
-    "unit_cost": 4.1141
+    "unit_cost": 4.1514
   },
   {
     "part_number": "300551",
@@ -47512,22 +48032,22 @@
   {
     "part_number": "300901",
     "description": "STICKER,MDL 1860,BIG WHITE LH STRIPE",
-    "unit_cost": 9.3381
+    "unit_cost": 9.3388
   },
   {
     "part_number": "300902",
     "description": "STICKER,MDL 1860,SMALL WHITE LH STRIPE",
-    "unit_cost": 8.9562
+    "unit_cost": 8.9572
   },
   {
     "part_number": "300903",
     "description": "STICKER,MDL 1860,BIG WHITE RH STRIPE",
-    "unit_cost": 9.5049
+    "unit_cost": 9.5062
   },
   {
     "part_number": "300904",
     "description": "STICKER,MDL 1860,SMALL WHITE RH STRIPE",
-    "unit_cost": 8.7095
+    "unit_cost": 8.7098
   },
   {
     "part_number": "300905",
@@ -48472,7 +48992,7 @@
   {
     "part_number": "301.03111",
     "description": "TRANSPORT WEB 50/897/8706",
-    "unit_cost": 3110.86
+    "unit_cost": 3333.93
   },
   {
     "part_number": "301.03512",
@@ -48957,7 +49477,7 @@
   {
     "part_number": "301.06576",
     "description": "DISCHARGE WEB",
-    "unit_cost": 1833.89
+    "unit_cost": 2048.13
   },
   {
     "part_number": "301.06592",
@@ -49490,6 +50010,36 @@
     "unit_cost": 23.63
   },
   {
+    "part_number": "301.1255",
+    "description": "LE-LINE 3p SUS 2m",
+    "unit_cost": 35.51
+  },
+  {
+    "part_number": "301.12551",
+    "description": "LE-LINE 3p SUS 3m",
+    "unit_cost": 35.69
+  },
+  {
+    "part_number": "301.12552",
+    "description": "LE-LINE 3p SUS 4m",
+    "unit_cost": 41.12
+  },
+  {
+    "part_number": "301.12553",
+    "description": "LE-LINE 3p SUS 5m",
+    "unit_cost": 46.04
+  },
+  {
+    "part_number": "301.12554",
+    "description": "LE-LINE 3p SUS 6m",
+    "unit_cost": 48.51
+  },
+  {
+    "part_number": "301.12556",
+    "description": "LE-LINE 3p SUS 8m",
+    "unit_cost": 53
+  },
+  {
     "part_number": "301.12634",
     "description": "FUEL LINE",
     "unit_cost": 43.94
@@ -49592,7 +50142,7 @@
   {
     "part_number": "301.13893",
     "description": "MTSFC WITH PLUG",
-    "unit_cost": 28.33
+    "unit_cost": 30.48
   },
   {
     "part_number": "301.14112",
@@ -50047,7 +50597,7 @@
   {
     "part_number": "301101",
     "description": "STICKER, DRAWBAR HOSES 66X1",
-    "unit_cost": 1.5716
+    "unit_cost": 1.5779
   },
   {
     "part_number": "301103",
@@ -50447,7 +50997,7 @@
   {
     "part_number": "301187",
     "description": "STICKER,ROLLER-STAR CHAIN ROUTES - 991",
-    "unit_cost": 0.7767
+    "unit_cost": 0.7811
   },
   {
     "part_number": "301188",
@@ -50577,7 +51127,7 @@
   {
     "part_number": "301213",
     "description": "STICKER,SPUDNIK,XLARGE WHITE,INCISED 18",
-    "unit_cost": 6.5919
+    "unit_cost": 6.6344
   },
   {
     "part_number": "301214",
@@ -50687,7 +51237,7 @@
   {
     "part_number": "301235",
     "description": "STICKER,MDL 8060 WHITE,LRG,ARIAL 2018",
-    "unit_cost": 1.1694
+    "unit_cost": 1.1871
   },
   {
     "part_number": "301236",
@@ -51017,7 +51567,7 @@
   {
     "part_number": "301302",
     "description": "STICKER,SPUDNIK,XLARGE RED,INCISED 18",
-    "unit_cost": 6.748
+    "unit_cost": 6.7507
   },
   {
     "part_number": "301303",
@@ -54662,22 +55212,22 @@
   {
     "part_number": "302093",
     "description": "STICKER,MDL 4400,SMALL RED LH STRIPE",
-    "unit_cost": 18.85
+    "unit_cost": 15.8773
   },
   {
     "part_number": "302094",
     "description": "STICKER,MDL 4400,SMALL RED RH STRIPE",
-    "unit_cost": 18.85
+    "unit_cost": 15.8773
   },
   {
     "part_number": "302095",
     "description": "STICKER,MDL 4400,BIG RED LH STRIPE",
-    "unit_cost": 43.43
+    "unit_cost": 37.5773
   },
   {
     "part_number": "302096",
     "description": "STICKER,MDL 4400,BIG RED RH STRIPE",
-    "unit_cost": 43.43
+    "unit_cost": 37.5773
   },
   {
     "part_number": "302097",
@@ -54758,6 +55308,11 @@
     "part_number": "302115",
     "description": "LABEL,VALVE,3/4\"X1.5\",INNER BOOM DWN SPD",
     "unit_cost": 0.05
+  },
+  {
+    "part_number": "302116",
+    "description": "STICKER,MDL 1660 WHITE, LRG, ARIAL",
+    "unit_cost": 1.21
   },
   {
     "part_number": "3060",
@@ -55137,17 +55692,17 @@
   {
     "part_number": "601029",
     "description": "HOSE,ASSEM,3/8\"x36\"(3FT) 6FJS-6FJS 6M3K",
-    "unit_cost": 14.01
+    "unit_cost": 14.9
   },
   {
     "part_number": "601030",
     "description": "HOSE,ASSEM,3/8\"x48\"(4FT) 6FJS-6FJS 6M3K",
-    "unit_cost": 15.67
+    "unit_cost": 16.67
   },
   {
     "part_number": "601031",
     "description": "HOSE,ASSEM,3/8\"x60\"(5FT) 6FJS-6FJS 6M3K",
-    "unit_cost": 17.43
+    "unit_cost": 18.54
   },
   {
     "part_number": "601032",
@@ -55162,7 +55717,7 @@
   {
     "part_number": "601034",
     "description": "HOSE,ASSEM,3/8\"x108\"(9FT) 6FJS-6FJS 6M3K",
-    "unit_cost": 24.3
+    "unit_cost": 25.85
   },
   {
     "part_number": "601035",
@@ -55182,12 +55737,12 @@
   {
     "part_number": "601039",
     "description": "FILTER,ELEM,5\",10µ,CELLULOSE",
-    "unit_cost": 9.3835
+    "unit_cost": 9.3979
   },
   {
     "part_number": "601040",
     "description": "FILTER,HEAD,W/BYPASS 25psi,3/4\",30gpm",
-    "unit_cost": 12.3536
+    "unit_cost": 12.4969
   },
   {
     "part_number": "601041",
@@ -55202,7 +55757,7 @@
   {
     "part_number": "601043",
     "description": "HOSE,HYDRAULIC,1-1/4\" SUCTION",
-    "unit_cost": 6.8497
+    "unit_cost": 6.8545
   },
   {
     "part_number": "601044",
@@ -55222,7 +55777,7 @@
   {
     "part_number": "601048",
     "description": "COUPLING,QUICK,1/2\",MALE",
-    "unit_cost": 11.6103
+    "unit_cost": 12.0023
   },
   {
     "part_number": "601049",
@@ -55662,7 +56217,7 @@
   {
     "part_number": "601209",
     "description": "CALIPER,SINGLE,PUCK,BRAKE HYD",
-    "unit_cost": 369.4044
+    "unit_cost": 370.0506
   },
   {
     "part_number": "601210",
@@ -55832,7 +56387,7 @@
   {
     "part_number": "601258",
     "description": "CPLG,HYD,90DEG,6801-LL-6-6(6MJ-6MB LONG)",
-    "unit_cost": 2.1645
+    "unit_cost": 2.1774
   },
   {
     "part_number": "601259",
@@ -55862,7 +56417,7 @@
   {
     "part_number": "601268",
     "description": "HANDLE,VALVE,M8x120 W/LENS CAP",
-    "unit_cost": 7.7746
+    "unit_cost": 8.603
   },
   {
     "part_number": "601269",
@@ -55977,7 +56532,7 @@
   {
     "part_number": "601303",
     "description": "PUMP,8 PISTON,43ccm,1\"KEY,W/ 5GAL TANK",
-    "unit_cost": 1070.09
+    "unit_cost": 1070.1
   },
   {
     "part_number": "601304",
@@ -56097,7 +56652,7 @@
   {
     "part_number": "601332",
     "description": "CPLG,HYD,TEE,6804-6-6-6 (6MJ-6MB-6MJ)",
-    "unit_cost": 2.2812
+    "unit_cost": 2.2811
   },
   {
     "part_number": "601333",
@@ -56122,7 +56677,7 @@
   {
     "part_number": "601338",
     "description": "CPLG,HYD,STR,6400-6-6 (6MJ-6MB)",
-    "unit_cost": 0.6001
+    "unit_cost": 0.6042
   },
   {
     "part_number": "601340",
@@ -56162,7 +56717,7 @@
   {
     "part_number": "601347",
     "description": "CPLG,HYD,90DEG,6801-6-6 (6MJ-6MB)",
-    "unit_cost": 1.1581
+    "unit_cost": 1.1629
   },
   {
     "part_number": "601348",
@@ -56247,7 +56802,7 @@
   {
     "part_number": "601365",
     "description": "GAUGE,OIL,LEVEL",
-    "unit_cost": 25.8281
+    "unit_cost": 26.2573
   },
   {
     "part_number": "601366",
@@ -56367,7 +56922,7 @@
   {
     "part_number": "601390",
     "description": "CPLG,HYD,STR,2404-8-8 (8MJ-8MP)",
-    "unit_cost": 0.8167
+    "unit_cost": 0.8248
   },
   {
     "part_number": "601391",
@@ -56472,12 +57027,12 @@
   {
     "part_number": "601410",
     "description": "GAUGE,PRESSURE 3000PSI,1/4\" NPT",
-    "unit_cost": 11.6976
+    "unit_cost": 12.6161
   },
   {
     "part_number": "601411",
     "description": "CPLG,HYD,90DEG,6801-12-12 (12MJ-12MB)",
-    "unit_cost": 3.4112
+    "unit_cost": 3.477
   },
   {
     "part_number": "601412",
@@ -56497,7 +57052,7 @@
   {
     "part_number": "601416",
     "description": "CPLG,HYD,90DEG,6801-8-6 (8MJ-6MB)",
-    "unit_cost": 2.3384
+    "unit_cost": 2.3461
   },
   {
     "part_number": "601417",
@@ -56702,7 +57257,7 @@
   {
     "part_number": "601457",
     "description": "CPLG,HYD,STR,6400-8-8 (8MJ-8MB)",
-    "unit_cost": 0.7344
+    "unit_cost": 0.7407
   },
   {
     "part_number": "601459",
@@ -56747,7 +57302,7 @@
   {
     "part_number": "601467",
     "description": "CPLG,HYD,STR,6506-4-6 (4FP-6FJS)",
-    "unit_cost": 1.7094
+    "unit_cost": 1.7399
   },
   {
     "part_number": "601468",
@@ -56797,7 +57352,7 @@
   {
     "part_number": "601477",
     "description": "CPLG,HYD,STR,6400-6-8 (6MJ-8MB)",
-    "unit_cost": 1.573
+    "unit_cost": 1.5854
   },
   {
     "part_number": "601478",
@@ -56892,7 +57447,7 @@
   {
     "part_number": "601497",
     "description": "HOSE,ASSEM,3/8\"x144\"(12FT)6FJS-6FJS 6M3K",
-    "unit_cost": 29.5
+    "unit_cost": 31.38
   },
   {
     "part_number": "601498",
@@ -56927,7 +57482,7 @@
   {
     "part_number": "601504",
     "description": "VALVE, LINE, THROTTLE,ADJUSTABLE SETTING",
-    "unit_cost": 33.6887
+    "unit_cost": 33.9912
   },
   {
     "part_number": "601505",
@@ -56952,7 +57507,7 @@
   {
     "part_number": "601509",
     "description": "COUPLING,QUICK,1\",FEMALE",
-    "unit_cost": 28.1111
+    "unit_cost": 72.0227
   },
   {
     "part_number": "601510",
@@ -57002,7 +57557,7 @@
   {
     "part_number": "601519",
     "description": "CPLG,HYD,90DEG,6801-12-8 (12MJ-8MB)",
-    "unit_cost": 3.7251
+    "unit_cost": 3.7536
   },
   {
     "part_number": "601520",
@@ -57082,7 +57637,7 @@
   {
     "part_number": "601535",
     "description": "MNT,MTR/PUMP,SAE B,6.81\",M182682B",
-    "unit_cost": 75.4901
+    "unit_cost": 75.5024
   },
   {
     "part_number": "601536",
@@ -57132,12 +57687,12 @@
   {
     "part_number": "601545",
     "description": "CPLG,HYD,45DEG,6802-12-10 (12MJ-10MB)",
-    "unit_cost": 3.9212
+    "unit_cost": 3.9616
   },
   {
     "part_number": "601546",
     "description": "VALVE ASSY,4W 3P,D03,TANDEM,110VAC",
-    "unit_cost": 201.7036
+    "unit_cost": 205.3162
   },
   {
     "part_number": "601547",
@@ -57232,7 +57787,7 @@
   {
     "part_number": "601566",
     "description": "CPLG,HYD,STR,6400-12-16 (12MJ-16MB)",
-    "unit_cost": 2.3843
+    "unit_cost": 2.3921
   },
   {
     "part_number": "601567",
@@ -57277,7 +57832,7 @@
   {
     "part_number": "601575",
     "description": "PLUG,HYD,6408-8-0(8MB-0)HX HD",
-    "unit_cost": 1.2368
+    "unit_cost": 1.2373
   },
   {
     "part_number": "601576",
@@ -57357,7 +57912,7 @@
   {
     "part_number": "601589",
     "description": "STOP,CYLNDR,STROKE,1-1/2\",LONG CLIP ON",
-    "unit_cost": 10.369
+    "unit_cost": 10.3525
   },
   {
     "part_number": "601590",
@@ -57492,7 +58047,7 @@
   {
     "part_number": "601618",
     "description": "PLUG,HYD,6408-H04(4MB-0)ALLEN HEAD O-RNG",
-    "unit_cost": 0.5337
+    "unit_cost": 0.5378
   },
   {
     "part_number": "601619",
@@ -57587,7 +58142,7 @@
   {
     "part_number": "601637",
     "description": "CPLG,HYD,90DEG,6801-8-10 (8MJ-10MB)",
-    "unit_cost": 2.4699
+    "unit_cost": 2.5201
   },
   {
     "part_number": "601638",
@@ -57692,7 +58247,7 @@
   {
     "part_number": "601655",
     "description": "MTR,HY,3.0CUIN,1\"KEY,SAE-A,TB-SERIES",
-    "unit_cost": 133.4927
+    "unit_cost": 133.4933
   },
   {
     "part_number": "601656",
@@ -57712,7 +58267,7 @@
   {
     "part_number": "601659",
     "description": "CPLG,HYD,STR,2403-8-8 (8MJ-8MJ)",
-    "unit_cost": 0.8453
+    "unit_cost": 0.8521
   },
   {
     "part_number": "601660",
@@ -57827,7 +58382,7 @@
   {
     "part_number": "601682",
     "description": "VALVE,BALL,1-1/4\"NPT 171N-114-NPT",
-    "unit_cost": 37.3674
+    "unit_cost": 37.3684
   },
   {
     "part_number": "601683",
@@ -57847,7 +58402,7 @@
   {
     "part_number": "601686",
     "description": "VALVE BODY,2W 2P,10-2,FLOW CONTROL,SAE8",
-    "unit_cost": 19.94
+    "unit_cost": 19.9868
   },
   {
     "part_number": "601687",
@@ -57977,12 +58532,12 @@
   {
     "part_number": "601712",
     "description": "CPLG,HYD,TEE,6803-6-6-6 (6MJ-6MJ-6MB)",
-    "unit_cost": 2.6818
+    "unit_cost": 2.7114
   },
   {
     "part_number": "601713",
     "description": "CPLG,HYD,90DEG 6500-6-6 (6MJ-6FJS)",
-    "unit_cost": 1.1893
+    "unit_cost": 1.1948
   },
   {
     "part_number": "601714",
@@ -57992,7 +58547,7 @@
   {
     "part_number": "601715",
     "description": "CARTRIDGE,SHUTTLE,T11A-3",
-    "unit_cost": 20.7794
+    "unit_cost": 20.8332
   },
   {
     "part_number": "601716",
@@ -58127,7 +58682,7 @@
   {
     "part_number": "601742",
     "description": "MNT,MTR/PUMP,SAE A,6.81\",M182682A",
-    "unit_cost": 72.0849
+    "unit_cost": 72.0318
   },
   {
     "part_number": "601743",
@@ -58162,7 +58717,7 @@
   {
     "part_number": "601749",
     "description": "CPLG,HYD,STR,6400-8-10 (8MJ-10MB)",
-    "unit_cost": 1.1178
+    "unit_cost": 1.1249
   },
   {
     "part_number": "601750",
@@ -58267,7 +58822,7 @@
   {
     "part_number": "601770",
     "description": "CPLG,HYD,STR,6400-6-10 (6MJ-10MB)",
-    "unit_cost": 1.114
+    "unit_cost": 1.1188
   },
   {
     "part_number": "601771",
@@ -58287,7 +58842,7 @@
   {
     "part_number": "601774",
     "description": "HOSE,ASSEM,3/8\"x252\"(21FT)6FJS-6FJS 6M3K",
-    "unit_cost": 42.66
+    "unit_cost": 48.28
   },
   {
     "part_number": "601775",
@@ -58712,7 +59267,7 @@
   {
     "part_number": "601864",
     "description": "GAUGE,PRESSURE 3000 PSI , -4 SAE",
-    "unit_cost": 31.5097
+    "unit_cost": 31.9479
   },
   {
     "part_number": "601865",
@@ -58722,7 +59277,7 @@
   {
     "part_number": "601866",
     "description": "CPLG,HYD,STR,6400-12-12(12MJ-12MORB)",
-    "unit_cost": 1.7658
+    "unit_cost": 1.7685
   },
   {
     "part_number": "601867",
@@ -58852,7 +59407,7 @@
   {
     "part_number": "601892",
     "description": "CPLG,HYD,STR,6402-08-08 (8MORB-8FJS)",
-    "unit_cost": 1.6272
+    "unit_cost": 1.6521
   },
   {
     "part_number": "601893",
@@ -58872,7 +59427,7 @@
   {
     "part_number": "601896",
     "description": "END,COVER,12\"",
-    "unit_cost": 41.4556
+    "unit_cost": 42.2764
   },
   {
     "part_number": "601897",
@@ -58992,7 +59547,7 @@
   {
     "part_number": "601928",
     "description": "CPLG,HYD,90DEG,6801-LL-8-8 (MJ-MAORB)",
-    "unit_cost": 2.998
+    "unit_cost": 3.0153
   },
   {
     "part_number": "601929",
@@ -59222,7 +59777,7 @@
   {
     "part_number": "601980",
     "description": "VALVE ASSY,RELIEF,8-2,SAE6",
-    "unit_cost": 46.7303
+    "unit_cost": 46.7759
   },
   {
     "part_number": "601981",
@@ -59262,7 +59817,7 @@
   {
     "part_number": "601988",
     "description": "VALVE ASSY,COUN BLNC,ECJ,T11A-3,SAE8/6",
-    "unit_cost": 102.1631
+    "unit_cost": 102.1983
   },
   {
     "part_number": "601989",
@@ -59292,7 +59847,7 @@
   {
     "part_number": "601994",
     "description": "CPLG,HYD,90DEG,6801-8-12,NWO (8MJ-12MB)",
-    "unit_cost": 3.5939
+    "unit_cost": 3.6159
   },
   {
     "part_number": "601995",
@@ -59317,7 +59872,7 @@
   {
     "part_number": "602.00052",
     "description": "SUPPORT ROLLER DM95 [x]",
-    "unit_cost": 28.6777
+    "unit_cost": 28.6278
   },
   {
     "part_number": "602.00053",
@@ -59372,7 +59927,7 @@
   {
     "part_number": "602.00204",
     "description": "FLANGE ROLLER 95 YELLOW ROLL",
-    "unit_cost": 39.3646
+    "unit_cost": 39.2986
   },
   {
     "part_number": "602.00242",
@@ -59677,7 +60232,7 @@
   {
     "part_number": "602057",
     "description": "CPLG,HYD,90DEG 6500-8-6 (8MJ-6FJS)",
-    "unit_cost": 2.3578
+    "unit_cost": 2.3898
   },
   {
     "part_number": "602058",
@@ -59722,7 +60277,7 @@
   {
     "part_number": "602066",
     "description": "CPLG,HYD,STR,6402-06-06 (6MORB-6FJS)",
-    "unit_cost": 1.3849
+    "unit_cost": 1.3561
   },
   {
     "part_number": "602067",
@@ -59737,7 +60292,7 @@
   {
     "part_number": "602069",
     "description": "MNT,MTR/PUMP,SAE A,4.75\",M182472A",
-    "unit_cost": 70.8822
+    "unit_cost": 70.8839
   },
   {
     "part_number": "602070",
@@ -59887,7 +60442,7 @@
   {
     "part_number": "602099",
     "description": "PUMP,GEAR,PTO,PERMCO",
-    "unit_cost": 491.1886
+    "unit_cost": 494.9457
   },
   {
     "part_number": "6021-0029",
@@ -59917,7 +60472,7 @@
   {
     "part_number": "602102",
     "description": "RESTRICTOR,HYD FLOW .047DIA ORIFICE",
-    "unit_cost": 3.62
+    "unit_cost": 2.57
   },
   {
     "part_number": "602103",
@@ -60067,7 +60622,7 @@
   {
     "part_number": "602134",
     "description": "CPLG,HYD,STR,RESTRICTOR 6400-6-8-0 R.042",
-    "unit_cost": 2.8328
+    "unit_cost": 2.8381
   },
   {
     "part_number": "602135",
@@ -60097,7 +60652,7 @@
   {
     "part_number": "602140",
     "description": "TEST POINT #4-0-RING 7/16-20UNF",
-    "unit_cost": 19.3491
+    "unit_cost": 19.7148
   },
   {
     "part_number": "602141",
@@ -60127,7 +60682,7 @@
   {
     "part_number": "602146",
     "description": "CAP #6 JIC",
-    "unit_cost": 1.0558
+    "unit_cost": 1.0685
   },
   {
     "part_number": "602147",
@@ -60152,7 +60707,7 @@
   {
     "part_number": "602151",
     "description": "VALVE, LINE, NEEDLE, SIZE 12, SAE-8",
-    "unit_cost": 86.3626
+    "unit_cost": 89.937
   },
   {
     "part_number": "602152",
@@ -60167,7 +60722,7 @@
   {
     "part_number": "602154",
     "description": "FILTER,ELEM,5\",10µ,BETA 75,SYNTHETIC",
-    "unit_cost": 31.1194
+    "unit_cost": 31.1561
   },
   {
     "part_number": "602155",
@@ -60202,7 +60757,7 @@
   {
     "part_number": "602161",
     "description": "FTNG,STRAIGHT#8-#8-O-RING #3474-08-08NWO",
-    "unit_cost": 1.7674
+    "unit_cost": 1.7727
   },
   {
     "part_number": "602162",
@@ -60292,7 +60847,7 @@
   {
     "part_number": "602181",
     "description": "BREATHER #8 PORT O-RING",
-    "unit_cost": 3.6191
+    "unit_cost": 3.6559
   },
   {
     "part_number": "602182",
@@ -60492,7 +61047,7 @@
   {
     "part_number": "602219",
     "description": "CPLG,HYD,STR,6400-12-08 (12MJ-8MB)",
-    "unit_cost": 1.618
+    "unit_cost": 1.6147
   },
   {
     "part_number": "602221",
@@ -60527,7 +61082,7 @@
   {
     "part_number": "602227",
     "description": "PLUG #12 JIC",
-    "unit_cost": 2.035
+    "unit_cost": 2.0541
   },
   {
     "part_number": "602228",
@@ -60707,7 +61262,7 @@
   {
     "part_number": "602264",
     "description": "VALVE,BALL,#8SAE",
-    "unit_cost": 29.6118
+    "unit_cost": 30.3739
   },
   {
     "part_number": "602265",
@@ -61022,7 +61577,7 @@
   {
     "part_number": "602334",
     "description": "VALVE, LINE, NEEDLE, SIZE 16, SAE-12",
-    "unit_cost": 98.8862
+    "unit_cost": 104.1418
   },
   {
     "part_number": "602335",
@@ -61182,7 +61737,7 @@
   {
     "part_number": "602367",
     "description": "CPLG,HYD,TEE,6602-08-08-08(MJ-FJS-MJ)",
-    "unit_cost": 2.4932
+    "unit_cost": 2.5542
   },
   {
     "part_number": "602368",
@@ -61257,7 +61812,7 @@
   {
     "part_number": "602382",
     "description": "CARTRIDGE E/H,2W 2P,10-2,N.C.,D.BLCKNG",
-    "unit_cost": 46.9396
+    "unit_cost": 48.7833
   },
   {
     "part_number": "602383",
@@ -61297,12 +61852,12 @@
   {
     "part_number": "602390",
     "description": "VALVE,MONOBL,3-ST,3XDBL-ACTING,OC & CC",
-    "unit_cost": 273.3348
+    "unit_cost": 274.0057
   },
   {
     "part_number": "602391",
     "description": "VALVE,MONOBL,4-ST,4XDBL-ACTING,OC & CC",
-    "unit_cost": 390.964
+    "unit_cost": 390.9977
   },
   {
     "part_number": "602392",
@@ -61562,7 +62117,7 @@
   {
     "part_number": "602449",
     "description": "CPLG,HYD,STR,6400-08-06-(08MJ-06MB)",
-    "unit_cost": 0.8289
+    "unit_cost": 0.8332
   },
   {
     "part_number": "602450",
@@ -61652,7 +62207,7 @@
   {
     "part_number": "602467",
     "description": "CPLG,HYD,STR,2406-12-8 (12FJ-8MJ)",
-    "unit_cost": 2.1568
+    "unit_cost": 2.1829
   },
   {
     "part_number": "602468",
@@ -61692,7 +62247,7 @@
   {
     "part_number": "602475",
     "description": "VALVE,ACCESORY,STD.LEVER M8x1.25x200mm",
-    "unit_cost": 3.3431
+    "unit_cost": 3.3487
   },
   {
     "part_number": "602476",
@@ -61722,7 +62277,7 @@
   {
     "part_number": "602481",
     "description": "VALVE,ACCESORY,LEVER HOUSING W/RUBBER",
-    "unit_cost": 13.9191
+    "unit_cost": 14.0124
   },
   {
     "part_number": "602482",
@@ -61767,7 +62322,7 @@
   {
     "part_number": "602498",
     "description": "VALVE,CHECK,SAE#12,5PSI,30gpm,max.5kpsi",
-    "unit_cost": 39
+    "unit_cost": 39.7226
   },
   {
     "part_number": "602499",
@@ -61802,12 +62357,12 @@
   {
     "part_number": "602505",
     "description": "FILTER,HEAD,W/BYPASS 25psi,1-1/4\",60gpm",
-    "unit_cost": 55.366
+    "unit_cost": 55.546
   },
   {
     "part_number": "602506",
     "description": "FILTER,ELEM.10µ-B,SUCTION/ RETURN,602505",
-    "unit_cost": 60.8526
+    "unit_cost": 61.7826
   },
   {
     "part_number": "602507",
@@ -61877,7 +62432,7 @@
   {
     "part_number": "602520",
     "description": "HOSE,ASSEM,1/4\"x10\"(0.83') 6FJX-6FJX",
-    "unit_cost": 6.89
+    "unit_cost": 10.56
   },
   {
     "part_number": "602521",
@@ -61892,7 +62447,7 @@
   {
     "part_number": "602523",
     "description": "FILTER,INDICATOR-GAUGE,RETURN,0..100psi",
-    "unit_cost": 11.8618
+    "unit_cost": 12.8886
   },
   {
     "part_number": "602524",
@@ -61972,7 +62527,7 @@
   {
     "part_number": "602544",
     "description": "HOSE,HYDRAULIC,1\" 1275 PSI,16M3K",
-    "unit_cost": 5.127
+    "unit_cost": 5.1468
   },
   {
     "part_number": "602545",
@@ -62022,7 +62577,7 @@
   {
     "part_number": "602554",
     "description": "PLUG,HYD,6408-16-O MORB EXTERNAL",
-    "unit_cost": 2.4867
+    "unit_cost": 2.487
   },
   {
     "part_number": "602555",
@@ -62132,7 +62687,7 @@
   {
     "part_number": "602577",
     "description": "VALVE,GATE,2\" NTPF",
-    "unit_cost": 46.7742
+    "unit_cost": 46.9199
   },
   {
     "part_number": "602578",
@@ -62507,7 +63062,7 @@
   {
     "part_number": "602663",
     "description": "MTR,HY,17.9CUIN,1-1/4\"KEY,W/BRAKE(COMPL)",
-    "unit_cost": 1170.72
+    "unit_cost": 1201.13
   },
   {
     "part_number": "602664",
@@ -62537,12 +63092,12 @@
   {
     "part_number": "602670",
     "description": "CPLG,HYD,90DEG 6500-8-8(8MJ-8FJS)",
-    "unit_cost": 1.7453
+    "unit_cost": 1.7663
   },
   {
     "part_number": "602671",
     "description": "CPLG,HYD,90DEG 6500-12-12(12MJ-12FJS)",
-    "unit_cost": 3.3364
+    "unit_cost": 3.347
   },
   {
     "part_number": "602672",
@@ -62592,7 +63147,7 @@
   {
     "part_number": "602680",
     "description": "CPLG,HYD,STR,2404-12-16 (12MJ-16MP)1\"",
-    "unit_cost": 2.2836
+    "unit_cost": 2.2932
   },
   {
     "part_number": "602681",
@@ -62607,7 +63162,7 @@
   {
     "part_number": "602683",
     "description": "CPLG,HYD,90DEG,4601-20-12(12MB 1-1/4\"HB)",
-    "unit_cost": 14.4948
+    "unit_cost": 14.7642
   },
   {
     "part_number": "602684",
@@ -62622,7 +63177,7 @@
   {
     "part_number": "602686",
     "description": "CPLG,HYD,90DEG,4601-20-16(1\"MB 1-1/4\"HB)",
-    "unit_cost": 10.9402
+    "unit_cost": 10.976
   },
   {
     "part_number": "602687",
@@ -62632,7 +63187,7 @@
   {
     "part_number": "602688",
     "description": "CPLG,HYD,TEE,6804.12-12-12(12MJ-12MB-12M",
-    "unit_cost": 6.3732
+    "unit_cost": 6.374
   },
   {
     "part_number": "602689",
@@ -62672,12 +63227,12 @@
   {
     "part_number": "602696",
     "description": "VALVE,CHECH,SAE#8,7PSI,10GPM,MAX.3K PSI",
-    "unit_cost": 83.4022
+    "unit_cost": 88.2569
   },
   {
     "part_number": "602697",
     "description": "MANIFOLD,DO3,1-STATION,PARALLEL CIRCUIT",
-    "unit_cost": 69.2378
+    "unit_cost": 69.3441
   },
   {
     "part_number": "602698",
@@ -62692,12 +63247,12 @@
   {
     "part_number": "602700",
     "description": "CPLG,HYD,STR,7002-06-08(MJ#6-G1/2\"MBSPP)",
-    "unit_cost": 7.0746
+    "unit_cost": 7.2915
   },
   {
     "part_number": "602701",
     "description": "CPLG,HYD,TEE,6602-12-12-12(MJ-FJS-MJ)",
-    "unit_cost": 5.1924
+    "unit_cost": 5.1989
   },
   {
     "part_number": "602702",
@@ -62792,7 +63347,7 @@
   {
     "part_number": "602721",
     "description": "VALVE ASSY,4W 2P, D05,12VDC,DIRECT-CHG",
-    "unit_cost": 187.4794
+    "unit_cost": 187.5303
   },
   {
     "part_number": "602722",
@@ -62892,7 +63447,7 @@
   {
     "part_number": "602742",
     "description": "STOP,CYLNDR,STROKE,ASSY,2\"ROD",
-    "unit_cost": 38.2902
+    "unit_cost": 38.2901
   },
   {
     "part_number": "602743",
@@ -62992,7 +63547,7 @@
   {
     "part_number": "602765",
     "description": "CARTRIDGE,PUMP ACCESSORY,ADJ. LS PVM",
-    "unit_cost": 133.2841
+    "unit_cost": 134.213
   },
   {
     "part_number": "602766",
@@ -63002,12 +63557,12 @@
   {
     "part_number": "602767",
     "description": "PWM FLOW CONTROL VALVE N.O 15gmp 3-WAY",
-    "unit_cost": 214.0278
+    "unit_cost": 217.7991
   },
   {
     "part_number": "602768",
     "description": "CARTRIDGE,SEQUENCE,T11A-3,15GPM",
-    "unit_cost": 52.4608
+    "unit_cost": 52.4853
   },
   {
     "part_number": "602769",
@@ -63217,7 +63772,7 @@
   {
     "part_number": "602822",
     "description": "PUMP,PIST,34ccm,7/8\"KEY,SAE-B,PVWJ",
-    "unit_cost": 1798.22
+    "unit_cost": 1815.26
   },
   {
     "part_number": "602823",
@@ -63267,7 +63822,7 @@
   {
     "part_number": "602834",
     "description": "CPLG,HYD,STR,2406-06-08(6FJ-8MJ)",
-    "unit_cost": 1.2286
+    "unit_cost": 1.2424
   },
   {
     "part_number": "602835",
@@ -63292,7 +63847,7 @@
   {
     "part_number": "602839",
     "description": "VALVE,MONOBL,1-ST,DBL-ACT,OC&CC",
-    "unit_cost": 199.8739
+    "unit_cost": 199.9091
   },
   {
     "part_number": "602840",
@@ -63452,7 +64007,7 @@
   {
     "part_number": "602876",
     "description": "CPLG,HYD,STR,6410-02-04(2MB-4FB)",
-    "unit_cost": 0.8675
+    "unit_cost": 0.9056
   },
   {
     "part_number": "602877",
@@ -63462,7 +64017,7 @@
   {
     "part_number": "602878",
     "description": "VALVE,ACCESORY,DETENT KIT,BUCHER",
-    "unit_cost": 14.2416
+    "unit_cost": 14.7406
   },
   {
     "part_number": "602879",
@@ -63487,7 +64042,7 @@
   {
     "part_number": "602883",
     "description": "CPLG,HYD,STR,6402-12-12 (12MB-12FJS)",
-    "unit_cost": 3.3448
+    "unit_cost": 3.3456
   },
   {
     "part_number": "602884",
@@ -63597,7 +64152,7 @@
   {
     "part_number": "602906",
     "description": "VALVE,MONOBL,6W2P,PILOT,AUTO-TOW,SAE8/4",
-    "unit_cost": 283.7874
+    "unit_cost": 283.9316
   },
   {
     "part_number": "602907",
@@ -63627,7 +64182,7 @@
   {
     "part_number": "602912",
     "description": "CPLG,HYD,STR,RESTRICTOR 6400-6-8-O R.021",
-    "unit_cost": 4.034
+    "unit_cost": 4.0663
   },
   {
     "part_number": "602913",
@@ -63657,7 +64212,7 @@
   {
     "part_number": "602918",
     "description": "VALVE ASSY,4W 3P,D05,FLOAT,12VDC",
-    "unit_cost": 360.7723
+    "unit_cost": 365.9067
   },
   {
     "part_number": "602919",
@@ -63667,7 +64222,7 @@
   {
     "part_number": "602920",
     "description": "MANIFOLD,1 STATION,D05,SAE 12",
-    "unit_cost": 105.0891
+    "unit_cost": 106.0692
   },
   {
     "part_number": "602921",
@@ -63707,7 +64262,7 @@
   {
     "part_number": "602928",
     "description": "CYL,1.00\"x8\",Tie Rod,13.81\",0.5\",SAE 4",
-    "unit_cost": 207.571
+    "unit_cost": 208.3823
   },
   {
     "part_number": "602929",
@@ -63962,7 +64517,7 @@
   {
     "part_number": "602979",
     "description": "PWR,UNIT,KTI,2GPM,VERTICAL,C-FACE,NO MTR",
-    "unit_cost": 368.9
+    "unit_cost": 389.39
   },
   {
     "part_number": "602980",
@@ -64077,7 +64632,7 @@
   {
     "part_number": "603000",
     "description": "FILTER,HEAD,W/BYPASS 25PSI,SAE 12,30GPM",
-    "unit_cost": 28.9065
+    "unit_cost": 28.9177
   },
   {
     "part_number": "603001",
@@ -64162,7 +64717,7 @@
   {
     "part_number": "603017",
     "description": "MANIFOLD,HEADER,8HOLE,90DEG,SAE12,SAE16",
-    "unit_cost": 134.2924
+    "unit_cost": 134.6952
   },
   {
     "part_number": "603018",
@@ -64187,12 +64742,12 @@
   {
     "part_number": "603024",
     "description": "VALVE ASSY,4W 2P,DUAL P.O.CHECK,SAE8",
-    "unit_cost": 72.7058
+    "unit_cost": 73.0746
   },
   {
     "part_number": "603025",
     "description": "MANIFOLD,HEADER,2-STATION,90DEG,SAE-8",
-    "unit_cost": 67.8493
+    "unit_cost": 67.8586
   },
   {
     "part_number": "603026",
@@ -64242,7 +64797,7 @@
   {
     "part_number": "603035",
     "description": "PLUG,HYD,6408-H08(8MB-0)HEX HEAD O-RING",
-    "unit_cost": 0.91
+    "unit_cost": 0.9106
   },
   {
     "part_number": "603036",
@@ -64312,7 +64867,7 @@
   {
     "part_number": "603049",
     "description": "MTR,HY,30.5CUIN,2\"KEY,HI-EFF,1860-2011",
-    "unit_cost": 3084.93
+    "unit_cost": 3130.88
   },
   {
     "part_number": "603050",
@@ -64647,12 +65202,12 @@
   {
     "part_number": "603116",
     "description": "CARTRIDGE,CHECK VALVE,CV10-20,6640-2011",
-    "unit_cost": 8.3981
+    "unit_cost": 8.3706
   },
   {
     "part_number": "603117",
     "description": "VALVE,FLOW DIVIDER,BUCHER,MORB PORT,5GPM",
-    "unit_cost": 309.7981
+    "unit_cost": 308.586
   },
   {
     "part_number": "603118",
@@ -65112,7 +65667,7 @@
   {
     "part_number": "603213",
     "description": "CPLG,HYD,STR,4404-20-20 (1-1/4\"HB-20MP)",
-    "unit_cost": 5.8796
+    "unit_cost": 5.8996
   },
   {
     "part_number": "603214",
@@ -65152,7 +65707,7 @@
   {
     "part_number": "603221",
     "description": "FILTER,HIGH PRESSURE,25 GPM,4000 PSI",
-    "unit_cost": 184.9735
+    "unit_cost": 185.2107
   },
   {
     "part_number": "603222",
@@ -65447,7 +66002,7 @@
   {
     "part_number": "603282",
     "description": "VALVE,CHECK,FTNG,-8 M JIC/ 1/2\" M NPT",
-    "unit_cost": 29.036
+    "unit_cost": 29.6762
   },
   {
     "part_number": "603283",
@@ -65457,7 +66012,7 @@
   {
     "part_number": "603284",
     "description": "VALVE,CHECK,FTNG,-10 M SAE/-8 M JIC",
-    "unit_cost": 43.8526
+    "unit_cost": 43.8618
   },
   {
     "part_number": "603285",
@@ -65472,7 +66027,7 @@
   {
     "part_number": "603287",
     "description": "TANK FLANGE,#32 SAE, WELD-ON",
-    "unit_cost": 10.0994
+    "unit_cost": 10.0997
   },
   {
     "part_number": "603288",
@@ -65482,7 +66037,7 @@
   {
     "part_number": "603289",
     "description": "FILTER,TANK,25GPM,100MESH,SS,#32OD/#20ID",
-    "unit_cost": 31.5061
+    "unit_cost": 30.8326
   },
   {
     "part_number": "603290",
@@ -65492,7 +66047,7 @@
   {
     "part_number": "603291",
     "description": "CLPG,HYD,STR,6401-32-32 (32MB-32MP)",
-    "unit_cost": 62.9631
+    "unit_cost": 63.1754
   },
   {
     "part_number": "603292",
@@ -65642,7 +66197,7 @@
   {
     "part_number": "603322",
     "description": "MTR,HY,14.5CUIN,1-1/4\"KEY,2-HOLE,TF-SERI",
-    "unit_cost": 367.2162
+    "unit_cost": 371.724
   },
   {
     "part_number": "603323",
@@ -65777,7 +66332,7 @@
   {
     "part_number": "603349",
     "description": "MNT,MTR/PUMP,SAE B,6.88\",M284682-BM8",
-    "unit_cost": 170.6633
+    "unit_cost": 170.7508
   },
   {
     "part_number": "603350",
@@ -65927,7 +66482,7 @@
   {
     "part_number": "603379",
     "description": "COOLER,RETURN,HYDAC,20GPM,24VDC,-12SAE",
-    "unit_cost": 348.9227
+    "unit_cost": 349.4386
   },
   {
     "part_number": "603380",
@@ -65947,7 +66502,7 @@
   {
     "part_number": "603383",
     "description": "MTR,HY,7.8CUIN,1-1/4\"KEY,2-HOLE,TF-SERIE",
-    "unit_cost": 364.0981
+    "unit_cost": 366.6486
   },
   {
     "part_number": "603384",
@@ -66052,17 +66607,17 @@
   {
     "part_number": "603405",
     "description": "HOSE,EXT,GREASE ZERK,24\"",
-    "unit_cost": 25.4466
+    "unit_cost": 25.9003
   },
   {
     "part_number": "603406",
     "description": "HOSE,EXT,GREASE ZERK,36\"",
-    "unit_cost": 26.0182
+    "unit_cost": 26.5476
   },
   {
     "part_number": "603407",
     "description": "HOSE,EXT,GREASE ZERK,48\"",
-    "unit_cost": 26.5657
+    "unit_cost": 27.0319
   },
   {
     "part_number": "603408",
@@ -66102,7 +66657,7 @@
   {
     "part_number": "603415",
     "description": "CARTRIDGE,CHECK,10-2,BALL,5PSI CRACK",
-    "unit_cost": 14.8354
+    "unit_cost": 14.8316
   },
   {
     "part_number": "603416",
@@ -66122,7 +66677,7 @@
   {
     "part_number": "603419",
     "description": "PUMP,GEAR,TANDEM,14.1CCM,4.5CCM,5/8\" KEY",
-    "unit_cost": 545.1609
+    "unit_cost": 557.9673
   },
   {
     "part_number": "603420",
@@ -66597,7 +67152,7 @@
   {
     "part_number": "603514",
     "description": "MTR,HY,12CUIN,1-1/4\"KEY,2-HOLE,TF-SERIES",
-    "unit_cost": 359.2855
+    "unit_cost": 365.8513
   },
   {
     "part_number": "603515",
@@ -66887,7 +67442,7 @@
   {
     "part_number": "603572",
     "description": "PUMP,PIST,28ccm,7/8\"SPLNE,SAE-B,HP LIMIT",
-    "unit_cost": 1300.7
+    "unit_cost": 1366.66
   },
   {
     "part_number": "603573",
@@ -66927,7 +67482,7 @@
   {
     "part_number": "603579",
     "description": "HOSE,EXT,GREASE ZERK, 66\"",
-    "unit_cost": 27.9528
+    "unit_cost": 28.4132
   },
   {
     "part_number": "603580",
@@ -67037,7 +67592,7 @@
   {
     "part_number": "603601",
     "description": "VALVE ASSY,PROP,12-3,N.C.,15GPM,DEUT,-12",
-    "unit_cost": 209.0745
+    "unit_cost": 209.918
   },
   {
     "part_number": "603602",
@@ -67187,12 +67742,12 @@
   {
     "part_number": "603632",
     "description": "CPLG,HYD,TEE,6804-08-10-08",
-    "unit_cost": 5.2297
+    "unit_cost": 5.3122
   },
   {
     "part_number": "603633",
     "description": "MANIFOLD,HEADER,2-STATION,90DEG,SAE-8",
-    "unit_cost": 38.5458
+    "unit_cost": 39.6505
   },
   {
     "part_number": "603634",
@@ -67217,7 +67772,7 @@
   {
     "part_number": "603638",
     "description": "MTR,HY,29.1CUIN,1-1/4\"KEY,SAE-A,TF-SERIE",
-    "unit_cost": 419.9706
+    "unit_cost": 428.7298
   },
   {
     "part_number": "603639",
@@ -67232,12 +67787,12 @@
   {
     "part_number": "603641",
     "description": "CPLG,HYD,TEE,6804-08-08-08(08MJ-08MB-08M",
-    "unit_cost": 2.7474
+    "unit_cost": 2.7791
   },
   {
     "part_number": "603642",
     "description": "MTR,HY,8.6CUIN,1-1/4\"KEY,SAE-A,TF-SERIE",
-    "unit_cost": 369.7134
+    "unit_cost": 364.24
   },
   {
     "part_number": "603643",
@@ -67257,7 +67812,7 @@
   {
     "part_number": "603646",
     "description": "ACCUMULATOR WELDED BLADDER 5 GALLON",
-    "unit_cost": 1375.16
+    "unit_cost": 1674.5
   },
   {
     "part_number": "603647",
@@ -67277,7 +67832,7 @@
   {
     "part_number": "603650",
     "description": "FILTER ELEMENT,6000 PSI FOR #603649",
-    "unit_cost": 70.7784
+    "unit_cost": 70.8548
   },
   {
     "part_number": "603651",
@@ -67287,7 +67842,7 @@
   {
     "part_number": "603652",
     "description": "VALVE ASSY,6W 2P, SER/PAR,DETENT,-12SAE",
-    "unit_cost": 148.1862
+    "unit_cost": 148.1881
   },
   {
     "part_number": "603653",
@@ -67427,7 +67982,7 @@
   {
     "part_number": "603681",
     "description": "MANIFOLD,BULKBED PTO/ELEC HP LIM,4400-14",
-    "unit_cost": 586.5417
+    "unit_cost": 587.6407
   },
   {
     "part_number": "603682",
@@ -67522,7 +68077,7 @@
   {
     "part_number": "603700",
     "description": "VALVE DUAL COUNTERBALANCE 3:1 T11A 10GPM",
-    "unit_cost": 173.653
+    "unit_cost": 174.472
   },
   {
     "part_number": "603701",
@@ -67637,7 +68192,7 @@
   {
     "part_number": "603724",
     "description": "CARTRIDGE,CNTR BALNCE,RR,3:1,2-5KSI",
-    "unit_cost": 116.2045
+    "unit_cost": 119.08
   },
   {
     "part_number": "603725",
@@ -67797,7 +68352,7 @@
   {
     "part_number": "603756",
     "description": "CYL,2.00\"x10\",WELDED,20.25\",1.125\",-8",
-    "unit_cost": 105.0532
+    "unit_cost": 105.1364
   },
   {
     "part_number": "603757",
@@ -67822,7 +68377,7 @@
   {
     "part_number": "603761",
     "description": "CYL,3.00\"x6\",WELDED,18.25\",1.25\",-8",
-    "unit_cost": 192.3186
+    "unit_cost": 191.7944
   },
   {
     "part_number": "603762",
@@ -67832,12 +68387,12 @@
   {
     "part_number": "603763",
     "description": "CYL,3.00\"x10\",WELDED,20.25\",1.25\",-8",
-    "unit_cost": 137.1831
+    "unit_cost": 136.814
   },
   {
     "part_number": "603764",
     "description": "CYL,3.00\"x12\",WELDED,22.25\",1.25\",-8",
-    "unit_cost": 143.5853
+    "unit_cost": 142.8962
   },
   {
     "part_number": "603765",
@@ -67862,7 +68417,7 @@
   {
     "part_number": "603769",
     "description": "CYL,3.25\"x10\",WELDED, 22.25\",1.25\"REPHAS",
-    "unit_cost": 175.1664
+    "unit_cost": 175.8671
   },
   {
     "part_number": "603770",
@@ -67872,7 +68427,7 @@
   {
     "part_number": "603771",
     "description": "CYL,3.25\"x8\",WELDED, 20.25\",1.25\"REPHAS",
-    "unit_cost": 165.2803
+    "unit_cost": 165.1158
   },
   {
     "part_number": "603772",
@@ -67897,7 +68452,7 @@
   {
     "part_number": "603776",
     "description": "CYL,2.50\"x24\",WELDED,34.25\",1.25\",-8",
-    "unit_cost": 144.4565
+    "unit_cost": 145.4008
   },
   {
     "part_number": "603777",
@@ -67932,7 +68487,7 @@
   {
     "part_number": "603783",
     "description": "CYL,4.00\"x24\",WELDED,34.25\",1.75\",-8",
-    "unit_cost": 237.0441
+    "unit_cost": 244.5412
   },
   {
     "part_number": "603784",
@@ -68142,7 +68697,7 @@
   {
     "part_number": "603827",
     "description": "CARTRIDGE, CBLNC, SUN CBCA 3500 PSI",
-    "unit_cost": 63.4381
+    "unit_cost": 63.5664
   },
   {
     "part_number": "603828",
@@ -68162,12 +68717,12 @@
   {
     "part_number": "603831",
     "description": "CYL,2.25\"x4\",WELD,SNSR,14.25\",1.38\",-8",
-    "unit_cost": 605.7253
+    "unit_cost": 611.7801
   },
   {
     "part_number": "603832",
     "description": "VALVE,CHECK,FTNG,2403-08-08, (8MJ-8MJ)",
-    "unit_cost": 26.9713
+    "unit_cost": 27.0324
   },
   {
     "part_number": "603833",
@@ -68277,7 +68832,7 @@
   {
     "part_number": "603854",
     "description": "CARTRIDGE,10-3,PROP,PRESSURE RED-REL",
-    "unit_cost": 98.2506
+    "unit_cost": 98.6413
   },
   {
     "part_number": "603855",
@@ -68462,7 +69017,7 @@
   {
     "part_number": "603891",
     "description": "CARTRIDGE E/H,2W 2P,10-2,N.O.,POP",
-    "unit_cost": 36.9146
+    "unit_cost": 37.7988
   },
   {
     "part_number": "603892",
@@ -68477,7 +69032,7 @@
   {
     "part_number": "603894",
     "description": "COOLER,HYD MTR 6.3CC,65GPM,SAE-16,HYDAC",
-    "unit_cost": 1167.87
+    "unit_cost": 1171.56
   },
   {
     "part_number": "603895",
@@ -68702,7 +69257,7 @@
   {
     "part_number": "603939",
     "description": "VALVE ASSY,2W 2P,N.C,BLCK,SAE16,DEUTSCH",
-    "unit_cost": 121.4653
+    "unit_cost": 204.41
   },
   {
     "part_number": "603940",
@@ -68807,7 +69362,7 @@
   {
     "part_number": "603960",
     "description": "SENSOR,PRESSURE,5000 PSI,4-20mA,-4SAE,DT",
-    "unit_cost": 106.7934
+    "unit_cost": 107.2196
   },
   {
     "part_number": "603961",
@@ -68872,7 +69427,7 @@
   {
     "part_number": "603975",
     "description": "VALVE,CHECK,FTNG, -6 FJIC-6 MJIC",
-    "unit_cost": 61.4586
+    "unit_cost": 61.4589
   },
   {
     "part_number": "603976",
@@ -69002,7 +69557,7 @@
   {
     "part_number": "604001",
     "description": "CPLG,QUICK,NIPPLE,3/4 INCH,SAE12",
-    "unit_cost": 47.8522
+    "unit_cost": 48.0067
   },
   {
     "part_number": "604002",
@@ -69012,7 +69567,7 @@
   {
     "part_number": "604003",
     "description": "CPLG,QUICK,NIPPLE,1/2 INCH,SAE10",
-    "unit_cost": 20.7399
+    "unit_cost": 20.7408
   },
   {
     "part_number": "604004",
@@ -69097,7 +69652,7 @@
   {
     "part_number": "604020",
     "description": "MTR,HY,22.2CUIN,6B-SPLINE,SAE-A,6-BLT,TF",
-    "unit_cost": 415.7231
+    "unit_cost": 418.306
   },
   {
     "part_number": "604021",
@@ -69212,7 +69767,7 @@
   {
     "part_number": "604044",
     "description": "VALVE, SECTIONAL LS SINGLE STATION",
-    "unit_cost": 246.4344
+    "unit_cost": 246.5128
   },
   {
     "part_number": "604045",
@@ -69337,7 +69892,7 @@
   {
     "part_number": "604069",
     "description": "VALVE,LINE,THROTTLE,ADJUSTABLE SAE 4",
-    "unit_cost": 31.532
+    "unit_cost": 31.5657
   },
   {
     "part_number": "604070",
@@ -69357,7 +69912,7 @@
   {
     "part_number": "604073",
     "description": "CARTRIDGE,2W 2P,10-2,12VDC,NO,POP,DEUTSC",
-    "unit_cost": 67.5068
+    "unit_cost": 67.7852
   },
   {
     "part_number": "604074",
@@ -69642,7 +70197,7 @@
   {
     "part_number": "604136",
     "description": "MANIFOLD,HEADER,2xSAE16,2xSAE20,90DEG",
-    "unit_cost": 93.5102
+    "unit_cost": 93.5265
   },
   {
     "part_number": "604137",
@@ -69677,7 +70232,7 @@
   {
     "part_number": "604143",
     "description": "FILTER,ELEMENT FOR 604142,RETURN/SUCTION",
-    "unit_cost": 149.5853
+    "unit_cost": 147.6635
   },
   {
     "part_number": "604144",
@@ -69797,12 +70352,12 @@
   {
     "part_number": "604167",
     "description": "R_MANIFOLD, INLET, FLOW CONTROL",
-    "unit_cost": 491.9946
+    "unit_cost": 514.4968
   },
   {
     "part_number": "604168",
     "description": "R_MANIFOLD, FLOW CONTROL, ADDER",
-    "unit_cost": 452.255
+    "unit_cost": 463.2133
   },
   {
     "part_number": "604169",
@@ -69877,7 +70432,7 @@
   {
     "part_number": "604185",
     "description": "CARTRIDGE,FLOW CTRL,2W-PROP,PV72-20",
-    "unit_cost": 111.1433
+    "unit_cost": 131.96
   },
   {
     "part_number": "604186",
@@ -70402,7 +70957,7 @@
   {
     "part_number": "604306",
     "description": "VALVE BODY, 2 WAY X OVER SIZE 10-2 #8SAE",
-    "unit_cost": 56.0606
+    "unit_cost": 55.7178
   },
   {
     "part_number": "604307",
@@ -70637,7 +71192,7 @@
   {
     "part_number": "604357",
     "description": "COIL,HAWE EDL SIZE 2,DEUTSCH",
-    "unit_cost": 77.7678
+    "unit_cost": 77.8328
   },
   {
     "part_number": "604358",
@@ -70707,7 +71262,7 @@
   {
     "part_number": "604378",
     "description": "HAWE,4STN,1XH40,3XH25C",
-    "unit_cost": 1543.52
+    "unit_cost": 1547.85
   },
   {
     "part_number": "604379",
@@ -70717,7 +71272,7 @@
   {
     "part_number": "604380",
     "description": "PLUG,HYD, 9522-H02-0)ALLEN HEAD MBSPP",
-    "unit_cost": 1.799
+    "unit_cost": 1.7991
   },
   {
     "part_number": "604381",
@@ -70727,7 +71282,7 @@
   {
     "part_number": "604382",
     "description": "PUMP,PIST,35CCM,15T,SAE-B,A1V,LS",
-    "unit_cost": 1164.33
+    "unit_cost": 1201.94
   },
   {
     "part_number": "604383",
@@ -71137,7 +71692,7 @@
   {
     "part_number": "604469",
     "description": "CPLG, HYD, STR, 7002-02-06 (02MBSPP-6MJ)",
-    "unit_cost": 7.1798
+    "unit_cost": 7.2324
   },
   {
     "part_number": "604471",
@@ -71267,7 +71822,7 @@
   {
     "part_number": "604503",
     "description": "VALVE BODY 08-3 SAE 6",
-    "unit_cost": 19.7656
+    "unit_cost": 19.7524
   },
   {
     "part_number": "604504",
@@ -71282,7 +71837,7 @@
   {
     "part_number": "604506",
     "description": "CPLG,HYD,TEE,2603-06-06-08(6MJ-6MJ-8MJ)",
-    "unit_cost": 3.806
+    "unit_cost": 3.86
   },
   {
     "part_number": "604508",
@@ -71447,7 +72002,7 @@
   {
     "part_number": "604547",
     "description": "CPLG,45 DEG,6802-06-10-NWO-FG(10MB-06MJ)",
-    "unit_cost": 3.7887
+    "unit_cost": 3.8699
   },
   {
     "part_number": "604549",
@@ -71527,7 +72082,7 @@
   {
     "part_number": "604570",
     "description": "CARTRIDGE, 08-8, PRESSURE RED-REL",
-    "unit_cost": 42.5768
+    "unit_cost": 42.5921
   },
   {
     "part_number": "604571",
@@ -71617,12 +72172,12 @@
   {
     "part_number": "604589",
     "description": "VALVE BODY, T2A #12 SAE PORTS",
-    "unit_cost": 39.9972
+    "unit_cost": 39.9769
   },
   {
     "part_number": "604590",
     "description": "CYL,4.00\"x12\",WELDED,22.25\",1.5\",-8",
-    "unit_cost": 251.0494
+    "unit_cost": 250.9513
   },
   {
     "part_number": "604591",
@@ -71647,7 +72202,7 @@
   {
     "part_number": "604595",
     "description": "TIEBOLT KIT 4 STATION SIZE 2",
-    "unit_cost": 40.5643
+    "unit_cost": 40.0611
   },
   {
     "part_number": "604596",
@@ -71667,7 +72222,7 @@
   {
     "part_number": "604599",
     "description": "TIEBOLT KIT 8 STATION SIZE 2",
-    "unit_cost": 43.06
+    "unit_cost": 43.624
   },
   {
     "part_number": "604600",
@@ -71722,7 +72277,7 @@
   {
     "part_number": "604611",
     "description": "HAWE,1STN,1XH40C",
-    "unit_cost": 557.1101
+    "unit_cost": 557.3913
   },
   {
     "part_number": "604612",
@@ -71767,12 +72322,12 @@
   {
     "part_number": "604621",
     "description": "ACCUMULATOR WELDED DIAPHRAM 5CUIN #6 SAE",
-    "unit_cost": 124.5083
+    "unit_cost": 125.1126
   },
   {
     "part_number": "604622",
     "description": "CPLG,STR,6410-08-08(8MB-8FB)",
-    "unit_cost": 2.4295
+    "unit_cost": 2.4471
   },
   {
     "part_number": "604624",
@@ -71787,7 +72342,7 @@
   {
     "part_number": "604626",
     "description": "HAWE EDL STROKE LIMITER CAP",
-    "unit_cost": 7.8789
+    "unit_cost": 7.7984
   },
   {
     "part_number": "604627",
@@ -71897,7 +72452,7 @@
   {
     "part_number": "604648",
     "description": "CPLG,90 DEG,6815-08-08(8MB-8FB)",
-    "unit_cost": 5.2878
+    "unit_cost": 5.3653
   },
   {
     "part_number": "604649",
@@ -72072,7 +72627,7 @@
   {
     "part_number": "604689",
     "description": "CYL,5.00\"X10.00\". WELDED, 22.25\", 2.0\"",
-    "unit_cost": 321.4406
+    "unit_cost": 322.837
   },
   {
     "part_number": "604690",
@@ -72252,7 +72807,7 @@
   {
     "part_number": "604727",
     "description": "CPLG,45DEG,FS6802-08-12(08MS-12MB)",
-    "unit_cost": 11.725
+    "unit_cost": 12.1033
   },
   {
     "part_number": "604728",
@@ -72517,7 +73072,7 @@
   {
     "part_number": "604780",
     "description": "ROD CLEVIS 494980 FOR 603697",
-    "unit_cost": 9.0784
+    "unit_cost": 9.0876
   },
   {
     "part_number": "604781",
@@ -72697,7 +73252,7 @@
   {
     "part_number": "604816",
     "description": "CPLG,90DEG,6815-06-06(6MB-6FB)",
-    "unit_cost": 3.0543
+    "unit_cost": 3.0737
   },
   {
     "part_number": "604817",
@@ -72792,7 +73347,7 @@
   {
     "part_number": "604835",
     "description": "TANK,HYD,7 GAL,HDPE,WITH MTB10 FILTER",
-    "unit_cost": 608.6039
+    "unit_cost": 613.9082
   },
   {
     "part_number": "604836",
@@ -72832,7 +73387,7 @@
   {
     "part_number": "604843",
     "description": "CPLG,STR,6400-12-8-O(8MB-12MJ)",
-    "unit_cost": 1.61
+    "unit_cost": 1.6267
   },
   {
     "part_number": "604844",
@@ -73027,7 +73582,7 @@
   {
     "part_number": "604882",
     "description": "FC51-12 SAE FLOW CONTROL VALVE",
-    "unit_cost": 88.19
+    "unit_cost": 88.195
   },
   {
     "part_number": "604883",
@@ -73067,7 +73622,7 @@
   {
     "part_number": "604890",
     "description": "APACHE LOAD SENSE PUMP",
-    "unit_cost": 933.9279
+    "unit_cost": 934.964
   },
   {
     "part_number": "604891",
@@ -73117,7 +73672,7 @@
   {
     "part_number": "604900",
     "description": "PLUG,PNU,(6MP)",
-    "unit_cost": 1.2286
+    "unit_cost": 1.21
   },
   {
     "part_number": "604901",
@@ -73302,7 +73857,7 @@
   {
     "part_number": "604937",
     "description": "CPLG,QUICK,NIPPLE,3/8 INCH,SAE 6",
-    "unit_cost": 23.6282
+    "unit_cost": 23.758
   },
   {
     "part_number": "604938",
@@ -73322,7 +73877,7 @@
   {
     "part_number": "604941",
     "description": "CAP,COUPLER,QUICK, RED 3/8\"",
-    "unit_cost": 2.3661
+    "unit_cost": 2.3785
   },
   {
     "part_number": "604942",
@@ -73822,7 +74377,7 @@
   {
     "part_number": "605041",
     "description": "MANIFOLD, 10-2, M8 MTR MOUNT, SV10-25",
-    "unit_cost": 118.4347
+    "unit_cost": 117.8708
   },
   {
     "part_number": "605042",
@@ -74187,17 +74742,17 @@
   {
     "part_number": "605104",
     "description": "GLAD HAND, BLUE",
-    "unit_cost": 7.3113
+    "unit_cost": 7.3838
   },
   {
     "part_number": "605105",
     "description": "GLAD HAND, RED",
-    "unit_cost": 4.5041
+    "unit_cost": 4.4947
   },
   {
     "part_number": "605106",
     "description": "TANK, PNU, 8\" DIAMETER, HT-8000",
-    "unit_cost": 159.2037
+    "unit_cost": 159.7678
   },
   {
     "part_number": "605107",
@@ -74207,7 +74762,7 @@
   {
     "part_number": "605108",
     "description": "VALVE,PNU,SPRING BRAKE PRIORITY",
-    "unit_cost": 60.9899
+    "unit_cost": 60.99
   },
   {
     "part_number": "605109",
@@ -74227,7 +74782,7 @@
   {
     "part_number": "605112",
     "description": "VALVE,PNU,RELIEF,\"PRESS. PROTECT. VALVE\"",
-    "unit_cost": 15.9975
+    "unit_cost": 14.4
   },
   {
     "part_number": "605113",
@@ -74377,7 +74932,7 @@
   {
     "part_number": "605142",
     "description": "HAWE,3STN,1XH40C,1XH25C,,1X9BH40C",
-    "unit_cost": 1298.01
+    "unit_cost": 1299.19
   },
   {
     "part_number": "605143",
@@ -74617,12 +75172,12 @@
   {
     "part_number": "605190",
     "description": "PUMP,TANDEM,PM50/45X2,SAE BB,Q12 CTRL",
-    "unit_cost": 3566.64
+    "unit_cost": 3651.48
   },
   {
     "part_number": "605191",
     "description": "VALVE,2 ST,3W2P,12VDC,SAE6,DEUTSCH,KVC2",
-    "unit_cost": 155.8067
+    "unit_cost": 159.4272
   },
   {
     "part_number": "605192",
@@ -74872,7 +75427,7 @@
   {
     "part_number": "605241",
     "description": "SENSOR, SPEED, PARKER MTR, M12",
-    "unit_cost": 249.09
+    "unit_cost": 256.581
   },
   {
     "part_number": "605242",
@@ -75017,7 +75572,7 @@
   {
     "part_number": "605270",
     "description": "MTR,HYD,11.9CUIN,1\"KEY,SAE-A,M8,TE-SERIE",
-    "unit_cost": 315.8334
+    "unit_cost": 316.0082
   },
   {
     "part_number": "605271",
@@ -75187,7 +75742,7 @@
   {
     "part_number": "605305",
     "description": "CPLG,TEE,6660-16-16-16(16FB-16FB-16FB)",
-    "unit_cost": 20.33
+    "unit_cost": 23.55
   },
   {
     "part_number": "605306",
@@ -75247,7 +75802,7 @@
   {
     "part_number": "605317",
     "description": "CARTRIDGE,REDUCING RELIEVNG,10-2,2100PSI",
-    "unit_cost": 32.5
+    "unit_cost": 32.6817
   },
   {
     "part_number": "605318",
@@ -75327,7 +75882,7 @@
   {
     "part_number": "605334",
     "description": "CPLG,STR,2700-LN-08-08-SS(08MJ-08MJ)",
-    "unit_cost": 20.69
+    "unit_cost": 20.8444
   },
   {
     "part_number": "605335",
@@ -75342,7 +75897,7 @@
   {
     "part_number": "605337",
     "description": "TUBE ASSEM,3/8\",STAINLESS,FJIC, 4X12 CYL",
-    "unit_cost": 20.5467
+    "unit_cost": 20.7737
   },
   {
     "part_number": "605338",
@@ -75442,7 +75997,7 @@
   {
     "part_number": "605358",
     "description": "VALVE,WTR,08FPT,2W2P,N.C.,12VDC",
-    "unit_cost": 377.6571
+    "unit_cost": 507.6161
   },
   {
     "part_number": "605359",
@@ -75462,7 +76017,7 @@
   {
     "part_number": "605362",
     "description": "CPLG,90DEG,BULKHD,2701-08-08-SS(8MJ-8MJ)",
-    "unit_cost": 18.83
+    "unit_cost": 19.67
   },
   {
     "part_number": "605363",
@@ -75527,7 +76082,7 @@
   {
     "part_number": "605377",
     "description": "CPLG,STR,2403-08-06-SS(06MJ-08MJ)",
-    "unit_cost": 7.2616
+    "unit_cost": 7.5085
   },
   {
     "part_number": "605378",
@@ -75562,7 +76117,7 @@
   {
     "part_number": "605384",
     "description": "CPLG,HYD,STR,2403-10-10-SS(10MJ-10MJ)",
-    "unit_cost": 11.2492
+    "unit_cost": 11.573
   },
   {
     "part_number": "605385",
@@ -75726,7 +76281,7 @@
   },
   {
     "part_number": "605417",
-    "description": "CPLG,45DEG,FS2702-10-10-SS(10MS-10MS)",
+    "description": "CPLG,45DEG,FS2702-10-10(10MS-10MS)",
     "unit_cost": 14.5374
   },
   {
@@ -75882,7 +76437,7 @@
   {
     "part_number": "605448",
     "description": "CPLG,STR,6MM PUSH TO CONNECT-1/4\" BSPP",
-    "unit_cost": 4.7508
+    "unit_cost": 4.599
   },
   {
     "part_number": "605449",
@@ -76012,7 +76567,7 @@
   {
     "part_number": "605474",
     "description": "CPLG,HYD,STR,2404-04-06-SS(04MJ-06MP)",
-    "unit_cost": 5.78
+    "unit_cost": 6.06
   },
   {
     "part_number": "605475",
@@ -77077,7 +77632,7 @@
   {
     "part_number": "605687",
     "description": "CARTRIDGE,2W2P, P.O. BLOCKING VLV 150PSI",
-    "unit_cost": 32
+    "unit_cost": 34.5
   },
   {
     "part_number": "605688",
@@ -77207,7 +77762,7 @@
   {
     "part_number": "605713",
     "description": "MTR,HY,11.9CUIN,1-1/4\"KEY,SAE-A,TG-SERIE",
-    "unit_cost": 410.05
+    "unit_cost": 411.83
   },
   {
     "part_number": "605714",
@@ -77252,7 +77807,7 @@
   {
     "part_number": "605722",
     "description": "PUMP,PIST,85CCM,14T,SAE-C,A10VO,DRSC",
-    "unit_cost": 2624.56
+    "unit_cost": 2693.38
   },
   {
     "part_number": "605723",
@@ -77377,7 +77932,7 @@
   {
     "part_number": "605747",
     "description": "CPLG,HYD, STR, 7002-06-06 (06MJ-06MBSPP)",
-    "unit_cost": 6.5278
+    "unit_cost": 6.5565
   },
   {
     "part_number": "605748",
@@ -77397,7 +77952,7 @@
   {
     "part_number": "605751",
     "description": "ROD CLEVIS 1.50-1.00 SHORT/N",
-    "unit_cost": 20.691
+    "unit_cost": 18.643
   },
   {
     "part_number": "605752",
@@ -77447,7 +78002,7 @@
   {
     "part_number": "605761",
     "description": "MTR,HYD,1.9CUIN,5/8\"KEY,5BOLT,ETN J-SERI",
-    "unit_cost": 264.41
+    "unit_cost": 324.0622
   },
   {
     "part_number": "605762",
@@ -77472,12 +78027,12 @@
   {
     "part_number": "605766",
     "description": "FILTER,RETURN,63GPM,SAE-20,HYDAC LPF",
-    "unit_cost": 405.5827
+    "unit_cost": 404.9725
   },
   {
     "part_number": "605767",
     "description": "SWITCH,DIFF PRESSURE,29PSI,NC,DT04,G1/2",
-    "unit_cost": 140.49
+    "unit_cost": 145.5417
   },
   {
     "part_number": "605768",
@@ -77577,7 +78132,7 @@
   {
     "part_number": "605787",
     "description": "HAWE,4STN,1XH40,1XH25,2XH16",
-    "unit_cost": 952.15
+    "unit_cost": 1002.74
   },
   {
     "part_number": "605788",
@@ -77932,7 +78487,7 @@
   {
     "part_number": "605858",
     "description": "CARTRIDGE, RELIEF, T-3A, 25-800PSI",
-    "unit_cost": 81.9
+    "unit_cost": 94.11
   },
   {
     "part_number": "605859",
@@ -78972,7 +79527,7 @@
   {
     "part_number": "606066",
     "description": "CPLG,HYD,90DEG 6500-08-12 (8MJ-12FJS)",
-    "unit_cost": 8.96
+    "unit_cost": 9.1012
   },
   {
     "part_number": "606067",
@@ -81257,7 +81812,7 @@
   {
     "part_number": "606527",
     "description": "HAWE,3STN,1XH40C,2XH25",
-    "unit_cost": 1014.26
+    "unit_cost": 1036.58
   },
   {
     "part_number": "606528",
@@ -84417,7 +84972,7 @@
   {
     "part_number": "607146",
     "description": "CYL,3.50\"X96\",WELDED,106.0\",3\",-8,BAILEY",
-    "unit_cost": 1162.92
+    "unit_cost": 1385.59
   },
   {
     "part_number": "607147",
@@ -84642,7 +85197,7 @@
   {
     "part_number": "607191",
     "description": "VALVE, FLOW CNTRL,PRES COMP 0-3GPM SAE06",
-    "unit_cost": 78.3611
+    "unit_cost": 78.2939
   },
   {
     "part_number": "607192",
@@ -84652,7 +85207,7 @@
   {
     "part_number": "607193",
     "description": "MTR,HYD,11.9CUIN,1\"KEY,SAE-A,2000SER",
-    "unit_cost": 396.2981
+    "unit_cost": 397.1494
   },
   {
     "part_number": "607194",
@@ -87117,7 +87672,7 @@
   {
     "part_number": "607685",
     "description": "PUMP,GEAR,3CUIN,15T SHAFT,SAE-B,AZPG",
-    "unit_cost": 683
+    "unit_cost": 653.5
   },
   {
     "part_number": "607686",
@@ -87137,7 +87692,7 @@
   {
     "part_number": "607689",
     "description": "VALVE BODY, 12-6, SAE 10",
-    "unit_cost": 0
+    "unit_cost": 202.33
   },
   {
     "part_number": "607691",
@@ -88247,7 +88802,7 @@
   {
     "part_number": "607918",
     "description": "PUMP,PIST,63CCM,15T,SAE-B,A10VO,LS",
-    "unit_cost": 1762.79
+    "unit_cost": 3073.6
   },
   {
     "part_number": "607919",
@@ -88727,7 +89282,7 @@
   {
     "part_number": "608014",
     "description": "HOSE,ASSEM,1/4\"X9\",06FJS-06FJS90S",
-    "unit_cost": 14.31
+    "unit_cost": 14.4238
   },
   {
     "part_number": "608015",
@@ -88962,7 +89517,7 @@
   {
     "part_number": "608063",
     "description": "TANK,FLANGE,#32 SAE,WELD-ON,STNLS STEEL",
-    "unit_cost": 113.8
+    "unit_cost": 146.31
   },
   {
     "part_number": "608064",
@@ -89210,9 +89765,19 @@
     "unit_cost": 0
   },
   {
+    "part_number": "608155",
+    "description": "HOSE,ASSEM,1/4\"X276\",6FJS-6FJS90L",
+    "unit_cost": 54.14
+  },
+  {
     "part_number": "608156",
     "description": "PWR,UNIT,110VAC,1PH 1HP,1.15GAL,1GPM",
     "unit_cost": 1604.97
+  },
+  {
+    "part_number": "608157",
+    "description": "HAWE,8STN,1XH80ME,2XH25MEC,4XH25MEC,1XH4",
+    "unit_cost": 3798.81
   },
   {
     "part_number": "608158",
@@ -89270,6 +89835,41 @@
     "unit_cost": 73.2
   },
   {
+    "part_number": "608175",
+    "description": "HOSE,2\"X234\" SUCTION",
+    "unit_cost": 200.4
+  },
+  {
+    "part_number": "608176",
+    "description": "HOSE,ASSEM,1\"X22\" 16FJS-16FJS,S/R",
+    "unit_cost": 43.87
+  },
+  {
+    "part_number": "608177",
+    "description": "HOSE,ASSEM,1\"X300\" 16FJS-16FJS,S/R",
+    "unit_cost": 196.56
+  },
+  {
+    "part_number": "608178",
+    "description": "HOSE,ASSEM,1\"X40\" 16FJS-16FJS,S/R",
+    "unit_cost": 53.76
+  },
+  {
+    "part_number": "608179",
+    "description": "HOSE,2-1/2\"X231\",SUCTION",
+    "unit_cost": 267.5
+  },
+  {
+    "part_number": "608180",
+    "description": "HOSE,ASSEM,3/4\"X294\",12FJS-12FJS,S/R",
+    "unit_cost": 163.35
+  },
+  {
+    "part_number": "608181",
+    "description": "HOSE,ASSEM,3/4\"X306\",12FJS-12FJS,S/R",
+    "unit_cost": 169.23
+  },
+  {
     "part_number": "608182",
     "description": "O-RING, #230, BUNA-N, 70",
     "unit_cost": 0.3
@@ -89285,6 +89885,56 @@
     "unit_cost": 31.9
   },
   {
+    "part_number": "608185",
+    "description": "HOSE,ASSEM,1/2\"X63\",08FJS-08FJS90M",
+    "unit_cost": 59.55
+  },
+  {
+    "part_number": "608186",
+    "description": "HOSE,ASSEM,1-1/4\"X228\"20FJS-20FJS,S/R",
+    "unit_cost": 229.48
+  },
+  {
+    "part_number": "608187",
+    "description": "HOSE,ASSEM,1/2\"X138\" 08FJS-08FJS90S",
+    "unit_cost": 41.23
+  },
+  {
+    "part_number": "608188",
+    "description": "HOSE,ASSEM,1/4\"X75\",06FJS-06FJS90S",
+    "unit_cost": 22.54
+  },
+  {
+    "part_number": "608189",
+    "description": "HOSE,ASSEM,1/4\"X20\",06FJS-06FJS45",
+    "unit_cost": 14.04
+  },
+  {
+    "part_number": "608190",
+    "description": "HOSE,ASSEM,1/4\"X38\",06FJS-06FJS45",
+    "unit_cost": 16.18
+  },
+  {
+    "part_number": "608191",
+    "description": "HOSE,ASSM,1/4\"X105\",06FJS-06FJS90S",
+    "unit_cost": 26.11
+  },
+  {
+    "part_number": "608192",
+    "description": "HOSE,ASSEM,1/2\"X288\",08FJS-08FJS90S",
+    "unit_cost": 66.23
+  },
+  {
+    "part_number": "608193",
+    "description": "HOSE,ASSEM,3/4\"X48\",12FJS-16FLH22",
+    "unit_cost": 84.3
+  },
+  {
+    "part_number": "608194",
+    "description": "CPLG,90DEG,6500-L-06-06 (6MJ-6FJS)",
+    "unit_cost": 5.68
+  },
+  {
     "part_number": "608195",
     "description": "COOLER,HYD,22CC MTR,SAE-24,HYDAC,ELH9",
     "unit_cost": 3831.75
@@ -89293,6 +89943,116 @@
     "part_number": "608196",
     "description": "HAWE,6STN,1XH80ME,3XH25ME,1XH40ME,1XH25C",
     "unit_cost": 2953.71
+  },
+  {
+    "part_number": "608197",
+    "description": "HOSE,ASSEM,5/8\"X168\",10FJS-10FJS90L",
+    "unit_cost": 72.88
+  },
+  {
+    "part_number": "608198",
+    "description": "HOSE,ASSEM,1/2\"X73\",10FJS-08FJ90S",
+    "unit_cost": 33.05
+  },
+  {
+    "part_number": "608199",
+    "description": "HOSE,ASSEM,3/8\"X192\",06FJS-06FJS90S",
+    "unit_cost": 43.56
+  },
+  {
+    "part_number": "608200",
+    "description": "HOSE,ASSEM,3/4\"X24\" 12FJS-12FJS45",
+    "unit_cost": 42.41
+  },
+  {
+    "part_number": "608201",
+    "description": "HOSE,ASSEM,3/4\"X26\" 12FJS-12FJS45",
+    "unit_cost": 43.02
+  },
+  {
+    "part_number": "608202",
+    "description": "PSL SIZE 2 INLET",
+    "unit_cost": 299.82
+  },
+  {
+    "part_number": "608203",
+    "description": "HAWE,FD,1STN,1XH6ME",
+    "unit_cost": 598.98
+  },
+  {
+    "part_number": "608204",
+    "description": "HOSE,ASSEM,3/8\"X120\",06FJS-08FJS90S",
+    "unit_cost": 41.93
+  },
+  {
+    "part_number": "608205",
+    "description": "CONVERSION SHAFT,FS30AS 1.5\" 17T FEM SPL",
+    "unit_cost": 361.6
+  },
+  {
+    "part_number": "608206",
+    "description": "SHAFT ASSEMBLY,SAI GM2 FEM DIN5480",
+    "unit_cost": 805.98
+  },
+  {
+    "part_number": "608207",
+    "description": "SEAL KIT,SAI GM2A3",
+    "unit_cost": 119.9
+  },
+  {
+    "part_number": "608208",
+    "description": "SEAL KIT, PUMP 604135, A10VO45",
+    "unit_cost": 132.58
+  },
+  {
+    "part_number": "608209",
+    "description": "FLOW DIVIDER GEAR 50:50 26GPM 3500PSI",
+    "unit_cost": 1680
+  },
+  {
+    "part_number": "608210",
+    "description": "MTR,HYD,6.2CUIN,1\"KEY,4-BOLT,T-SER",
+    "unit_cost": 277.52
+  },
+  {
+    "part_number": "608211",
+    "description": "HAWE,3STN,1XH80,1XH120,1XH25PL",
+    "unit_cost": 2369.43
+  },
+  {
+    "part_number": "608213",
+    "description": "TRACK,POLYMER,1665UNIFLEX, 55 LINK, 880",
+    "unit_cost": 271.99
+  },
+  {
+    "part_number": "608214",
+    "description": "TRACK,POLYMER,1665UNIFLEX, ENDS ONLY",
+    "unit_cost": 20.55
+  },
+  {
+    "part_number": "608215",
+    "description": "TRACK,POLYMER,1665UNIFLEX, LINK ONLY",
+    "unit_cost": 4.57
+  },
+  {
+    "part_number": "608217",
+    "description": "CARTRIDGE E/H,2W 2P,12-2,N.C.,POP,MO",
+    "unit_cost": 53.72
+  },
+  {
+    "part_number": "608218",
+    "description": "HAWE,6STN,1XH80,1XH6C,1XH25C,2XH16C,1XH4",
+    "unit_cost": 2773.7
+  },
+  {
+    "part_number": "608219",
+    "description": "HAWE,6STN,1XH16C,1XH6C,1XH40,1XH25PL...",
+    "unit_cost": 2205.12
+  },
+  {
+    "part_number": "608220",
+    "description": "SEAL KIT, PUMP 604890, A10VO28",
+    "unit_cost": 261.89
   },
   {
     "part_number": "7302-0018",
@@ -89392,12 +90152,12 @@
   {
     "part_number": "731003",
     "description": "PIPE,1/2\",SCH,40(.840\" OD)ASTM A120 BARE",
-    "unit_cost": 0.7345
+    "unit_cost": 0.6802
   },
   {
     "part_number": "731004",
     "description": "PIPE,3/4\",SCH,40(1.05\" OD)ASTM A500",
-    "unit_cost": 0.8887
+    "unit_cost": 0.949
   },
   {
     "part_number": "731005",
@@ -89407,12 +90167,12 @@
   {
     "part_number": "731006",
     "description": "PIPE,1-1/4\",SCH,40(1.66\"OD)ASTM A500",
-    "unit_cost": 1.6892
+    "unit_cost": 1.6865
   },
   {
     "part_number": "731007",
     "description": "PIPE,1-1/2\",SCH,40(1.9\"OD)ASTM A500",
-    "unit_cost": 2.2752
+    "unit_cost": 2.3502
   },
   {
     "part_number": "731009",
@@ -89427,7 +90187,7 @@
   {
     "part_number": "731011",
     "description": "PIPE,3\",SCH,40(3.5\"OD)ASTM A53B",
-    "unit_cost": 5.6241
+    "unit_cost": 5.8143
   },
   {
     "part_number": "731012",
@@ -89437,7 +90197,7 @@
   {
     "part_number": "731015",
     "description": "PIPE,4\",SCH,40(4.50\"OD), BLACK PE,A53",
-    "unit_cost": 8.8937
+    "unit_cost": 9.4576
   },
   {
     "part_number": "731017",
@@ -89527,7 +90287,7 @@
   {
     "part_number": "731048",
     "description": "ELBOW,PIPE,STREET,90 DEGREE 1/8\"",
-    "unit_cost": 3.3532
+    "unit_cost": 3.8244
   },
   {
     "part_number": "731049",
@@ -89547,7 +90307,7 @@
   {
     "part_number": "731052",
     "description": "ELBOW,PIPE,STREET,90 DEGREE 3/4\"",
-    "unit_cost": 3.339
+    "unit_cost": 3.3394
   },
   {
     "part_number": "731053",
@@ -89557,7 +90317,7 @@
   {
     "part_number": "731054",
     "description": "ELBOW,PIPE,STREET,90 DEGREE 1-1/4\"",
-    "unit_cost": 8.0614
+    "unit_cost": 8.3227
   },
   {
     "part_number": "731055",
@@ -90097,7 +90857,7 @@
   {
     "part_number": "731164",
     "description": "PIPE,3-1/2\",SCH,40 (4\" OD) ASTM A53B",
-    "unit_cost": 7.7573
+    "unit_cost": 7.7983
   },
   {
     "part_number": "731165",
@@ -90132,7 +90892,7 @@
   {
     "part_number": "731171",
     "description": "NIPPLE,PIPE,1-1/4\" x CLOSE",
-    "unit_cost": 5.5098
+    "unit_cost": 5.5099
   },
   {
     "part_number": "731172",
@@ -90207,7 +90967,7 @@
   {
     "part_number": "731186",
     "description": "PIPE,3\",SCH,80,ASTM A53 GR8 ASTM A53B",
-    "unit_cost": 9.3863
+    "unit_cost": 9.3845
   },
   {
     "part_number": "731187",
@@ -90282,7 +91042,7 @@
   {
     "part_number": "731202",
     "description": "PVC,PIPE,2-1/2\"SCH,40(2.875\"OD)WHITEx20'",
-    "unit_cost": 1.1051
+    "unit_cost": 3.0923
   },
   {
     "part_number": "731207",
@@ -90702,7 +91462,7 @@
   {
     "part_number": "HA0050",
     "description": "MAIN HYDRAULICS, 66X1-13",
-    "unit_cost": 41.3495
+    "unit_cost": 39.8498
   },
   {
     "part_number": "HA0051",
@@ -91197,7 +91957,7 @@
   {
     "part_number": "HA0150",
     "description": "WHEEL ASSIST,6621-14",
-    "unit_cost": 12405.44
+    "unit_cost": 1469.6
   },
   {
     "part_number": "HA0151",
@@ -96332,7 +97092,7 @@
   {
     "part_number": "HA1255",
     "description": "TUBE KIT,TOMRA AIR LINES,BBL 1000",
-    "unit_cost": 473.24
+    "unit_cost": 483.24
   },
   {
     "part_number": "HA1256",
@@ -98777,7 +99537,7 @@
   {
     "part_number": "HA1762",
     "description": "BOOM LIFT, 882",
-    "unit_cost": 547.9788
+    "unit_cost": 868.4307
   },
   {
     "part_number": "HA1763",
@@ -98797,7 +99557,7 @@
   {
     "part_number": "HA1766",
     "description": "REAR WHEEL DRIVE, 882",
-    "unit_cost": 852.6259
+    "unit_cost": 854.8357
   },
   {
     "part_number": "HA1767",
@@ -98867,7 +99627,7 @@
   {
     "part_number": "HA1780",
     "description": "SWING AXLE LIFT, 882",
-    "unit_cost": 449.1609
+    "unit_cost": 830.325
   },
   {
     "part_number": "HA1781",
@@ -98942,7 +99702,7 @@
   {
     "part_number": "HA1795",
     "description": "REAR WHEEL STEERING, 882",
-    "unit_cost": 227.0253
+    "unit_cost": 228.9475
   },
   {
     "part_number": "HA1796",
@@ -100550,9 +101310,99 @@
     "unit_cost": 155.3734
   },
   {
+    "part_number": "HA2145",
+    "description": "TRACTOR HYDRAULICS SUPPLY,6631",
+    "unit_cost": 6959.24
+  },
+  {
+    "part_number": "HA2146",
+    "description": "AXLE STEERING,6631",
+    "unit_cost": 158.2443
+  },
+  {
+    "part_number": "HA2147",
+    "description": "AXLE LEVELING,6631",
+    "unit_cost": 117.5544
+  },
+  {
+    "part_number": "HA2148",
+    "description": "INDEPENDENT CONTROL DIGGERNOSE,6631",
+    "unit_cost": 1537.2
+  },
+  {
+    "part_number": "HA2149",
+    "description": "PRESSURE DOWN COULTERS,6631",
+    "unit_cost": 387.0155
+  },
+  {
+    "part_number": "HA2150",
+    "description": "REAR ROCK BOX,6631",
+    "unit_cost": 130.0978
+  },
+  {
+    "part_number": "HA2151",
+    "description": "HUMP ADJUST,6631",
+    "unit_cost": 222.4045
+  },
+  {
+    "part_number": "HA2152",
+    "description": "SIMPLE-SEP SPACING,6631",
+    "unit_cost": 112.1953
+  },
+  {
+    "part_number": "HA2153",
+    "description": "TERRA FLOAT ADJUST,6631",
+    "unit_cost": 188.9393
+  },
+  {
     "part_number": "HA2154",
     "description": "13TH DIRECTIONAL VALVE,61XX",
-    "unit_cost": 633.7284
+    "unit_cost": 633.9524
+  },
+  {
+    "part_number": "HA2155",
+    "description": "OUTSIDE DEPTH WHEEL ADJUST,6631",
+    "unit_cost": 199.4593
+  },
+  {
+    "part_number": "HA2156",
+    "description": "AIRSEP TILT,6631",
+    "unit_cost": 293.0869
+  },
+  {
+    "part_number": "HA2157",
+    "description": "AIRSEP CLUTCH,6631",
+    "unit_cost": 72.9646
+  },
+  {
+    "part_number": "HA2158",
+    "description": "AIRSEP GRID ANGLE,6631",
+    "unit_cost": 113.66
+  },
+  {
+    "part_number": "HA2159",
+    "description": "AIRSEP GATE,6631",
+    "unit_cost": 101.623
+  },
+  {
+    "part_number": "HA2160",
+    "description": "TRASH CONVEYOR ADJUST,6631",
+    "unit_cost": 191.3389
+  },
+  {
+    "part_number": "HA2161",
+    "description": "ROCK CONVEYOR W/ TRASH,6631",
+    "unit_cost": 1155.48
+  },
+  {
+    "part_number": "HA2162",
+    "description": "ROCK CONVEYOR W/O TRASH,6631",
+    "unit_cost": 973.1841
+  },
+  {
+    "part_number": "HA2163",
+    "description": "FOLDOVER BOOM SWING,6631",
+    "unit_cost": 65.0422
   },
   {
     "part_number": "HA2164",
@@ -100562,52 +101412,162 @@
   {
     "part_number": "HA2165",
     "description": "DEPTH CONTROL JUMPERS,89XX",
-    "unit_cost": 47.4036
+    "unit_cost": 47.4176
   },
   {
     "part_number": "HA2166",
     "description": "REAR LIFT JUMPERS,FERT,89XX",
-    "unit_cost": 50.9908
+    "unit_cost": 51.0048
   },
   {
     "part_number": "HA2167",
     "description": "FEED BELTS/CHAINS JUMPERS,FERT,89XX",
-    "unit_cost": 407.6308
+    "unit_cost": 407.6448
   },
   {
     "part_number": "HA2168",
     "description": "PRIMARY ROCKER SHAKER,T-CTRL,61XX",
-    "unit_cost": 108.6468
+    "unit_cost": 108.8903
   },
   {
     "part_number": "HA2169",
     "description": "PRIMARY ROCKER SHAKER,S4-CTRL,61XX",
-    "unit_cost": 387.3861
+    "unit_cost": 387.6296
+  },
+  {
+    "part_number": "HA2170",
+    "description": "HYD SIDE ELEVATOR AND REAR CROSS,6631",
+    "unit_cost": 962.3557
+  },
+  {
+    "part_number": "HA2171",
+    "description": "COOLER DRIVE,6631",
+    "unit_cost": 218.6716
+  },
+  {
+    "part_number": "HA2172",
+    "description": "TANDEM W/ HYD PRIMARY HPU,6631",
+    "unit_cost": 12316.46
+  },
+  {
+    "part_number": "HA2173",
+    "description": "SELF-HYD PRIMARY DRIVE,6631",
+    "unit_cost": 265.7337
   },
   {
     "part_number": "HA2174",
     "description": "SECONDARY ROCKER SHAKER,S4-CTRL,61XX",
-    "unit_cost": 56.9657
+    "unit_cost": 56.98
   },
   {
     "part_number": "HA2175",
     "description": "CHAIN DRIVE REVERSING KIT,6160",
-    "unit_cost": 477.3027
+    "unit_cost": 477.6446
   },
   {
     "part_number": "HA2176",
     "description": "CONTROL PANEL SUPPLY JUMPERS, FERT, 89XX",
-    "unit_cost": 150.3751
+    "unit_cost": 150.4458
   },
   {
     "part_number": "HA2177",
     "description": "PRMRY & SCDRY RCKR SHKR,S4-CTRL,61XX",
-    "unit_cost": 657.8525
+    "unit_cost": 658.0819
+  },
+  {
+    "part_number": "HA2179",
+    "description": "SINGLE PUMP HPU,6631",
+    "unit_cost": 8869.87
+  },
+  {
+    "part_number": "HA2180",
+    "description": "SINGLE PUMP VALVE SUPPLY,6631",
+    "unit_cost": 3699.35
+  },
+  {
+    "part_number": "HA2181",
+    "description": "TANDEM W/ HYD SE & REAR X HPU,6631",
+    "unit_cost": 9579.97
+  },
+  {
+    "part_number": "HA2183",
+    "description": "SELF-HYDRAULIC VALVE SUPPLY,6631",
+    "unit_cost": 3700.79
+  },
+  {
+    "part_number": "HA2184",
+    "description": "SIMPLE-SEP DRIVE,6631",
+    "unit_cost": 407.2273
+  },
+  {
+    "part_number": "HA2185",
+    "description": "MULTI-SEP DRIVES,PRO CTRL,42\" SE,6631",
+    "unit_cost": 1531.01
+  },
+  {
+    "part_number": "HA2186",
+    "description": "M-SEP SEG ROLLERS,42\" SE,6631",
+    "unit_cost": 794.3304
+  },
+  {
+    "part_number": "HA2187",
+    "description": "M-SEP CLOD ROLLERS,42\" SE,6631",
+    "unit_cost": 736.6807
+  },
+  {
+    "part_number": "HA2188",
+    "description": "STAR-SEP DRIVE,FOLDOVER BOOM,6631",
+    "unit_cost": 448.5145
+  },
+  {
+    "part_number": "HA2189",
+    "description": "PRIMARY SHAKER,6631",
+    "unit_cost": 80.6999
+  },
+  {
+    "part_number": "HA2190",
+    "description": "SECONDARY SHAKERS,6631",
+    "unit_cost": 112.8459
+  },
+  {
+    "part_number": "HA2191",
+    "description": "GRID SHAKER,6631",
+    "unit_cost": 442.9335
+  },
+  {
+    "part_number": "HA2192",
+    "description": "WHEEL ASSIST,6631",
+    "unit_cost": 908.9495
+  },
+  {
+    "part_number": "HA2193",
+    "description": "TERRA FLOAT DRIVE,6631",
+    "unit_cost": 767.2764
   },
   {
     "part_number": "HA2194",
     "description": "DRY FERT, STANDARD DRAWBAR, 89XX",
     "unit_cost": 242.7881
+  },
+  {
+    "part_number": "HA2195",
+    "description": "MULTI-SEP CYLINDER FUNCTIONS,6631",
+    "unit_cost": 413.5849
+  },
+  {
+    "part_number": "HA2196",
+    "description": "MULTI-SEP CLOD ROLLER GAP,6631",
+    "unit_cost": 126.7527
+  },
+  {
+    "part_number": "HA2197",
+    "description": "MULTI-SEP CLOD ROLLER HEIGHT,6631",
+    "unit_cost": 151.6327
+  },
+  {
+    "part_number": "HA2198",
+    "description": "MULTI-SEP TABLE ANGLE,6631",
+    "unit_cost": 135.1995
   },
   {
     "part_number": "HA2199",
@@ -100620,9 +101580,99 @@
     "unit_cost": 670.3187
   },
   {
+    "part_number": "HA2201",
+    "description": "FOLDOVER BOOM INNER,6631",
+    "unit_cost": 538.6336
+  },
+  {
+    "part_number": "HA2202",
+    "description": "FOLDOVER BOOM OUTER,6631",
+    "unit_cost": 414.0651
+  },
+  {
+    "part_number": "HA2203",
+    "description": "FOLDOVER BOOM DRIVE,6631",
+    "unit_cost": 251.0339
+  },
+  {
+    "part_number": "HA2204",
+    "description": "SWINGING H-TANK VLV SUPPLY,6631",
+    "unit_cost": 2985.22
+  },
+  {
+    "part_number": "HA2205",
+    "description": "H-TANK BOOM DRIVE,6631",
+    "unit_cost": 538.5136
+  },
+  {
+    "part_number": "HA2206",
+    "description": "H-TANK FILL ELEVATOR DRIVE,HARV",
+    "unit_cost": 94.5741
+  },
+  {
+    "part_number": "HA2207",
+    "description": "H-TANK FILL ELEVATOR LIFT,HARV",
+    "unit_cost": 46.947
+  },
+  {
+    "part_number": "HA2208",
+    "description": "H-TANK HOPPER FLOOR,HARV",
+    "unit_cost": 46.8027
+  },
+  {
+    "part_number": "HA2209",
+    "description": "H-TANK SWING,HARV",
+    "unit_cost": 32.9092
+  },
+  {
+    "part_number": "HA2210",
+    "description": "H-TANK BOOM FOLD,HARV",
+    "unit_cost": 123.7192
+  },
+  {
+    "part_number": "HA2211",
+    "description": "H-TANK BOOM INNER,HARV",
+    "unit_cost": 128.4042
+  },
+  {
+    "part_number": "HA2212",
+    "description": "H-TANK STD BOOM OUTER,HARV",
+    "unit_cost": 137.387
+  },
+  {
+    "part_number": "HA2213",
+    "description": "H-TANK B/A BOOM OUTER,HARV",
+    "unit_cost": 154.5355
+  },
+  {
+    "part_number": "HA2214",
+    "description": "TRACTOR HYD DRIVEN PRIMARY,66X1",
+    "unit_cost": 506.9449
+  },
+  {
+    "part_number": "HA2221",
+    "description": "STAR-SEP DRIVE,H-TANK,6631",
+    "unit_cost": 476.0357
+  },
+  {
     "part_number": "HA2222",
     "description": "DRY FERTILIZER DRIVE, 89XX",
     "unit_cost": 45.6097
+  },
+  {
+    "part_number": "HA2223",
+    "description": "HYD KIT,WHEEL DRIVE DIVERTER,6740",
+    "unit_cost": 569.1605
+  },
+  {
+    "part_number": "HA2224",
+    "description": "WHEEL ASSIST SUPPLY,6631",
+    "unit_cost": 1985.57
+  },
+  {
+    "part_number": "HA2225",
+    "description": "MANUAL/ELECTRIC VALVE, 882",
+    "unit_cost": 3332.46
   },
   {
     "part_number": "HA2226",
@@ -101373,6 +102423,26 @@
     "part_number": "HA2375",
     "description": "STEERING HOSE KIT,DBL DISCH 36\",6142",
     "unit_cost": 128.16
+  },
+  {
+    "part_number": "HA2376",
+    "description": "3HP HYD PWR UNIT, BOOM LIFT + PUPS, 1660",
+    "unit_cost": 2274.5
+  },
+  {
+    "part_number": "HA2377",
+    "description": "2 PUPS, 1660",
+    "unit_cost": 439.1879
+  },
+  {
+    "part_number": "HA2378",
+    "description": "BOOM LIFT, 1660",
+    "unit_cost": 1346.16
+  },
+  {
+    "part_number": "HA2379",
+    "description": "3HP HYD PWR UNIT,BOOM LIFT NO PUPS,1660",
+    "unit_cost": 2275.1
   },
   {
     "part_number": "HA29001",
@@ -102217,12 +103287,12 @@
   {
     "part_number": "HK0120",
     "description": "HOSE KIT,6 HYDRAULIC JACKS,991-14",
-    "unit_cost": 575.97
+    "unit_cost": 612.73
   },
   {
     "part_number": "HK0121",
     "description": "HOSE KIT, A/S+M/S ADJUST,991-14",
-    "unit_cost": 512.95
+    "unit_cost": 434.08
   },
   {
     "part_number": "HK0122",
@@ -102297,7 +103367,7 @@
   {
     "part_number": "HK0136",
     "description": "HOSE KIT,HYD WHL DRV/STEER,2 AXLE,991-14",
-    "unit_cost": 301.65
+    "unit_cost": 320.914
   },
   {
     "part_number": "HK0137",
@@ -102757,7 +103827,7 @@
   {
     "part_number": "HK0229",
     "description": "HOSE KIT,STANDARD HYD,LARGE FRAME,991-14",
-    "unit_cost": 279.11
+    "unit_cost": 220.56
   },
   {
     "part_number": "HK0230",
@@ -102772,7 +103842,7 @@
   {
     "part_number": "HK0232",
     "description": "HOSE KIT,SIDE DISCH LARGE FRAM,991-14",
-    "unit_cost": 195.19
+    "unit_cost": 207.64
   },
   {
     "part_number": "HK0233",
@@ -103037,7 +104107,7 @@
   {
     "part_number": "HK0285",
     "description": "HOSE KIT,RH/LHTIPDN+FAN,LRG FRAME,991",
-    "unit_cost": 332.57
+    "unit_cost": 361.57
   },
   {
     "part_number": "HK0286",
@@ -103112,7 +104182,7 @@
   {
     "part_number": "HK0301",
     "description": "HOSE KIT,ELEVATOR SHKR,LARGE FRAME,991",
-    "unit_cost": 126.64
+    "unit_cost": 134.72
   },
   {
     "part_number": "HK0302",
@@ -103362,7 +104432,7 @@
   {
     "part_number": "HK0352",
     "description": "HOSE KIT,UPPER+LOWER MSEP CTRL,991",
-    "unit_cost": 306.83
+    "unit_cost": 326.44
   },
   {
     "part_number": "HK0353",
@@ -103662,7 +104732,7 @@
   {
     "part_number": "HK0412",
     "description": "HOSE KIT,ROCK TRANSFER CONVEYOR,991",
-    "unit_cost": 49.56
+    "unit_cost": 52.72
   },
   {
     "part_number": "HK0413",
@@ -103987,7 +105057,7 @@
   {
     "part_number": "HK0484",
     "description": "HOSE KIT, ELEVATOR SHAKER, 994",
-    "unit_cost": 59.7
+    "unit_cost": 59.09
   },
   {
     "part_number": "HK0485",
@@ -105257,12 +106327,12 @@
   {
     "part_number": "HK0773",
     "description": "HOSE KIT,DEERE GPS,STANDARD DRAWBAR 83XX",
-    "unit_cost": 81.37
+    "unit_cost": 86.56
   },
   {
     "part_number": "HK0774",
     "description": "HOSE KIT, DRAWBAR, STANDARD, 83XX",
-    "unit_cost": 257.89
+    "unit_cost": 274.34
   },
   {
     "part_number": "HK0775",
@@ -105332,7 +106402,7 @@
   {
     "part_number": "HK0790",
     "description": "HOSE KIT 8XXX STANDARD DRAWBAR 3/8\"",
-    "unit_cost": 71.4227
+    "unit_cost": 73.78
   },
   {
     "part_number": "HK0791",
@@ -105477,12 +106547,12 @@
   {
     "part_number": "HK0821",
     "description": "HOSE KIT, DRAWBAR, LONG, 83XX",
-    "unit_cost": 300.47
+    "unit_cost": 319.63
   },
   {
     "part_number": "HK0823",
     "description": "HOSE KIT, DEERE GPS LONG DRAWBAR 83XX",
-    "unit_cost": 88.26
+    "unit_cost": 93.9
   },
   {
     "part_number": "HK0824",
@@ -105592,7 +106662,7 @@
   {
     "part_number": "HK0845",
     "description": "HOSE KIT,LEVELING JACKS,994",
-    "unit_cost": 607.3467
+    "unit_cost": 607.3475
   },
   {
     "part_number": "HK0846",
@@ -105917,7 +106987,7 @@
   {
     "part_number": "HK0910",
     "description": "HOSE KIT,DIGGER NOSE,6740M",
-    "unit_cost": 179.6278
+    "unit_cost": 185.6186
   },
   {
     "part_number": "HK0911",
@@ -105927,7 +106997,7 @@
   {
     "part_number": "HK0912",
     "description": "HOSE KIT,PRIMARY SHAKERS,6740M",
-    "unit_cost": 132.0865
+    "unit_cost": 132.1241
   },
   {
     "part_number": "HK0913",
@@ -106097,62 +107167,62 @@
   {
     "part_number": "HK0948",
     "description": "HOSE KIT, REAR CROSS FEED CHAINS, 8308",
-    "unit_cost": 187.37
+    "unit_cost": 199.34
   },
   {
     "part_number": "HK0949",
     "description": "HOSE KIT,REAR TOOLBAR,TRAILING,FOLD,8308",
-    "unit_cost": 317.95
+    "unit_cost": 338.25
   },
   {
     "part_number": "HK0950",
     "description": "HOSE KIT, AXLE STEERING, 8308",
-    "unit_cost": 175.37
+    "unit_cost": 186.56
   },
   {
     "part_number": "HK0951",
     "description": "HOSE KIT, MAIN FRAME ROW UNIT DRIVE,8308",
-    "unit_cost": 210.29
+    "unit_cost": 237.37
   },
   {
     "part_number": "HK0952",
     "description": "HOSE KIT, FEED CHAINS, 8308",
-    "unit_cost": 315.28
+    "unit_cost": 335.38
   },
   {
     "part_number": "HK0953",
     "description": "HOSE KIT, FOLDING FEED CHAINS LH,8308/10",
-    "unit_cost": 78.05
+    "unit_cost": 83
   },
   {
     "part_number": "HK0954",
     "description": "HOSE KIT, FOLDING FEED CHAINS RH,8308/10",
-    "unit_cost": 78.37
+    "unit_cost": 83.34
   },
   {
     "part_number": "HK0955",
     "description": "HOSE KIT,FOLDING FEED CHAINS SUPPLY,8308",
-    "unit_cost": 142.12
+    "unit_cost": 151.16
   },
   {
     "part_number": "HK0956",
     "description": "HOSE KIT, FRONT & REAR LIFT, 8308",
-    "unit_cost": 279.21
+    "unit_cost": 297.02
   },
   {
     "part_number": "HK0957",
     "description": "HOSE KIT, FOLDING WING, 8308",
-    "unit_cost": 272.81
+    "unit_cost": 290.21
   },
   {
     "part_number": "HK0958",
     "description": "HOSE KIT, HOPPER TILT, 8308",
-    "unit_cost": 120.66
+    "unit_cost": 128.36
   },
   {
     "part_number": "HK0959",
     "description": "HOSE KIT, STANDARD HYDRAULICS, 8308",
-    "unit_cost": 271.23
+    "unit_cost": 289.17
   },
   {
     "part_number": "HK0960",
@@ -107192,7 +108262,7 @@
   {
     "part_number": "HK1168",
     "description": "HOSE KIT, STANDARD DRAWBAR, 89XX",
-    "unit_cost": 278.62
+    "unit_cost": 291.955
   },
   {
     "part_number": "HK1169",
@@ -107377,7 +108447,7 @@
   {
     "part_number": "HK1206",
     "description": "HOSE KIT, ROW UNIT LEVELING 34\"-36\", 890",
-    "unit_cost": 141.77
+    "unit_cost": 150.82
   },
   {
     "part_number": "HK1207",
@@ -107457,7 +108527,7 @@
   {
     "part_number": "HK1222",
     "description": "HOSE KIT, M-SEP INDIVIDUAL DRIVE, LF 991",
-    "unit_cost": 731.74
+    "unit_cost": 811.47
   },
   {
     "part_number": "HK1223",
@@ -107472,7 +108542,7 @@
   {
     "part_number": "HK1225",
     "description": "HOSE KIT, AIRSEP FEED CHAIN, LF 991",
-    "unit_cost": 113.79
+    "unit_cost": 121.05
   },
   {
     "part_number": "HK1226",
@@ -107587,22 +108657,22 @@
   {
     "part_number": "HK1252",
     "description": "HOSE KIT, CONTROL PANEL SUPPLY, LF, 8906",
-    "unit_cost": 185.23
+    "unit_cost": 327.86
   },
   {
     "part_number": "HK1254",
     "description": "HOSE KIT, 4 WHEEL CASTER,LF,8906",
-    "unit_cost": 258.5
+    "unit_cost": 300.21
   },
   {
     "part_number": "HK1255",
     "description": "HOSE KIT, FEED CHAINS, 34\"-36\", 8906",
-    "unit_cost": 136.25
+    "unit_cost": 144.95
   },
   {
     "part_number": "HK1256",
     "description": "HOSE KIT, FEED BELTS, LF, 8906",
-    "unit_cost": 273.62
+    "unit_cost": 292.51
   },
   {
     "part_number": "HK1257",
@@ -107627,7 +108697,7 @@
   {
     "part_number": "HK1261",
     "description": "HOSE KIT, NO DRAWBAR / SEMI MOUNT, 8906",
-    "unit_cost": 181.27
+    "unit_cost": 192.84
   },
   {
     "part_number": "HK1262",
@@ -107642,7 +108712,7 @@
   {
     "part_number": "HK1264",
     "description": "HOSE KIT, TRLNG TLBR,CASTER,LF,8906",
-    "unit_cost": 164.18
+    "unit_cost": 174.66
   },
   {
     "part_number": "HK1265",
@@ -108417,7 +109487,7 @@
   {
     "part_number": "HK1420",
     "description": "HOSE KIT, ROW UNIT LEVELING, LF, 8906",
-    "unit_cost": 147.07
+    "unit_cost": 156.45
   },
   {
     "part_number": "HK1421",
@@ -108762,7 +109832,7 @@
   {
     "part_number": "HK1498",
     "description": "HOSE KIT,FRONT & REAR LIFT,LF,8906",
-    "unit_cost": 296.84
+    "unit_cost": 315.77
   },
   {
     "part_number": "HK1499",
@@ -108792,7 +109862,7 @@
   {
     "part_number": "HK1505",
     "description": "HOSE KIT, STANDARD JD GPS DRAWBAR, 89XX",
-    "unit_cost": 69.36
+    "unit_cost": 71.57
   },
   {
     "part_number": "HK1506",
@@ -108807,7 +109877,7 @@
   {
     "part_number": "HK1508",
     "description": "HOSE KIT, JD GPS, LF, 8906",
-    "unit_cost": 84.8
+    "unit_cost": 90.22
   },
   {
     "part_number": "HK1509",
@@ -110062,7 +111132,7 @@
   {
     "part_number": "HK1763",
     "description": "HOSE KIT, BOOM LIFT, 882",
-    "unit_cost": 215.52
+    "unit_cost": 333.67
   },
   {
     "part_number": "HK1764",
@@ -110127,12 +111197,12 @@
   {
     "part_number": "HK1776",
     "description": "HOSE KIT, REAR WHEEL DRIVE, 882",
-    "unit_cost": 191.1
+    "unit_cost": 211.62
   },
   {
     "part_number": "HK1777",
     "description": "HOSE KIT, SWING AXLE LIFT, 882",
-    "unit_cost": 178.02
+    "unit_cost": 182.99
   },
   {
     "part_number": "HK1778",
@@ -110197,7 +111267,7 @@
   {
     "part_number": "HK1790",
     "description": "HOSE KIT, REAR WHEEL STEERING, 882",
-    "unit_cost": 218.82
+    "unit_cost": 224.04
   },
   {
     "part_number": "HK1792",
@@ -110662,7 +111732,7 @@
   {
     "part_number": "HK1884",
     "description": "HOSE KIT, RH PLANT AND SHAKER DRIVE,89XX",
-    "unit_cost": 115.54
+    "unit_cost": 121.11
   },
   {
     "part_number": "HK1885",
@@ -110942,7 +112012,7 @@
   {
     "part_number": "HK1942",
     "description": "HOSE KIT, STANDARD STEERING, 780",
-    "unit_cost": 133.1135
+    "unit_cost": 139.2
   },
   {
     "part_number": "HK1943",
@@ -111037,7 +112107,7 @@
   {
     "part_number": "HK1961",
     "description": "HOSE KIT,RH VALVE ASSEMBLY,6740M",
-    "unit_cost": 156.63
+    "unit_cost": 156.6014
   },
   {
     "part_number": "HK1962",
@@ -111047,7 +112117,7 @@
   {
     "part_number": "HK1963",
     "description": "HOSE KIT,TRACTOR CONNECTIONS,6740M",
-    "unit_cost": 289.6367
+    "unit_cost": 289.8029
   },
   {
     "part_number": "HK1964",
@@ -111247,7 +112317,7 @@
   {
     "part_number": "HK2005",
     "description": "HOSE KIT,FILL ELEVATOR,4880",
-    "unit_cost": 87.02
+    "unit_cost": 92.58
   },
   {
     "part_number": "HK2006",
@@ -111257,7 +112327,7 @@
   {
     "part_number": "HK2007",
     "description": "HOSE KIT,ELEVATOR DRIVE,4880",
-    "unit_cost": 139.89
+    "unit_cost": 148.82
   },
   {
     "part_number": "HK2008",
@@ -111272,7 +112342,7 @@
   {
     "part_number": "HK2010",
     "description": "HOSE KIT,ELEVATOR LIFT,4880",
-    "unit_cost": 75.91
+    "unit_cost": 80.75
   },
   {
     "part_number": "HK2011",
@@ -111282,12 +112352,12 @@
   {
     "part_number": "HK2012",
     "description": "HOSE KIT,ELEVATOR FOLD,4880",
-    "unit_cost": 107.68
+    "unit_cost": 114.55
   },
   {
     "part_number": "HK2013",
     "description": "HOSE KIT,SUPPLY,4880",
-    "unit_cost": 68.33
+    "unit_cost": 72.69
   },
   {
     "part_number": "HK2014",
@@ -111560,9 +112630,64 @@
     "unit_cost": 129.04
   },
   {
+    "part_number": "HK2085",
+    "description": "HOSE KIT,TRACTOR HYDRAULICS SUPPLY,6631",
+    "unit_cost": 284.34
+  },
+  {
+    "part_number": "HK2086",
+    "description": "HOSE KIT,AXLE STEERING,6631",
+    "unit_cost": 121.07
+  },
+  {
+    "part_number": "HK2087",
+    "description": "HOSE KIT,AXLE LEVELING,6631",
+    "unit_cost": 97.66
+  },
+  {
+    "part_number": "HK2088",
+    "description": "HOSE KIT,IND CONTROL DIGGERNOSE,6631",
+    "unit_cost": 106.86
+  },
+  {
+    "part_number": "HK2089",
+    "description": "HOSE KIT,PRESSURE DOWN COULTERS,6631",
+    "unit_cost": 224.41
+  },
+  {
+    "part_number": "HK2090",
+    "description": "HOSE KIT,REAR ROCK BOX,6631",
+    "unit_cost": 105.14
+  },
+  {
+    "part_number": "HK2091",
+    "description": "HOSE KIT,HUMP ADJUST,6631",
+    "unit_cost": 194.68
+  },
+  {
+    "part_number": "HK2092",
+    "description": "HOSE KIT,SIMPLE-SEP SPACING,6631",
+    "unit_cost": 96.05
+  },
+  {
+    "part_number": "HK2093",
+    "description": "HOSE KIT,TERRA FLOAT ADJUST,6631",
+    "unit_cost": 161.03
+  },
+  {
     "part_number": "HK2094",
     "description": "HOSE KIT,13TH DIRECTIONAL VALVE,61XX",
     "unit_cost": 50.22
+  },
+  {
+    "part_number": "HK2095",
+    "description": "HOSE KIT,TERRA FLOAT ADJUST,6631",
+    "unit_cost": 171.55
+  },
+  {
+    "part_number": "HK2096",
+    "description": "HOSE KIT,AIRSEP TILT,6631",
+    "unit_cost": 155.71
   },
   {
     "part_number": "HK2097",
@@ -111573,6 +112698,36 @@
     "part_number": "HK2098",
     "description": "HOSE KIT,DRT RLL HPPER W/ PINTLE, LF 991",
     "unit_cost": 104.7
+  },
+  {
+    "part_number": "HK2099",
+    "description": "HOSE KIT,AIRSEP CLUTCH,6631",
+    "unit_cost": 67.62
+  },
+  {
+    "part_number": "HK2100",
+    "description": "HOSE KIT,AIRSEP GRID ANGLE,6631",
+    "unit_cost": 102.88
+  },
+  {
+    "part_number": "HK2101",
+    "description": "HOSE KIT,AIRSEP GATE,6631",
+    "unit_cost": 95.91
+  },
+  {
+    "part_number": "HK2102",
+    "description": "HOSE KIT,TRASH CONVEYOR ADJUST,6631",
+    "unit_cost": 179.3
+  },
+  {
+    "part_number": "HK2103",
+    "description": "HOSE KIT,ROCK CONVEYOR W/ TRASH,6631",
+    "unit_cost": 438.58
+  },
+  {
+    "part_number": "HK2104",
+    "description": "HOSE KIT,ROCK CONVEYOR W/O TRASH,6631",
+    "unit_cost": 358.92
   },
   {
     "part_number": "HK2105",
@@ -111593,6 +112748,11 @@
     "part_number": "HK2108",
     "description": "HOSE KIT,PRIMARY SHAKER,T-CTRL,36\",6142",
     "unit_cost": 274.2
+  },
+  {
+    "part_number": "HK2109",
+    "description": "HOSE KIT,HYD SIDE ELEV AND REAR X,6631",
+    "unit_cost": 429.81
   },
   {
     "part_number": "HK2110",
@@ -111628,6 +112788,11 @@
     "part_number": "HK2116",
     "description": "HOSE KIT,PRIMARY SHAKER,T-CTRL,40\",6160",
     "unit_cost": 311.92
+  },
+  {
+    "part_number": "HK2117",
+    "description": "HOSE KIT,COOLER DRIVE,6631",
+    "unit_cost": 122.81
   },
   {
     "part_number": "HK2118",
@@ -111668,6 +112833,21 @@
     "part_number": "HK2125",
     "description": "HOSE KIT,LOADING DOCK",
     "unit_cost": 145.03
+  },
+  {
+    "part_number": "HK2126",
+    "description": "HOSE KIT,SINGLE PUMP HPU,6631",
+    "unit_cost": 494.59
+  },
+  {
+    "part_number": "HK2127",
+    "description": "HOSE KIT,SINGLE PUMP VALVE SUPPLY,6631",
+    "unit_cost": 273.11
+  },
+  {
+    "part_number": "HK2128",
+    "description": "HOSE KIT,TANDEM W/ HYD SE & RC HPU,6631",
+    "unit_cost": 960.35
   },
   {
     "part_number": "HK2130",
@@ -111715,9 +112895,74 @@
     "unit_cost": 54.73
   },
   {
+    "part_number": "HK2139",
+    "description": "HOSE KIT,SELF-HYD VALVE SUPPLY,6631",
+    "unit_cost": 274.55
+  },
+  {
+    "part_number": "HK2140",
+    "description": "HOSE KIT,SIMPLE SEP DRIVE,6631",
+    "unit_cost": 233.09
+  },
+  {
+    "part_number": "HK2141",
+    "description": "HOSE KIT,M-SEP SEG ROLLERS,42\" SE,6631",
+    "unit_cost": 302.09
+  },
+  {
+    "part_number": "HK2142",
+    "description": "HOSE KIT,M-SEP CLOD ROLLERS,42\" SE,6631",
+    "unit_cost": 117.4
+  },
+  {
+    "part_number": "HK2143",
+    "description": "HOSE KIT,STAR-SEP DRIVE,FLDVER BOOM,6631",
+    "unit_cost": 196.78
+  },
+  {
+    "part_number": "HK2144",
+    "description": "HOSE KIT,PRIMARY SHAKER,6631",
+    "unit_cost": 78.45
+  },
+  {
+    "part_number": "HK2145",
+    "description": "HOSE KIT,SECONDARY SHAKERS,6631",
+    "unit_cost": 102.79
+  },
+  {
+    "part_number": "HK2146",
+    "description": "HOSE KIT,GRID SHAKER,6631",
+    "unit_cost": 263.79
+  },
+  {
+    "part_number": "HK2147",
+    "description": "HOSE KIT,WHEEL ASSIST,6631",
+    "unit_cost": 769.62
+  },
+  {
+    "part_number": "HK2148",
+    "description": "HOSE KIT,TERRA FLOAT DRIVE,6631",
+    "unit_cost": 247.99
+  },
+  {
     "part_number": "HK2149",
     "description": "HOSE KIT, DRY FERT, STNDRD DRAWBAR, 89XX",
     "unit_cost": 98
+  },
+  {
+    "part_number": "HK2150",
+    "description": "HOSE KIT,M-SEP CLOD ROLLER GAP,6631",
+    "unit_cost": 106.76
+  },
+  {
+    "part_number": "HK2151",
+    "description": "HOSE KIT,M-SEP CLOD ROLLER HEIGHT,6631",
+    "unit_cost": 131.64
+  },
+  {
+    "part_number": "HK2152",
+    "description": "HOSE KIT,M-SEP TABLE ANGLE,6631",
+    "unit_cost": 122.41
   },
   {
     "part_number": "HK2153",
@@ -111725,13 +112970,148 @@
     "unit_cost": 150.14
   },
   {
+    "part_number": "HK2154",
+    "description": "HOSE KIT,TANDEM W/HYD PRIMARY HPU,6631",
+    "unit_cost": 927.22
+  },
+  {
+    "part_number": "HK2155",
+    "description": "HOSE KIT,SELF-HYD PRIMARY DRIVE,6631",
+    "unit_cost": 252.68
+  },
+  {
     "part_number": "HK2156",
     "description": "HOSE KIT, DRY FERT LID SUPPLY, 89XX",
     "unit_cost": 39.46
   },
   {
+    "part_number": "HK2157",
+    "description": "HOSE KIT,FOLDOVER BOOM SWING,6631",
+    "unit_cost": 61.07
+  },
+  {
+    "part_number": "HK2158",
+    "description": "HOSE KIT,FOLDOVER BOOM INNER,6631",
+    "unit_cost": 241.35
+  },
+  {
+    "part_number": "HK2159",
+    "description": "HOSE KIT,FOLDOVER BOOM OUTER,6631",
+    "unit_cost": 240.59
+  },
+  {
+    "part_number": "HK2160",
+    "description": "HOSE KIT,FOLDOVER BOOM DRIVE,6631",
+    "unit_cost": 138.34
+  },
+  {
+    "part_number": "HK2161",
+    "description": "HOSE KIT,SWINGING H-TANK VLV SUPPLY,6631",
+    "unit_cost": 137.3
+  },
+  {
+    "part_number": "HK2162",
+    "description": "HOSE KIT,H-TANK BOOM DRIVE,6631",
+    "unit_cost": 331.33
+  },
+  {
+    "part_number": "HK2163",
+    "description": "HOSE KIT,H-TANK FILL ELEVATOR DRIVE,HARV",
+    "unit_cost": 84.8
+  },
+  {
+    "part_number": "HK2164",
+    "description": "HOSE KIT,H-TANK FILL ELEVATOR LIFT,HARV",
+    "unit_cost": 33.2
+  },
+  {
+    "part_number": "HK2165",
+    "description": "HOSE KIT,H-TANK HOPPER FLOOR,HARV",
+    "unit_cost": 41.45
+  },
+  {
+    "part_number": "HK2166",
+    "description": "HOSE KIT,H-TANK SWING,HARV",
+    "unit_cost": 29.58
+  },
+  {
+    "part_number": "HK2167",
+    "description": "HOSE KIT,H-TANK BOOM FOLD,HARV",
+    "unit_cost": 103.74
+  },
+  {
+    "part_number": "HK2168",
+    "description": "HOSE KIT,H-TANK BOOM INNER,HARV",
+    "unit_cost": 107.42
+  },
+  {
+    "part_number": "HK2169",
+    "description": "HOSE KIT,H-TANK STD BOOM OUTER,HARV",
+    "unit_cost": 122.46
+  },
+  {
+    "part_number": "HK2170",
+    "description": "HOSE KIT,WHEEL DRIVE DIVERTER,6740",
+    "unit_cost": 377.74
+  },
+  {
+    "part_number": "HK2171",
+    "description": "HOSE KIT,WHEEL ASSIST SUPPLY,6631",
+    "unit_cost": 528.84
+  },
+  {
+    "part_number": "HK2172",
+    "description": "HOSE KIT,H-TANK B/A BOOM OUTER,HARV",
+    "unit_cost": 124.02
+  },
+  {
     "part_number": "HK2173",
     "description": "HOSE KIT, DRY FERTILIZER DRIVE, 89XX",
     "unit_cost": 37.53
+  },
+  {
+    "part_number": "HK2174",
+    "description": "HOSE KIT,TRACTOR HYD DRIVEN PRIMARY,66X1",
+    "unit_cost": 323.76
+  },
+  {
+    "part_number": "HK2175",
+    "description": "HOSE KIT,RETROFIT,8312,SMART RAM-2025",
+    "unit_cost": 269.94
+  },
+  {
+    "part_number": "HK2176",
+    "description": "HOSE KIT,RETROFIT,8308,SMART RAM-2025",
+    "unit_cost": 191.41
+  },
+  {
+    "part_number": "HK2177",
+    "description": "HOSE KIT,STAR-SEP DRIVE,H-TANK,6631",
+    "unit_cost": 215.43
+  },
+  {
+    "part_number": "HK2178",
+    "description": "HOSE KIT, PWR UNIT, BOOM LIFT+PUPS, 1660",
+    "unit_cost": 97.42
+  },
+  {
+    "part_number": "HK2180",
+    "description": "HOSE KIT, BOOM LIFT, 1660",
+    "unit_cost": 236.01
+  },
+  {
+    "part_number": "HK2181",
+    "description": "HOSE KIT, 2 PUPS, 1660",
+    "unit_cost": 220.4
+  },
+  {
+    "part_number": "HK2182",
+    "description": "HOSE KIT,PWR UNIT,BOOM LIFT NO PUPS,1660",
+    "unit_cost": 98.02
+  },
+  {
+    "part_number": "HK2190",
+    "description": "TEMPLATE,HOSE KIT",
+    "unit_cost": 0
   }
 ]
