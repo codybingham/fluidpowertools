@@ -14,15 +14,15 @@
   function applyTheme(isDarkMode) {
     document.body.classList.toggle('dark-mode', isDarkMode);
     if (themeToggle) {
-      themeToggle.checked = isDarkMode;
+      themeToggle.setAttribute('aria-checked', String(isDarkMode));
     }
   }
 
   applyTheme(initialDarkMode);
 
   if (themeToggle) {
-    themeToggle.addEventListener('change', () => {
-      const isDarkMode = themeToggle.checked;
+    themeToggle.addEventListener('click', () => {
+      const isDarkMode = themeToggle.getAttribute('aria-checked') !== 'true';
       applyTheme(isDarkMode);
       localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
     });
