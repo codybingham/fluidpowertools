@@ -2,6 +2,32 @@
 
   const PART_LOOKUP_PASSWORD = 'hydraulics';
 
+  const themeToggle = document.getElementById('themeToggle');
+  const storedTheme = localStorage.getItem('theme');
+  const prefersDark =
+    window.matchMedia &&
+    window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const initialDarkMode = storedTheme
+    ? storedTheme === 'dark'
+    : prefersDark;
+
+  function applyTheme(isDarkMode) {
+    document.body.classList.toggle('dark-mode', isDarkMode);
+    if (themeToggle) {
+      themeToggle.checked = isDarkMode;
+    }
+  }
+
+  applyTheme(initialDarkMode);
+
+  if (themeToggle) {
+    themeToggle.addEventListener('change', () => {
+      const isDarkMode = themeToggle.checked;
+      applyTheme(isDarkMode);
+      localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+    });
+  }
+
   let partLookupUnlocked =
 
     localStorage.getItem('plUnlocked') === 'true';
