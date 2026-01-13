@@ -37,34 +37,29 @@ h3 {
   margin-bottom: 15px;
 }
 .theme-toggle {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 10px;
   font-weight: 600;
   color: #2c3e50;
-  margin-bottom: 20px;
+  z-index: 100;
 }
 .theme-toggle .toggle {
   position: relative;
   width: 46px;
   height: 24px;
   display: inline-block;
-}
-.theme-toggle input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-.theme-toggle .slider {
-  position: absolute;
-  inset: 0;
+  border: none;
   background: #cbd5e1;
   border-radius: 999px;
   box-shadow: inset 0 0 0 1px #94a3b8;
+  cursor: pointer;
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
-.theme-toggle .slider::before {
+.theme-toggle .toggle::before {
   content: "";
   position: absolute;
   height: 18px;
@@ -76,13 +71,17 @@ h3 {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
   transition: transform 0.3s ease, background 0.3s ease;
 }
-.theme-toggle input:checked + .slider {
+.theme-toggle .toggle[aria-checked="true"] {
   background: #1f5f94;
   box-shadow: inset 0 0 0 1px #1f5f94;
 }
-.theme-toggle input:checked + .slider::before {
+.theme-toggle .toggle[aria-checked="true"]::before {
   transform: translateX(22px);
   background: #e2e8f0;
+}
+.theme-toggle .toggle:focus-visible {
+  outline: 2px solid #1f5f94;
+  outline-offset: 3px;
 }
 
 body.dark-mode {
